@@ -3,6 +3,9 @@
 
 Take care of your digital cat by feeding it, petting it, and giving it attention.
 
+![Kocio]
+(https://github.com/Maacciieejj/cAtSCII/blob/main/links/Zrzut%20ekranu%202025-03-07%20145405.png?raw=true)
+
 ## Features
 - Feed your cat to keep it well-fed
 - Pet your cat to maintain its well-being
