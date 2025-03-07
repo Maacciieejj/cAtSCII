@@ -2,7 +2,7 @@
  Simple tamagotchi with ASCII cats.
 
 Take care of your digital cat by feeding it, petting it, and giving it attention.
-
+"""
                                        -%#.
                    .-=-.             .-%##.
                    :++**+.          :-####-.
@@ -23,6 +23,7 @@ Take care of your digital cat by feeding it, petting it, and giving it attention
 --==-==--==+=============+####%%@%%+. 
 ---==-=+====+*++===++====-=%%%%%%%#:.
 ------=+=+++++++=++==++=-==+%%@@%%+... 
+"""
 
 ## Features
 - Feed your cat to keep it well-fed
