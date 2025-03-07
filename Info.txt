@@ -1,0 +1,4 @@
+bildowanie exe
+tu w cmd
+
+pyinstaller --onefile Traumagotchi.py
