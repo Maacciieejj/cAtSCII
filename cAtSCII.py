@@ -1,14 +1,14 @@
 import time #import mehanizmu czasu
 import random #import mehanizmu losowego
-import os #import komend systemowych
 import threading  # import mehanizmu wątków
+import os  # bibioteka os do czyszczenia ekranu
 from links.karmione import kotykarmione #import asci artow
 from links.glaskane import kotyglaskane #import asci artow
 from links.ogladane import kotyogladane #import asci artow
 from links.nagrobek import nagrobek #import asci artow
 from links.portret import portret #import asci artow
 
-def clear_screen(): # czysci ekran co petle w wind i linux
+def clear_screen(): #  czyszczenie ekran startowy
     os.system('cls' if os.name == 'nt' else 'clear')
 
 def wydarzenie_losowe(kot): # definicja funkcji wydarzenie_losowe
@@ -35,7 +35,7 @@ def wydarzenie_losowe(kot): # definicja funkcji wydarzenie_losowe
         print(f"\n\nWydarzenie losowe:{ wydarzenie}")  # pokazuje co się stało
         kot.zapisz_log(f"Wydarzenie losowe: {wydarzenie}") # zapisuje log
         kot.pokaz_stan()
-        print("\n(Enter)")    
+        print("(enter)")    
 
 #--------------------------------------------------------
 
@@ -50,7 +50,7 @@ class Cat:
 
 # funkcja zapisu logów do pliku
     def zapisz_log(self, akcja):
-        with open('kot_log.txt', 'a', encoding='utf-8') as plik:
+        with open('koci_pamietnik.txt', 'a', encoding='utf-8') as plik:
             czas_gry = int(time.time() - self.moment_adopcji)
             minuty = (czas_gry // 60) % 60
             godziny = (czas_gry // 3600) % 24
@@ -124,7 +124,7 @@ def main():
     kot = Cat() # tutaj wywołuje się __init__
     print(portret)
     time.sleep(4)  # czeka x sekundy
-    clear_screen()
+    clear_screen() #-  czyszczenie ekranu startoweego
     ostatnia_aktualizacja = time.time()
 
 
@@ -156,15 +156,14 @@ def main():
 
         # Wyświetl stan i menu
         kot.pokaz_stan()
-        print("\nCo chcesz zrobić?")
-        print("1 - Nakarm kota")
+        print("\n1 - Nakarm kota")
         print("2 - Pogłaszcz kota")
         print("3 - Spójrz na kota")
         print("0 - Wyjdź z gry")
         
         wybor = input("?: ") #wyswietla linie i zapisuje co wpisał użytkownik
 
-        clear_screen() #wykonanie funkcji clear_screen
+        # clear_screen() - - wylaczone czyszczenie ekranu
 
 # Sprawdzenie wyboru użytkownika
         if wybor == "1":
