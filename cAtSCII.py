@@ -8,6 +8,10 @@ from links.ogladane import kotyogladane #import asci artow
 from links.nagrobek import nagrobek #import asci artow
 from links.portret import portret #import asci artow
 
+pauza = False
+czas_rozpoczecia_pauzy = 0
+calkowity_czas_pauzy = 0
+
 def clear_screen(): #  czyszczenie ekran startowy
     os.system('cls' if os.name == 'nt' else 'clear')
 
@@ -101,7 +105,7 @@ class Cat:
  #wyswietla menu i aktualizuje stan kota
     def pokaz_stan(self):
         # ponizej konstruowanie licznika czasu gry
-        czas_gry = int(time.time() - self.moment_adopcji)  # całkowity czas w sekundach
+        czas_gry = int(time.time() - self.moment_adopcji - calkowity_czas_pauzy)  # całkowity czas w sekundach z odjetym całkowitego czasu pauzy
         minuty = (czas_gry // 60) % 60
         godziny = (czas_gry // 3600) % 24
         dni = czas_gry // 86400
@@ -137,16 +141,16 @@ def main():
     # While To jest pętla, która się powtarza, tak dlugo jak spelniony jest warunek
     while kot.zyje():
       
-        # Aktualizacja statystyk za cały miniony czas
-        teraz = time.time()
 
+        # Aktualizacja statystyk
         teraz = time.time() #aktualizacja czasu by pokazywaly się aktualne statystyki pod wydarzeniami losowymi
-        minuty = int((teraz - ostatnia_aktualizacja) // 60)  # ile minut minęło - dotyczy opadania statystyk
-        if minuty > 0:
-            kot.najedzenie -= minuty / 60  # odejmij 1/60 punktu za każdą minutę
-            kot.zadbanie -= minuty / 60
-            kot.dostatekuwagi -= minuty / 60
-            ostatnia_aktualizacja = teraz #???
+        if not pauza:  # obliczaj czas tylko gdy nie ma pauzy
+            minuty = int((teraz - ostatnia_aktualizacja) // 60)  # ile minut minęło - dotyczy opadania statystyk
+            if minuty > 0:
+                kot.najedzenie -= minuty / 60  # odejmij 1/60 punktu za każdą minutę
+                kot.zadbanie -= minuty / 60
+                kot.dostatekuwagi -= minuty / 60
+                ostatnia_aktualizacja = teraz #???
 
         if not kot.zyje(): #jesli zyje jest false to wyświetla się to
             print("\nTwój kot zmarł!") 
@@ -159,6 +163,7 @@ def main():
         print("\n1 - Nakarm kota")
         print("2 - Pogłaszcz kota")
         print("3 - Spójrz na kota")
+        print("4 - Połóż kota spać") 
         print("0 - Wyjdź z gry")
         
         wybor = input("?: ") #wyswietla linie i zapisuje co wpisał użytkownik
@@ -187,6 +192,17 @@ def main():
             kot.zapisz_log("Akcja: Patrzenie na kota") #zapis logu
             print(random.choice(kotyogladane))# wybiera losowo jedną z listy
             print("\nWidzisz kota")
+
+        elif wybor == "4": # pauza
+            global pauza, czas_rozpoczecia_pauzy, calkowity_czas_pauzy
+            pauza = not pauza
+            if pauza:
+                print("\nKot idzie spać...")
+                czas_rozpoczecia_pauzy = time.time()
+            else:
+                print("\nKot się budzi!")
+                calkowity_czas_pauzy += time.time() - czas_rozpoczecia_pauzy
+                ostatnia_aktualizacja = time.time()  # aktualizuj czas po pauzie    
 
 
 
