@@ -13,15 +13,16 @@ def clear_screen(): # czysci ekran co petle w wind i linux
 
 def wydarzenie_losowe(kot): # definicja funkcji wydarzenie_losowe
     while True:
-        czas_oczekiwania = random.randint(600, 1800)  # losuje od 10 do 30 minut, jak by co mozna zamienic na random.choice([600, 900, 1200, 1500, 1800]) i to losuje poszczegolne liczby
+        czas_oczekiwania = random.choice([300, 600, 600, 900, 900, 1200, 1500])  # losuje czas oczekiwania w sekundach
         time.sleep(czas_oczekiwania)  # czeka wylosowaną liczbę sekund
         if not kot.zyje():  # sprawdź czy kot żyje przed wydarzeniem
             print("\nTwój kot zmarł!") 
             print(nagrobek)
             break
-        wydarzenie = random.choice(["biegunka", "smutek", "upolowanie_muchy", "mycie_futra", "szwędanie", "szwędanie", "szwędanie"])
+        wydarzenie = random.choice(["biegunka", "smutek", "upolowanie_muchy", "spotkanie_kocich_znajomych", "spotkanie_kocich_znajomych", "szwędanie", "szwędanie", "szwędanie"])
         getattr(kot, wydarzenie)()  # wywołuje wylosowaną metodę na kocie
         print(f"\n\nWydarzenie losowe:{ wydarzenie}")  # pokazuje co się stało
+        kot.zapisz_log(f"Wydarzenie losowe: {wydarzenie}") # zapisuje log
         kot.pokaz_stan()
         print("\nNaciśnij Enter aby kontynuować...")    
 
@@ -29,11 +30,28 @@ def wydarzenie_losowe(kot): # definicja funkcji wydarzenie_losowe
 
 
 class Cat: 
+    #poniżej konstruktor klasy Cat
     def __init__(self): # konstruktor klasy Cat
         self.najedzenie = 10 #Tworzy zmienną przechowującą poziom najedzenia kota. Self oznacza, że zmienna należy do instancji klasy
         self.zadbanie = 10 # podobnie
         self.dostatekuwagi = 10
         self.moment_adopcji = time.time()  # dodajemy czas startu jako właściwość kota
+
+# funkcja zapisu logów do pliku
+    def zapisz_log(self, akcja):
+        with open('kot_log.txt', 'a', encoding='utf-8') as plik:
+            czas_gry = int(time.time() - self.moment_adopcji)
+            minuty = (czas_gry // 60) % 60
+            godziny = (czas_gry // 3600) % 24
+            dni = czas_gry // 86400
+            
+            log = f"\n[{dni}d {godziny}h {minuty}m] {akcja}\n"
+            log += f"Najedzenie: {round(self.najedzenie, 2)}, "
+            log += f"Zadbanie: {round(self.zadbanie, 2)}, "
+            log += f"Dostatek uwagi: {round(self.dostatekuwagi, 2)}\n"
+
+            plik.write(log)
+
 
 # ponizej są metody, które zmieniają wartość statystyk kota
     def karmienie(self): # definicja metody karmienie w klasie Cat
@@ -59,11 +77,14 @@ class Cat:
     def upolowanie_muchy(self):
         self.najedzenie = min(10, self.najedzenie + 1)
 
-    def mycie_futra(self):
-        self.dostatekuwagi = min(10, self.dostatekuwagi + 1)
+    #def mycie_futra(self): wyłączone
+        #self.dostatekuwagi = min(10, self.dostatekuwagi + 1) wyłączone
 
     def szwędanie(self):
         pass  # ta metoda celowo nic nie robi
+
+    def spotkanie_kocich_znajomych(self):
+        self.dostatekuwagi = min(10, self.dostatekuwagi + 1)
 
 
  #wyswietla menu i aktualizuje stan kota
@@ -136,11 +157,13 @@ def main():
 # Sprawdzenie wyboru użytkownika
         if wybor == "1":
             kot.karmienie()
+            kot.zapisz_log("Akcja: Karmienie kota") #zapis logu
             print(random.choice(kotykarmione))# wybiera losowo jedną z listy
             print("\nKarmisz kota")
 
         elif wybor == "2":
             kot.glaskanie()
+            kot.zapisz_log("Akcja: Głaskanie kota") #zapis logu
             print(random.choice(kotyglaskane))# wybiera losowo jedną z listy
             print("\nGłaszczesz kota")
 
@@ -150,6 +173,7 @@ def main():
 
         elif wybor == "3":
             kot.patrzenie()
+            kot.zapisz_log("Akcja: Patrzenie na kota") #zapis logu
             print(random.choice(kotyogladane))# wybiera losowo jedną z listy
             print("\nWidzisz kota")
 
