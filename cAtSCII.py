@@ -13,12 +13,13 @@ def clear_screen(): # czysci ekran co petle w wind i linux
 
 def wydarzenie_losowe(kot): # definicja funkcji wydarzenie_losowe
     while True:
-        time.sleep(1200)  # czeka X sekund
+        czas_oczekiwania = random.randint(600, 1800)  # losuje od 10 do 30 minut, jak by co mozna zamienic na random.choice([600, 900, 1200, 1500, 1800]) i to losuje poszczegolne liczby
+        time.sleep(czas_oczekiwania)  # czeka wylosowaną liczbę sekund
         if not kot.zyje():  # sprawdź czy kot żyje przed wydarzeniem
             print("\nTwój kot zmarł!") 
             print(nagrobek)
             break
-        wydarzenie = random.choice(["sraczka", "smutek", "upolowanie_muchy", "mycie_futra", "szwędanie", "szwędanie", "szwędanie"])
+        wydarzenie = random.choice(["biegunka", "smutek", "upolowanie_muchy", "mycie_futra", "szwędanie", "szwędanie", "szwędanie"])
         getattr(kot, wydarzenie)()  # wywołuje wylosowaną metodę na kocie
         print(f"\n\nWydarzenie losowe:{ wydarzenie}")  # pokazuje co się stało
         kot.pokaz_stan()
@@ -32,6 +33,7 @@ class Cat:
         self.najedzenie = 10 #Tworzy zmienną przechowującą poziom najedzenia kota. Self oznacza, że zmienna należy do instancji klasy
         self.zadbanie = 10 # podobnie
         self.dostatekuwagi = 10
+        self.moment_adopcji = time.time()  # dodajemy czas startu jako właściwość kota
 
 # ponizej są metody, które zmieniają wartość statystyk kota
     def karmienie(self): # definicja metody karmienie w klasie Cat
@@ -47,7 +49,7 @@ class Cat:
         return self.najedzenie > 0 and self.zadbanie > 0 and self.dostatekuwagi > 0
 
 # ponizej metody - wydarzenia losowe
-    def sraczka(self):
+    def biegunka(self):
         self.najedzenie = max(0, self.najedzenie - 2) 
         self.zadbanie = max(0, self.zadbanie - 2) 
 
@@ -66,10 +68,20 @@ class Cat:
 
  #wyswietla menu i aktualizuje stan kota
     def pokaz_stan(self):
+        # ponizej konstruowanie licznika czasu gry
+        czas_gry = int(time.time() - self.moment_adopcji)  # całkowity czas w sekundach
+        minuty = (czas_gry // 60) % 60
+        godziny = (czas_gry // 3600) % 24
+        dni = czas_gry // 86400
+        #ponizej wyswietlanie licznikow
         print(f"\nStan kota:")
         print(f"Najedzenie: {round(self.najedzenie, 2)}") #pokazuje stan najedzenia do 2 miejsc po przecinku
         print(f"Zadbanie: {round(self.zadbanie, 2)}")
         print(f"Dostatek uwagi: {round(self.dostatekuwagi, 2)}")
+        print("Czas opieki:")
+        print(f"{dni} d. {godziny} h. {minuty} m.")
+
+
 
 
 #--------------ponizej jest główna funkcja programu ----------
@@ -114,10 +126,10 @@ def main():
         print("\nCo chcesz zrobić?")
         print("1 - Nakarm kota")
         print("2 - Pogłaszcz kota")
-        print("3 - Wyjdź z gry")
-        print("4 - Spójrz na kota")
+        print("3 - Spójrz na kota")
+        print("0 - Wyjdź z gry")
         
-        wybor = input("Wybierz opcję: ") #wyswietla linie i zapisuje co wpisał użytkownik
+        wybor = input("\nWybierz opcję: ") #wyswietla linie i zapisuje co wpisał użytkownik
 
         clear_screen() #wykonanie funkcji clear_screen
 
@@ -132,10 +144,10 @@ def main():
             print("\nGłaszczesz kota")
             print(random.choice(kotyglaskane))# wybiera losowo jedną z listy
 
-        elif wybor == "3":
+        elif wybor == "0":
             break
 
-        elif wybor == "4":
+        elif wybor == "3":
             kot.patrzenie()
             print("\nWidzisz kota")
             print(random.choice(kotyogladane))# wybiera losowo jedną z listy
