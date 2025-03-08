@@ -136,21 +136,23 @@ def main():
 # Sprawdzenie wyboru użytkownika
         if wybor == "1":
             kot.karmienie()
-            print("\nKarmisz kota")
             print(random.choice(kotykarmione))# wybiera losowo jedną z listy
+            print("\nKarmisz kota")
 
         elif wybor == "2":
             kot.glaskanie()
-            print("\nGłaszczesz kota")
             print(random.choice(kotyglaskane))# wybiera losowo jedną z listy
+            print("\nGłaszczesz kota")
+
 
         elif wybor == "0":
             break
 
         elif wybor == "3":
             kot.patrzenie()
-            print("\nWidzisz kota")
             print(random.choice(kotyogladane))# wybiera losowo jedną z listy
+            print("\nWidzisz kota")
+
 
 
 # wywołanie funkcji main (która jest wywoływana tylko gdy plik jest uruchamiany bezpośrednio)
