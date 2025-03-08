@@ -12,9 +12,20 @@ def clear_screen(): # czysci ekran co petle w wind i linux
     os.system('cls' if os.name == 'nt' else 'clear')
 
 def wydarzenie_losowe(kot): # definicja funkcji wydarzenie_losowe
+    ostatnia_aktualizacja = time.time() # aktualizacja czasu ostatniej aktualizacji by pokazywaly sie aktualne statsy podczas wydarzen losowych
     while True:
         czas_oczekiwania = random.choice([300, 600, 600, 900, 900, 1200, 1500])  # losuje czas oczekiwania w sekundach
         time.sleep(czas_oczekiwania)  # czeka wylosowaną liczbę sekund
+
+# aktualizacja statsow przed wydarzeniami
+        teraz = time.time()
+        minuty = int((teraz - ostatnia_aktualizacja) // 60)
+        if minuty > 0:
+            kot.najedzenie -= minuty / 60
+            kot.zadbanie -= minuty / 60
+            kot.dostatekuwagi -= minuty / 60
+            ostatnia_aktualizacja = teraz
+
         if not kot.zyje():  # sprawdź czy kot żyje przed wydarzeniem
             print("\nTwój kot zmarł!") 
             print(nagrobek)
@@ -24,7 +35,7 @@ def wydarzenie_losowe(kot): # definicja funkcji wydarzenie_losowe
         print(f"\n\nWydarzenie losowe:{ wydarzenie}")  # pokazuje co się stało
         kot.zapisz_log(f"Wydarzenie losowe: {wydarzenie}") # zapisuje log
         kot.pokaz_stan()
-        print("\nNaciśnij Enter aby kontynuować...")    
+        print("\n(Enter)")    
 
 #--------------------------------------------------------
 
@@ -129,6 +140,7 @@ def main():
         # Aktualizacja statystyk za cały miniony czas
         teraz = time.time()
 
+        teraz = time.time() #aktualizacja czasu by pokazywaly się aktualne statystyki pod wydarzeniami losowymi
         minuty = int((teraz - ostatnia_aktualizacja) // 60)  # ile minut minęło - dotyczy opadania statystyk
         if minuty > 0:
             kot.najedzenie -= minuty / 60  # odejmij 1/60 punktu za każdą minutę
@@ -150,7 +162,7 @@ def main():
         print("3 - Spójrz na kota")
         print("0 - Wyjdź z gry")
         
-        wybor = input("\nWybierz opcję: ") #wyswietla linie i zapisuje co wpisał użytkownik
+        wybor = input("?: ") #wyswietla linie i zapisuje co wpisał użytkownik
 
         clear_screen() #wykonanie funkcji clear_screen
 
