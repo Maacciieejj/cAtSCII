@@ -50,7 +50,7 @@ def wydarzenie_losowe(kot): # definicja funkcji wydarzenie_losowe
 def drobne_wydarzenia(kot): # definicja funkcji 
     ostatnia_aktualizacja = time.time() # aktualizacja czasu ostatniej aktualizacji by pokazywaly sie aktualne statsy podczas wydarzen losowych
     while True:
-        czas_oczekiwania = random.choice([120, 120, 120, 120, 120, 120, 60, 60, 60, 60, 180, 180,5])  # losuje czas oczekiwania w sekundach
+        czas_oczekiwania = random.choice([120, 120, 120, 120, 120, 120, 60, 60, 60, 60, 180, 180, 300, 300, 5])  # losuje czas oczekiwania w sekundach
         time.sleep(czas_oczekiwania)  # czeka wylosowaną liczbę sekund
 
         # aktualizacja statsow przed wydarzeniami
