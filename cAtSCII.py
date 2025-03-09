@@ -39,7 +39,7 @@ def wydarzenie_losowe(kot): # definicja funkcji wydarzenie_losowe
 
         wydarzenie = random.choice(["biegunka", "smutek", "upolowanie_myszy", "spotkanie_kocich_znajomych", "dzieci_głaszcza", "szwedanie"]) # losowanie wydarzenia
         getattr(kot, wydarzenie)()  # Wywołuje metodę o nazwie wylosowanego wydarzenia na obiekcie kot . Na przykład, jeśli wylosowano "biegunka", to wykona się kot.biegunka()
-        print(f"\n\nWydarzenie losowe:{ wydarzenie}")  # pokazuje co się stało
+        print(f"↑ Wydarzenie losowe:{ wydarzenie}")  # pokazuje co się stało
         kot.zapisz_log(f"Wydarzenie losowe: { wydarzenie}") # zapisuje log
         kot.pokaz_stan()
         print("(enter)")    
@@ -70,7 +70,7 @@ def drobne_wydarzenia(kot): # definicja funkcji
 
         wydarzenie = random.choice(["szwedanie","przeciaganie", "upadek_z_krzesla", "mruczenie", "kaslanie", "upolowanie_muchy", "gonitwa_po_meblach", "upolowanie_pajaka", "wycieczka_na_dach", "wizyta_kota_sasiada", "utkniecie_pod_zlewem", "spotkanie_z_jezem", "koci_marazm"]) # losowanie wydarzenia
         getattr(kot, wydarzenie)()  # Wywołuje metodę o nazwie wylosowanego wydarzenia na obiekcie kot . Na przykład, jeśli wylosowano "biegunka", to wykona się kot.biegunka()
-        print(f"\n\nDrobne wydarzenie:{ wydarzenie}")  # pokazuje co się stało
+        print(f"↑ Drobne wydarzenie:{ wydarzenie}")  # pokazuje co się stało
         kot.zapisz_log(f"Drobne wydarzenie:{ wydarzenie}") # zapisuje log
         kot.pokaz_stan()
         print("(enter)") 
@@ -254,7 +254,7 @@ def main():
     kot = Cat() # tutaj wywołuje się __init__
     print(portret)
     time.sleep(4)  # czeka x sekundy
-    clear_screen() #-  czyszczenie ekranu startoweego
+    # clear_screen() #-  wyłączoneczyszczenie ekranu startoweego
     ostatnia_aktualizacja = time.time()
 
 
@@ -316,13 +316,13 @@ def main():
             kot.karmienie()
             kot.zapisz_log("Akcja: Karmienie kota") #zapis logu
             print(random.choice(kotykarmione))# wybiera losowo jedną z listy
-            print("\nKarmisz kota")
+            print("↑ Karmisz kota")
 
         elif wybor == "2":
             kot.glaskanie()
             kot.zapisz_log("Akcja: Głaskanie kota") #zapis logu
             print(random.choice(kotyglaskane))# wybiera losowo jedną z listy
-            print("\nGłaszczesz kota")
+            print("↑ Głaszczesz kota")
 
 
         elif wybor == "0":
@@ -332,7 +332,7 @@ def main():
             kot.patrzenie()
             kot.zapisz_log("Akcja: Patrzenie na kota") #zapis logu
             print(random.choice(kotyogladane))# wybiera losowo jedną z listy
-            print("\nWidzisz kota")
+            print("↑ Widzisz kota")
 
 
 
