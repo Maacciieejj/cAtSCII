@@ -232,3 +232,6 @@ Najedzenie: 7.31, Zadbanie: 7.57, Dostatek uwagi: 9.8
 
 [0d 0h 30m] Drobne wydarzenie:upadek_z_krzesla
 Najedzenie: 7.29, Zadbanie: 7.3, Dostatek uwagi: 9.78
+
+[0d 0h 0m] Akcja: Głaskanie kota
+Najedzenie: 10, Zadbanie: 10, Dostatek uwagi: 10
