@@ -169,3 +169,66 @@ Najedzenie: 9.89, Zadbanie: 8.98, Dostatek uwagi: 9.48
 
 [0d 0h 23m] Drobne wydarzenie:wizyta_kota_sasiada
 Najedzenie: 9.88, Zadbanie: 8.97, Dostatek uwagi: 9.72
+
+[0d 0h 2m] Drobne wydarzenie:wizyta_kota_sasiada
+Najedzenie: 9.98, Zadbanie: 9.98, Dostatek uwagi: 10
+
+[0d 0h 3m] Drobne wydarzenie:wycieczka_na_dach
+Najedzenie: 9.72, Zadbanie: 9.97, Dostatek uwagi: 9.99
+
+[0d 0h 6m] Drobne wydarzenie:wizyta_kota_sasiada
+Najedzenie: 9.7, Zadbanie: 9.95, Dostatek uwagi: 10
+
+[0d 0h 8m] Drobne wydarzenie:spotkanie_z_jezem
+Najedzenie: 9.68, Zadbanie: 9.93, Dostatek uwagi: 10
+
+[0d 0h 9m] Drobne wydarzenie:wycieczka_na_dach
+Najedzenie: 9.42, Zadbanie: 9.92, Dostatek uwagi: 9.99
+
+[0d 0h 10m] Drobne wydarzenie:mruczenie
+Najedzenie: 9.42, Zadbanie: 10, Dostatek uwagi: 9.98
+
+[0d 0h 11m] Drobne wydarzenie:spotkanie_z_jezem
+Najedzenie: 9.41, Zadbanie: 9.99, Dostatek uwagi: 10
+
+[0d 0h 13m] Drobne wydarzenie:mruczenie
+Najedzenie: 9.39, Zadbanie: 10, Dostatek uwagi: 9.98
+
+[0d 0h 14m] Drobne wydarzenie:upolowanie_pajaka
+Najedzenie: 9.63, Zadbanie: 9.99, Dostatek uwagi: 9.97
+
+[0d 0h 15m] Wydarzenie losowe: spotkanie_kocich_znajomych
+Najedzenie: 9.51, Zadbanie: 9.87, Dostatek uwagi: 10
+
+[0d 0h 16m] Drobne wydarzenie:mruczenie
+Najedzenie: 9.49, Zadbanie: 10, Dostatek uwagi: 9.98
+
+[0d 0h 17m] Drobne wydarzenie:wycieczka_na_dach
+Najedzenie: 9.23, Zadbanie: 9.99, Dostatek uwagi: 9.97
+
+[0d 0h 19m] Drobne wydarzenie:upolowanie_pajaka
+Najedzenie: 9.47, Zadbanie: 9.97, Dostatek uwagi: 9.96
+
+[0d 0h 21m] Drobne wydarzenie:gonitwa_po_meblach
+Najedzenie: 9.2, Zadbanie: 9.96, Dostatek uwagi: 9.94
+
+[0d 0h 23m] Drobne wydarzenie:upadek_z_krzesla
+Najedzenie: 9.18, Zadbanie: 9.69, Dostatek uwagi: 9.92
+
+[0d 0h 25m] Wydarzenie losowe: biegunka
+Najedzenie: 7.1, Zadbanie: 7.61, Dostatek uwagi: 9.84
+
+[0d 0h 25m] Drobne wydarzenie:szwedanie
+Najedzenie: 7.08, Zadbanie: 7.59, Dostatek uwagi: 9.82
+
+[0d 0h 26m] Drobne wydarzenie:przeciaganie
+Najedzenie: 7.07, Zadbanie: 7.83, Dostatek uwagi: 9.82
+
+[0d 0h 27m] Drobne wydarzenie:upadek_z_krzesla
+Najedzenie: 7.07, Zadbanie: 7.57, Dostatek uwagi: 9.81
+
+[0d 0h 28m] Drobne wydarzenie:upolowanie_pajaka
+Najedzenie: 7.31, Zadbanie: 7.57, Dostatek uwagi: 9.8
+
+[0d 0h 30m] Drobne wydarzenie:upadek_z_krzesla
+Najedzenie: 7.29, Zadbanie: 7.3, Dostatek uwagi: 9.78

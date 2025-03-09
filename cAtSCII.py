@@ -8,6 +8,7 @@ from links.ogladane import kotyogladane #import asci artow
 from links.nagrobek import nagrobek #import asci artow
 from links.portret import portret #import asci arto
 from links.ASCIIdrobne_wydarzenia import *
+from links.ASCIIwydarzenia_losowe import *
 
 def clear_screen(): #  czyszczenie ekran startowy
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -49,7 +50,7 @@ def wydarzenie_losowe(kot): # definicja funkcji wydarzenie_losowe
 def drobne_wydarzenia(kot): # definicja funkcji 
     ostatnia_aktualizacja = time.time() # aktualizacja czasu ostatniej aktualizacji by pokazywaly sie aktualne statsy podczas wydarzen losowych
     while True:
-        czas_oczekiwania = random.choice([120, 120, 120, 60, 60, 180,])  # losuje czas oczekiwania w sekundach
+        czas_oczekiwania = random.choice([120, 120, 120, 120, 120, 120, 60, 60, 60, 60, 180, 180,5])  # losuje czas oczekiwania w sekundach
         time.sleep(czas_oczekiwania)  # czeka wylosowaną liczbę sekund
 
         # aktualizacja statsow przed wydarzeniami
@@ -134,21 +135,26 @@ class Cat:
     # ponizej metody - wydarzenia losowe (wieksze )
 
     def biegunka(self):
+        print(random.choice(ASCIIbiegunka))  # wybiera losowo jeden art
         self.najedzenie = max(0, self.najedzenie - 2) 
         self.zadbanie = max(0, self.zadbanie - 2) 
 
     def upolowanie_myszy(self):
+        print(random.choice(ASCIIupolowanie_myszy))  # wybiera losowo jeden art
         self.najedzenie = min(10, self.najedzenie + 2)
 
     def dzieci_głaszcza(self):
+        print(random.choice(ASCIIdzieci_głaszcza))  # wybiera losowo jeden art
         self.zadbanie = min(10, self.zadbanie + 2)
 
 
 
     def smutek(self):
+        print(random.choice(ASCIIsmutek))  # wybiera losowo jeden art
         self.dostatekuwagi = max(0, self.dostatekuwagi - 2)
 
     def spotkanie_kocich_znajomych(self):
+        print(random.choice(ASCIIspotkanie_kocich_znajomych))  # wybiera losowo jeden art
         self.dostatekuwagi = min(10, self.dostatekuwagi + 2)
 
 
