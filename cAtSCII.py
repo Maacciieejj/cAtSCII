@@ -67,7 +67,7 @@ def drobne_wydarzenia(kot): # definicja funkcji
             kot.zapisz_log("R. I. P.") #zapis logu
             break
 
-        wydarzenie = random.choice(["szwedanie","szwedanie","szwedanie","szwedanie","szwedanie","szwedanie","szwedanie","szwedanie","szwedanie","szwedanie","przeciaganie", "upadek_z_krzesla", "mruczenie", "kaslanie", "upolowanie_muchy", "gonitwa_po_meblach", "upolowanie_pajaka", "wycieczka_na_dach", "wizyta_kota_sasiada", "utkniecie_pod_zlewem", "spotkanie_z_jezem", "koci_marazm"]) # losowanie wydarzenia
+        wydarzenie = random.choice(["szwedanie","przeciaganie", "upadek_z_krzesla", "mruczenie", "kaslanie", "upolowanie_muchy", "gonitwa_po_meblach", "upolowanie_pajaka", "wycieczka_na_dach", "wizyta_kota_sasiada", "utkniecie_pod_zlewem", "spotkanie_z_jezem", "koci_marazm"]) # losowanie wydarzenia
         getattr(kot, wydarzenie)()  # Wywołuje metodę o nazwie wylosowanego wydarzenia na obiekcie kot . Na przykład, jeśli wylosowano "biegunka", to wykona się kot.biegunka()
         print(f"\n\nDrobne wydarzenie:{ wydarzenie}")  # pokazuje co się stało
         kot.zapisz_log(f"Drobne wydarzenie:{ wydarzenie}") # zapisuje log
@@ -171,39 +171,49 @@ class Cat:
         self.zadbanie = max(0, self.zadbanie - 0.25)  
 
     def mruczenie(self):
+        print(random.choice(ASCIImruczenie))  # wybiera losowo jeden art
         self.zadbanie = min(10, self.zadbanie + 0.25)  
 
     def kaslanie(self):
+        print(random.choice(ASCIIkaslanie))  # wybiera losowo jeden art
         self.zadbanie = max(0, self.zadbanie - 0.25) 
 
 
     # najedzenie
 
     def upolowanie_muchy(self):
+        print(random.choice(ASCIIupolowanie_muchy))  # wybiera losowo jeden art
         self.najedzenie = min(10, self.najedzenie + 0.25)  
 
     def gonitwa_po_meblach(self):
+        print(random.choice(ASCIIgonitwa_po_meblach))  # wybiera losowo jeden art
         self.najedzenie = max(0, self.najedzenie - 0.25) 
 
     def upolowanie_pajaka(self):
+        print(random.choice(ASCIIupolowanie_pajaka))  # wybiera losowo jeden art
         self.najedzenie = min(10, self.najedzenie + 0.25)  
 
     def wycieczka_na_dach(self):
+        print(random.choice(ASCIIwycieczka_na_dach))  # wybiera losowo jeden art
         self.najedzenie = max(0, self.najedzenie - 0.25) 
 
 
     # dostatekuwagi
 
     def wizyta_kota_sasiada(self):
+        print(random.choice(ASCIIwizyta_kota_sasiada))  # wybiera losowo jeden art
         self.dostatekuwagi = min(10, self.dostatekuwagi + 0.25)  
 
     def utkniecie_pod_zlewem(self):
+        print(random.choice(ASCIIutkniecie_pod_zlewem))  # wybiera losowo jeden art
         self.dostatekuwagi = max(0, self.dostatekuwagi - 0.25) 
 
     def spotkanie_z_jezem(self):
+        print(random.choice(ASCIIspotkanie_z_jezem))  # wybiera losowo jeden art
         self.dostatekuwagi = min(10, self.dostatekuwagi + 0.25)  
 
     def koci_marazm(self):
+        print(random.choice(ASCIIkoci_marazm))  # wybiera losowo jeden art
         self.dostatekuwagi = max(0, self.dostatekuwagi - 0.25) 
 
 

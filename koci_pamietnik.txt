@@ -52,3 +52,120 @@ Najedzenie: 9.88, Zadbanie: 9.38, Dostatek uwagi: 9.97
 
 [0d 0h 15m] Wydarzenie losowe: smutek
 Najedzenie: 9.76, Zadbanie: 9.26, Dostatek uwagi: 7.84
+
+[0d 0h 0m] Akcja: Patrzenie na kota
+Najedzenie: 10, Zadbanie: 10, Dostatek uwagi: 10
+
+[0d 0h 3m] Drobne wydarzenie:wizyta_kota_sasiada
+Najedzenie: 9.97, Zadbanie: 9.97, Dostatek uwagi: 10
+
+[0d 0h 4m] Drobne wydarzenie:szwedanie
+Najedzenie: 9.97, Zadbanie: 9.97, Dostatek uwagi: 9.99
+
+[0d 0h 5m] Drobne wydarzenie:szwedanie
+Najedzenie: 9.96, Zadbanie: 9.96, Dostatek uwagi: 9.98
+
+[0d 0h 6m] Drobne wydarzenie:koci_marazm
+Najedzenie: 9.95, Zadbanie: 9.95, Dostatek uwagi: 9.73
+
+[0d 0h 8m] Drobne wydarzenie:upadek_z_krzesla
+Najedzenie: 9.93, Zadbanie: 9.68, Dostatek uwagi: 9.71
+
+[0d 0h 10m] Drobne wydarzenie:szwedanie
+Najedzenie: 9.92, Zadbanie: 9.67, Dostatek uwagi: 9.69
+
+[0d 0h 12m] Drobne wydarzenie:szwedanie
+Najedzenie: 9.9, Zadbanie: 9.65, Dostatek uwagi: 9.67
+
+[0d 0h 13m] Drobne wydarzenie:kaslanie
+Najedzenie: 9.89, Zadbanie: 9.39, Dostatek uwagi: 9.67
+
+[0d 0h 14m] Drobne wydarzenie:koci_marazm
+Najedzenie: 9.88, Zadbanie: 9.38, Dostatek uwagi: 9.41
+
+[0d 0h 17m] Drobne wydarzenie:wizyta_kota_sasiada
+Najedzenie: 9.86, Zadbanie: 9.36, Dostatek uwagi: 9.63
+
+[0d 0h 20m] Wydarzenie losowe: upolowanie_myszy
+Najedzenie: 10, Zadbanie: 9.19, Dostatek uwagi: 9.47
+
+[0d 0h 20m] Drobne wydarzenie:szwedanie
+Najedzenie: 9.97, Zadbanie: 9.17, Dostatek uwagi: 9.44
+
+[0d 0h 23m] Drobne wydarzenie:szwedanie
+Najedzenie: 9.95, Zadbanie: 9.14, Dostatek uwagi: 9.42
+
+[0d 0h 25m] Drobne wydarzenie:szwedanie
+Najedzenie: 9.93, Zadbanie: 9.12, Dostatek uwagi: 9.4
+
+[0d 0h 26m] Drobne wydarzenie:spotkanie_z_jezem
+Najedzenie: 9.92, Zadbanie: 9.12, Dostatek uwagi: 9.64
+
+[0d 0h 0m] Akcja: Głaskanie kota
+Najedzenie: 10, Zadbanie: 10, Dostatek uwagi: 10
+
+[0d 0h 2m] Drobne wydarzenie:utkniecie_pod_zlewem
+Najedzenie: 9.98, Zadbanie: 9.98, Dostatek uwagi: 9.73
+
+[0d 0h 4m] Drobne wydarzenie:szwedanie
+Najedzenie: 9.97, Zadbanie: 9.97, Dostatek uwagi: 9.72
+
+[0d 0h 5m] Drobne wydarzenie:wycieczka_na_dach
+Najedzenie: 9.71, Zadbanie: 9.96, Dostatek uwagi: 9.71
+
+[0d 0h 6m] Drobne wydarzenie:koci_marazm
+Najedzenie: 9.7, Zadbanie: 9.95, Dostatek uwagi: 9.45
+
+[0d 0h 7m] Drobne wydarzenie:upolowanie_pajaka
+Najedzenie: 9.94, Zadbanie: 9.94, Dostatek uwagi: 9.44
+
+[0d 0h 9m] Drobne wydarzenie:gonitwa_po_meblach
+Najedzenie: 9.67, Zadbanie: 9.92, Dostatek uwagi: 9.42
+
+[0d 0h 10m] Wydarzenie losowe: szwedanie
+Najedzenie: 9.59, Zadbanie: 9.84, Dostatek uwagi: 9.34
+
+[0d 0h 0m] Akcja: Głaskanie kota
+Najedzenie: 10, Zadbanie: 10, Dostatek uwagi: 10
+
+[0d 0h 2m] Drobne wydarzenie:szwedanie
+Najedzenie: 9.98, Zadbanie: 9.98, Dostatek uwagi: 9.98
+
+[0d 0h 4m] Drobne wydarzenie:utkniecie_pod_zlewem
+Najedzenie: 9.97, Zadbanie: 9.97, Dostatek uwagi: 9.72
+
+[0d 0h 7m] Drobne wydarzenie:gonitwa_po_meblach
+Najedzenie: 9.69, Zadbanie: 9.94, Dostatek uwagi: 9.69
+
+[0d 0h 9m] Drobne wydarzenie:upolowanie_pajaka
+Najedzenie: 9.92, Zadbanie: 9.92, Dostatek uwagi: 9.67
+
+[0d 0h 10m] Wydarzenie losowe: upolowanie_myszy
+Najedzenie: 10, Zadbanie: 9.84, Dostatek uwagi: 9.59
+
+[0d 0h 10m] Drobne wydarzenie:spotkanie_z_jezem
+Najedzenie: 9.99, Zadbanie: 9.83, Dostatek uwagi: 9.83
+
+[0d 0h 12m] Drobne wydarzenie:kaslanie
+Najedzenie: 9.97, Zadbanie: 9.57, Dostatek uwagi: 9.82
+
+[0d 0h 13m] Drobne wydarzenie:upadek_z_krzesla
+Najedzenie: 9.97, Zadbanie: 9.31, Dostatek uwagi: 9.81
+
+[0d 0h 15m] Drobne wydarzenie:gonitwa_po_meblach
+Najedzenie: 9.7, Zadbanie: 9.29, Dostatek uwagi: 9.79
+
+[0d 0h 17m] Drobne wydarzenie:szwedanie
+Najedzenie: 9.68, Zadbanie: 9.27, Dostatek uwagi: 9.77
+
+[0d 0h 19m] Drobne wydarzenie:kaslanie
+Najedzenie: 9.67, Zadbanie: 9.01, Dostatek uwagi: 9.76
+
+[0d 0h 20m] Drobne wydarzenie:upolowanie_pajaka
+Najedzenie: 9.91, Zadbanie: 9.0, Dostatek uwagi: 9.75
+
+[0d 0h 22m] Drobne wydarzenie:utkniecie_pod_zlewem
+Najedzenie: 9.89, Zadbanie: 8.98, Dostatek uwagi: 9.48
+
+[0d 0h 23m] Drobne wydarzenie:wizyta_kota_sasiada
+Najedzenie: 9.88, Zadbanie: 8.97, Dostatek uwagi: 9.72
