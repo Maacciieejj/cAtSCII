@@ -42,7 +42,8 @@ def wydarzenie_losowe(kot): # definicja funkcji wydarzenie_losowe
         print(f"↑ Wydarzenie losowe:{ wydarzenie}")  # pokazuje co się stało
         kot.zapisz_log(f"Wydarzenie losowe: { wydarzenie}") # zapisuje log
         kot.pokaz_stan()
-        print("(enter)")    
+        print("(enter)")
+        print("---------------------------------------------------")    
 
 
 # ponizej definicja funkcji drobnych wydarzeń
@@ -73,7 +74,8 @@ def drobne_wydarzenia(kot): # definicja funkcji
         print(f"↑ Drobne wydarzenie:{ wydarzenie}")  # pokazuje co się stało
         kot.zapisz_log(f"Drobne wydarzenie:{ wydarzenie}") # zapisuje log
         kot.pokaz_stan()
-        print("(enter)") 
+        print("(enter)")
+        print("---------------------------------------------------")
 
 
 
@@ -239,6 +241,7 @@ class Cat:
         print(f"Dostatek uwagi: {round(self.dostatekuwagi, 2)}")
         print("Czas opieki:")
         print(f"{dni} d. {godziny} h. {minuty} m.")
+        print("---------------------------------------------------")
 
 
 
