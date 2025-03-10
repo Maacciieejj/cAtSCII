@@ -35,7 +35,7 @@ def wazne_wydarzenie(kot): # definicja funkcji
             kot.zapisz_log("R. I. P.") #zapis logu
             break
 
-        wydarzenie = random.choice(["biegunka", "smutek", "upolowanie_myszy", "spotkanie_kocich_znajomych", "dzieci_głaszcza", "szwedanie"]) # losowanie wydarzenia
+        wydarzenie = random.choice(["biegunka", "smutek", "upolowanie_myszy", "spotkanie_kocich_znajomych", "psia_inwazja", "dzieci_głaszcza", "szwedanie"]) # losowanie wydarzenia
         getattr(kot, wydarzenie)()  # Wywołuje metodę o nazwie wylosowanego wydarzenia na obiekcie kot . Na przykład, jeśli wylosowano "biegunka", to wykona się kot.biegunka()
         print(f"↑ WAŻNE WYDARZENIE: {wydarzenie}")  # pokazuje co się stało
         kot.zapisz_log(f"WAŻNE WYDARZENIE: {wydarzenie}") # zapisuje log
@@ -134,16 +134,19 @@ class Cat:
     def biegunka(self):
         print(random.choice(ASCIIbiegunka))  # wybiera losowo jeden art
         self.najedzenie = max(0, self.najedzenie - 2) 
-        self.zadbanie = max(0, self.zadbanie - 2) 
-
+ 
     def upolowanie_myszy(self):
         print(random.choice(ASCIIupolowanie_myszy))  # wybiera losowo jeden art
         self.najedzenie = min(10, self.najedzenie + 2)
+ 
+ 
+    def psia_inwazja(self):
+        print(random.choice(ASCIIpsia_inwazja))  # wybiera losowo jeden art
+        self.zadbanie = max(0, self.zadbanie - 2) 
 
     def dzieci_głaszcza(self):
         print(random.choice(ASCIIdzieci_głaszcza))  # wybiera losowo jeden art
         self.zadbanie = min(10, self.zadbanie + 2)
-
 
 
     def smutek(self):
@@ -330,7 +333,7 @@ def main():
             print("↑ Widzisz kota")
 
         elif wybor == "h":
-            print("""Obserwuj jak żyje twój kot. Dbaj o niego, karmiąc, głaszcząc i poświęcając mu uwagę. Stan konta (najedzenie, zadbanie, dostatek uwagi) ciągle spada. W międzyczasie pojawią się drobne wydarzenia które lekko wpłyną na jego samopoczucie – pozytywnie lub negatywnie. Rzadziej pojawią się ważne wydarzenia które znacznie mocniej wpływają na kota (oprócz szwendania które w ogóle nie zmienia statystyk kota). Jakie wydarzenia jak wpływają na kota? Tego dowiesz się obserwując jego stan. [na razie nie ma mechaniki pauzowania i kot puki co nie przeżyje nocy]""")
+            print("""Obserwuj jak żyje twój kot. Dbaj o niego, karmiąc, głaszcząc i poświęcając mu uwagę. Stan kota (najedzenie, zadbanie, dostatek uwagi) ciągle powoli spada. W międzyczasie pojawią się drobne wydarzenia które lekko wpłyną na jego samopoczucie – pozytywnie lub negatywnie. Rzadziej pojawią się ważne wydarzenia które znacznie mocniej wpływają na kota (oprócz szwendania które w ogóle nie zmienia statystyk kota). Jakie wydarzenia jak wpływają na kota? Tego dowiesz się obserwując jego stan. [na razie nie ma mechaniki pauzowania i kot puki co nie przeżyje nocy]""")
 
 
 
