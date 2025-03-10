@@ -373,3 +373,6 @@ Najedzenie: 9.99, Zadbanie: 9.99, Dostatek uwagi: 9.99
 
 [0d 0h 0m] Akcja: Patrzenie na kota
 Najedzenie: 10, Zadbanie: 10, Dostatek uwagi: 10
+
+[0d 0h 0m] Drobne wydarzenie:upolowanie_pajaka
+Najedzenie: 10, Zadbanie: 10, Dostatek uwagi: 10
