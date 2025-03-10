@@ -40,7 +40,7 @@ def wazne_wydarzenie(kot): # definicja funkcji
         print(f"↑ WAŻNE WYDARZENIE: {wydarzenie}")  # pokazuje co się stało
         kot.zapisz_log(f"WAŻNE WYDARZENIE: {wydarzenie}") # zapisuje log
         kot.pokaz_stan()
-        print("(enter)")
+        print("(Menu-enter)")
 
 
 # ponizej definicja funkcji drobnych wydarzeń uruchamianej w wątku dodatkowym
@@ -71,7 +71,7 @@ def drobne_wydarzenia(kot): # definicja funkcji
         print(f"↑ Drobne wydarzenie:{ wydarzenie}")  # pokazuje co się stało
         kot.zapisz_log(f"Drobne wydarzenie:{ wydarzenie}") # zapisuje log
         kot.pokaz_stan()
-        print("(enter)")
+        print("(Menu-enter)")
 
 
 
