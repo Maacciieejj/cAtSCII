@@ -40,7 +40,7 @@ def wazne_wydarzenie(kot): # definicja funkcji
         print(f"↑ WAŻNE WYDARZENIE: {wydarzenie}")  # pokazuje co się stało
         kot.zapisz_log(f"WAŻNE WYDARZENIE: {wydarzenie}") # zapisuje log
         kot.pokaz_stan()
-        print("(Menu-enter)")
+        print("(Menu: enter)")
 
 
 # ponizej definicja funkcji drobnych wydarzeń uruchamianej w wątku dodatkowym
@@ -71,7 +71,7 @@ def drobne_wydarzenia(kot): # definicja funkcji
         print(f"↑ Drobne wydarzenie:{ wydarzenie}")  # pokazuje co się stało
         kot.zapisz_log(f"Drobne wydarzenie:{ wydarzenie}") # zapisuje log
         kot.pokaz_stan()
-        print("(Menu-enter)")
+        print("(Menu: enter)")
 
 
 
@@ -298,6 +298,7 @@ def main():
         print("\n1 - Nakarm kota")
         print("2 - Pogłaszcz kota")
         print("3 - Spójrz na kota")
+        print("H - Help")
         print("0 - Wyjdź z gry")
         
         wybor = input("?: ") #wyswietla linie i zapisuje co wpisał użytkownik
@@ -328,6 +329,8 @@ def main():
             print(random.choice(kotyogladane))# wybiera losowo jedną z listy
             print("↑ Widzisz kota")
 
+        elif wybor == "h":
+            print("""Obserwuj jak żyje twój kot. Dbaj o niego, karmiąc, głaszcząc i poświęcając mu uwagę. Stan konta (najedzenie, zadbanie, dostatek uwagi) ciągle spada. W międzyczasie pojawią się drobne wydarzenia które lekko wpłyną na jego samopoczucie – pozytywnie lub negatywnie. Rzadziej pojawią się ważne wydarzenia które znacznie mocniej wpływają na kota (oprócz szwendania które w ogóle nie zmienia statystyk kota). Jakie wydarzenia jak wpływają na kota? Tego dowiesz się obserwując jego stan. [na razie nie ma mechaniki pauzowania i kot puki co nie przeżyje nocy]""")
 
 
 

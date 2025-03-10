@@ -376,3 +376,9 @@ Najedzenie: 10, Zadbanie: 10, Dostatek uwagi: 10
 
 [0d 0h 0m] Drobne wydarzenie:upolowanie_pajaka
 Najedzenie: 10, Zadbanie: 10, Dostatek uwagi: 10
+
+[0d 0h 0m] Drobne wydarzenie:upolowanie_pajaka
+Najedzenie: 10, Zadbanie: 10, Dostatek uwagi: 10
+
+[0d 0h 0m] Akcja: Głaskanie kota
+Najedzenie: 10, Zadbanie: 10, Dostatek uwagi: 10
