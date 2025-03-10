@@ -14,7 +14,7 @@ from links.ASCIIwazne_wydarzenia import *
 
 # ponizej definicja funkcji wazne wydarzenia uruchamianej w wątku dodatkowym
 
-def wazne_wydarzenie(kot): # definicja funkcji 
+def wazne_wydarzenia(kot): # definicja funkcji 
     ostatnia_aktualizacja = time.time() # aktualizacja czasu ostatniej aktualizacji by pokazywaly sie aktualne statsy podczas wydarzen losowych
     while True:
         czas_oczekiwania = random.choice([600, 900, 900, 1200, 1500])  # losuje czas oczekiwania w sekundach
@@ -259,7 +259,7 @@ def main():
     # Ponizej wątki - funkcje, które będą działać równolegle z główną funkcją programu
 
     # Uruchom WĄTEK wydarzeń losowych
-    watek_waznych = threading.Thread(target=wazne_wydarzenie, args=(kot,)) #Tworzy nowy wątek i mówi, jaką funkcję ma wykonywać i rzekazuje argumenty do tej funkcj - tu kot
+    watek_waznych = threading.Thread(target=wazne_wydarzenia, args=(kot,)) #Tworzy nowy wątek i mówi, jaką funkcję ma wykonywać i rzekazuje argumenty do tej funkcj - tu kot
     watek_waznych.daemon = True  # wątek zakończy się gdy program się zakończy. "daemon" (usługowy)
     watek_waznych.start() #Uruchamia wątek. od tąd działa równolegle z głównym programem
 
