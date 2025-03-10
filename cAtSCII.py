@@ -8,17 +8,20 @@ from links.ogladane import kotyogladane #import asci artow
 from links.nagrobek import nagrobek #import asci artow
 from links.portret import portret #import asci arto
 from links.ASCIIdrobne_wydarzenia import *
-from links.ASCIIwydarzenia_losowe import *
+from links.ASCIIwazne_wydarzenia import *
 
 def clear_screen(): #  czyszczenie ekran startowy
     os.system('cls' if os.name == 'nt' else 'clear')
 
 
-# ponizej definicja funkcji wydarzenia losowe
+# ponizej definicja funkcji wazne wydarzenia 
 
-def wydarzenie_losowe(kot): # definicja funkcji wydarzenie_losowe
+def wazne_wydarzenie(kot): # definicja funkcji 
     ostatnia_aktualizacja = time.time() # aktualizacja czasu ostatniej aktualizacji by pokazywaly sie aktualne statsy podczas wydarzen losowych
     while True:
+        if kot.pauza_wydarzen: # to sprawdza czy wątek wydarzeń losowych jest wstrzymany
+            time.sleep(1)  # czekaj 1 sekundę jeśli jest pauza - zeby to sie tak w kolko nie krecilo
+            continue #Gdy kot.pauza_wydarzen jest True , continue powoduje natychmiastowe przejście do następnej iteracji pętli
         czas_oczekiwania = random.choice([600, 900, 900, 1200, 1500])  # losuje czas oczekiwania w sekundach
         time.sleep(czas_oczekiwania)  # czeka wylosowaną liczbę sekund
 
@@ -39,8 +42,8 @@ def wydarzenie_losowe(kot): # definicja funkcji wydarzenie_losowe
 
         wydarzenie = random.choice(["biegunka", "smutek", "upolowanie_myszy", "spotkanie_kocich_znajomych", "dzieci_głaszcza", "szwedanie"]) # losowanie wydarzenia
         getattr(kot, wydarzenie)()  # Wywołuje metodę o nazwie wylosowanego wydarzenia na obiekcie kot . Na przykład, jeśli wylosowano "biegunka", to wykona się kot.biegunka()
-        print(f"↑ Wydarzenie losowe:{ wydarzenie}")  # pokazuje co się stało
-        kot.zapisz_log(f"Wydarzenie losowe: { wydarzenie}") # zapisuje log
+        print(f"↑ WAŻNE WYDARZENIE: {wydarzenie}")  # pokazuje co się stało
+        kot.zapisz_log(f"WAŻNE WYDARZENIE: {wydarzenie}") # zapisuje log
         kot.pokaz_stan()
         print("(enter)")
         print("---------------------------------------------------")    
@@ -51,6 +54,9 @@ def wydarzenie_losowe(kot): # definicja funkcji wydarzenie_losowe
 def drobne_wydarzenia(kot): # definicja funkcji 
     ostatnia_aktualizacja = time.time() # aktualizacja czasu ostatniej aktualizacji by pokazywaly sie aktualne statsy podczas wydarzen losowych
     while True:
+        if kot.pauza_wydarzen: # to sprawdza czy wątek wydarzeń losowych jest wstrzymany
+            time.sleep(1)  # czekaj 1 sekundę jeśli jest pauza - zeby oszczewdzac proca
+            continue #Gdy kot.pauza_wydarzen jest True , continue powoduje natychmiastowe przejście do następnej iteracji pętli
         czas_oczekiwania = random.choice([120, 120, 120, 120, 120, 120, 60, 60, 60, 60, 180, 180, 300, 300, 10])  # losuje czas oczekiwania w sekundach
         time.sleep(czas_oczekiwania)  # czeka wylosowaną liczbę sekund
 
@@ -95,7 +101,7 @@ class Cat:
         self.zadbanie = 10 # podobnie
         self.dostatekuwagi = 10
         self.moment_adopcji = time.time()  # dodajemy czas startu jako właściwość kota
-
+        self.pauza_wydarzen = False # do pauzowania wątków wydarzen
 
 
 
@@ -134,7 +140,7 @@ class Cat:
 
 
 
-    # ponizej metody - wydarzenia losowe (wieksze )
+    # ponizej metody - wazne wydarzenia 
 
     def biegunka(self):
         print(random.choice(ASCIIbiegunka))  # wybiera losowo jeden art
@@ -265,7 +271,7 @@ def main():
     # Ponizej wątki - funkcje, które będą działać równolegle z główną funkcją programu
 
     # Uruchom WĄTEK wydarzeń losowych
-    watek_wydarzen = threading.Thread(target=wydarzenie_losowe, args=(kot,)) #Tworzy nowy wątek i mówi, jaką funkcję ma wykonywać i rzekazuje argumenty do tej funkcj - tu kot
+    watek_wydarzen = threading.Thread(target=wazne_wydarzenie, args=(kot,)) #Tworzy nowy wątek i mówi, jaką funkcję ma wykonywać i rzekazuje argumenty do tej funkcj - tu kot
     watek_wydarzen.daemon = True  # wątek zakończy się gdy program się zakończy. "daemon" (usługowy)
     watek_wydarzen.start() #Uruchamia wątek. od tąd działa równolegle z głównym programem
 
@@ -307,6 +313,7 @@ def main():
         print("\n1 - Nakarm kota")
         print("2 - Pogłaszcz kota")
         print("3 - Spójrz na kota")
+        print("4 - Połóż/Obudź kota")
         print("0 - Wyjdź z gry")
         
         wybor = input("?: ") #wyswietla linie i zapisuje co wpisał użytkownik
@@ -336,6 +343,12 @@ def main():
             kot.zapisz_log("Akcja: Patrzenie na kota") #zapis logu
             print(random.choice(kotyogladane))# wybiera losowo jedną z listy
             print("↑ Widzisz kota")
+
+
+        elif wybor == "4":
+            kot.pauza_wydarzen = not kot.pauza_wydarzen
+            status = "Kot śpi" if kot.pauza_wydarzen else "Kot się budzi"
+            print(f"{status}")
 
 
 
