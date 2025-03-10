@@ -394,3 +394,51 @@ Najedzenie: 10, Zadbanie: 10, Dostatek uwagi: 10
 
 [0d 0h 2m] Drobne wydarzenie:upadek_z_krzesla
 Najedzenie: 9.98, Zadbanie: 9.73, Dostatek uwagi: 9.98
+
+[0d 0h 1m] Drobne wydarzenie:wycieczka_na_dach
+Najedzenie: 9.74, Zadbanie: 9.99, Dostatek uwagi: 9.99
+
+[0d 0h 3m] Drobne wydarzenie:upolowanie_muchy
+Najedzenie: 9.97, Zadbanie: 9.97, Dostatek uwagi: 9.97
+
+[0d 0h 4m] Drobne wydarzenie:szwedanie
+Najedzenie: 9.97, Zadbanie: 9.97, Dostatek uwagi: 9.97
+
+[0d 0h 7m] Drobne wydarzenie:wizyta_kota_sasiada
+Najedzenie: 9.94, Zadbanie: 9.94, Dostatek uwagi: 10
+
+[0d 0h 9m] Drobne wydarzenie:kaslanie
+Najedzenie: 9.92, Zadbanie: 9.67, Dostatek uwagi: 9.98
+
+[0d 0h 12m] Drobne wydarzenie:upolowanie_muchy
+Najedzenie: 10, Zadbanie: 9.65, Dostatek uwagi: 9.96
+
+[0d 0h 14m] Drobne wydarzenie:utkniecie_pod_zlewem
+Najedzenie: 9.98, Zadbanie: 9.63, Dostatek uwagi: 9.69
+
+[0d 0h 15m] WAŻNE WYDARZENIE: psia_inwazja
+Najedzenie: 9.86, Zadbanie: 7.51, Dostatek uwagi: 9.57
+
+[0d 0h 16m] Drobne wydarzenie:kaslanie
+Najedzenie: 9.84, Zadbanie: 7.24, Dostatek uwagi: 9.55
+
+[0d 0h 18m] Drobne wydarzenie:kaslanie
+Najedzenie: 9.82, Zadbanie: 6.97, Dostatek uwagi: 9.53
+
+[0d 0h 19m] Drobne wydarzenie:kaslanie
+Najedzenie: 9.82, Zadbanie: 6.72, Dostatek uwagi: 9.52
+
+[0d 0h 21m] Drobne wydarzenie:mruczenie
+Najedzenie: 9.8, Zadbanie: 6.95, Dostatek uwagi: 9.51
+
+[0d 0h 23m] Drobne wydarzenie:przeciaganie
+Najedzenie: 9.78, Zadbanie: 7.18, Dostatek uwagi: 9.49
+
+[0d 0h 24m] Drobne wydarzenie:spotkanie_z_jezem
+Najedzenie: 9.77, Zadbanie: 7.17, Dostatek uwagi: 9.73
+
+[0d 0h 25m] WAŻNE WYDARZENIE: biegunka
+Najedzenie: 7.69, Zadbanie: 7.09, Dostatek uwagi: 9.65
+
+[0d 0h 27m] Drobne wydarzenie:gonitwa_po_meblach
+Najedzenie: 7.42, Zadbanie: 7.07, Dostatek uwagi: 9.62
