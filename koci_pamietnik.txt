@@ -19,3 +19,582 @@ Najedzenie: 9.97, Zadbanie: 9.91, Dostatek uwagi: 9.91
 
 [0d 0h 12m] Drobne wydarzenie:upolowanie_pajaka
 Najedzenie: 10, Zadbanie: 9.9, Dostatek uwagi: 9.9
+
+[0d 0h 14m] Drobne wydarzenie:kaslanie
+Najedzenie: 9.98, Zadbanie: 9.63, Dostatek uwagi: 9.88
+
+[0d 0h 16m] Drobne wydarzenie:upolowanie_muchy
+Najedzenie: 10, Zadbanie: 9.62, Dostatek uwagi: 9.87
+
+[0d 0h 19m] Drobne wydarzenie:utkniecie_pod_zlewem
+Najedzenie: 9.97, Zadbanie: 9.59, Dostatek uwagi: 9.59
+
+[0d 0h 20m] WAŻNE WYDARZENIE: szwedanie
+Najedzenie: 9.97, Zadbanie: 9.59, Dostatek uwagi: 9.59
+
+[0d 0h 20m] Drobne wydarzenie:przeciaganie
+Najedzenie: 9.97, Zadbanie: 9.83, Dostatek uwagi: 9.58
+
+[0d 0h 22m] Drobne wydarzenie:wycieczka_na_dach
+Najedzenie: 9.7, Zadbanie: 9.82, Dostatek uwagi: 9.57
+
+[0d 0h 23m] Drobne wydarzenie:kaslanie
+Najedzenie: 9.69, Zadbanie: 9.56, Dostatek uwagi: 9.56
+
+[0d 0h 25m] Akcja: Karmienie kota
+Najedzenie: 10, Zadbanie: 9.56, Dostatek uwagi: 9.56
+
+[0d 0h 25m] Akcja: Głaskanie kota
+Najedzenie: 9.98, Zadbanie: 10, Dostatek uwagi: 9.54
+
+[0d 0h 25m] Akcja: Patrzenie na kota
+Najedzenie: 9.98, Zadbanie: 10, Dostatek uwagi: 10
+
+[0d 0h 25m] Akcja: Patrzenie na kota
+Najedzenie: 9.98, Zadbanie: 10, Dostatek uwagi: 10
+
+[0d 0h 25m] Akcja: Patrzenie na kota
+Najedzenie: 9.98, Zadbanie: 10, Dostatek uwagi: 10
+
+[0d 0h 25m] Akcja: Głaskanie kota
+Najedzenie: 9.98, Zadbanie: 10, Dostatek uwagi: 10
+
+[0d 0h 26m] Akcja: Patrzenie na kota
+Najedzenie: 9.98, Zadbanie: 10, Dostatek uwagi: 10
+
+[0d 0h 26m] Akcja: Patrzenie na kota
+Najedzenie: 9.98, Zadbanie: 10, Dostatek uwagi: 10
+
+[0d 0h 26m] Akcja: Patrzenie na kota
+Najedzenie: 9.98, Zadbanie: 10, Dostatek uwagi: 10
+
+[0d 0h 26m] Akcja: Patrzenie na kota
+Najedzenie: 9.98, Zadbanie: 10, Dostatek uwagi: 10
+
+[0d 0h 26m] Akcja: Patrzenie na kota
+Najedzenie: 9.98, Zadbanie: 10, Dostatek uwagi: 10
+
+[0d 0h 27m] Drobne wydarzenie:spotkanie_z_jezem
+Najedzenie: 9.97, Zadbanie: 9.98, Dostatek uwagi: 10
+
+[0d 0h 29m] Drobne wydarzenie:upolowanie_muchy
+Najedzenie: 10, Zadbanie: 9.97, Dostatek uwagi: 9.98
+
+[0d 0h 30m] Drobne wydarzenie:mruczenie
+Najedzenie: 9.99, Zadbanie: 10, Dostatek uwagi: 9.97
+
+[0d 0h 33m] Drobne wydarzenie:szwedanie
+Najedzenie: 9.97, Zadbanie: 9.97, Dostatek uwagi: 9.95
+
+[0d 0h 33m] Drobne wydarzenie:upolowanie_muchy
+Najedzenie: 10, Zadbanie: 9.97, Dostatek uwagi: 9.95
+
+[0d 0h 38m] Drobne wydarzenie:kaslanie
+Najedzenie: 9.96, Zadbanie: 9.68, Dostatek uwagi: 9.91
+
+[0d 0h 40m] Drobne wydarzenie:wizyta_kota_sasiada
+Najedzenie: 9.94, Zadbanie: 9.67, Dostatek uwagi: 10
+
+[0d 0h 40m] Drobne wydarzenie:wizyta_kota_sasiada
+Najedzenie: 9.94, Zadbanie: 9.67, Dostatek uwagi: 10
+
+[0d 0h 45m] Drobne wydarzenie:upadek_z_krzesla
+Najedzenie: 9.9, Zadbanie: 9.38, Dostatek uwagi: 9.96
+
+[0d 0h 50m] WAŻNE WYDARZENIE: upolowanie_myszy
+Najedzenie: 10, Zadbanie: 9.34, Dostatek uwagi: 9.93
+
+[0d 0h 50m] Drobne wydarzenie:kaslanie
+Najedzenie: 10, Zadbanie: 9.09, Dostatek uwagi: 9.93
+
+[0d 0h 52m] Drobne wydarzenie:wycieczka_na_dach
+Najedzenie: 9.73, Zadbanie: 9.07, Dostatek uwagi: 9.91
+
+[0d 0h 53m] Drobne wydarzenie:mruczenie
+Najedzenie: 9.73, Zadbanie: 9.32, Dostatek uwagi: 9.91
+
+[0d 0h 58m] Drobne wydarzenie:przeciaganie
+Najedzenie: 9.69, Zadbanie: 9.53, Dostatek uwagi: 9.87
+
+[0d 1h 1m] Drobne wydarzenie:przeciaganie
+Najedzenie: 9.67, Zadbanie: 9.76, Dostatek uwagi: 9.84
+
+[0d 1h 2m] Drobne wydarzenie:przeciaganie
+Najedzenie: 9.66, Zadbanie: 10, Dostatek uwagi: 9.83
+
+[0d 1h 3m] Drobne wydarzenie:gonitwa_po_meblach
+Najedzenie: 9.4, Zadbanie: 9.99, Dostatek uwagi: 9.83
+
+[0d 1h 5m] Drobne wydarzenie:spotkanie_z_jezem
+Najedzenie: 9.38, Zadbanie: 9.97, Dostatek uwagi: 10
+
+[0d 1h 5m] WAŻNE WYDARZENIE: szwedanie
+Najedzenie: 9.38, Zadbanie: 9.97, Dostatek uwagi: 10
+
+[0d 1h 7m] Drobne wydarzenie:upolowanie_pajaka
+Najedzenie: 9.62, Zadbanie: 9.96, Dostatek uwagi: 9.98
+
+[0d 1h 12m] Drobne wydarzenie:utkniecie_pod_zlewem
+Najedzenie: 9.57, Zadbanie: 9.92, Dostatek uwagi: 9.69
+
+[0d 1h 15m] Drobne wydarzenie:wizyta_kota_sasiada
+Najedzenie: 9.55, Zadbanie: 9.89, Dostatek uwagi: 9.92
+
+[0d 1h 17m] Drobne wydarzenie:upolowanie_pajaka
+Najedzenie: 9.78, Zadbanie: 9.87, Dostatek uwagi: 9.9
+
+[0d 1h 19m] Drobne wydarzenie:przeciaganie
+Najedzenie: 9.77, Zadbanie: 10, Dostatek uwagi: 9.88
+
+[0d 1h 21m] Drobne wydarzenie:koci_marazm
+Najedzenie: 9.75, Zadbanie: 9.98, Dostatek uwagi: 9.62
+
+[0d 1h 25m] WAŻNE WYDARZENIE: spotkanie_kocich_znajomych
+Najedzenie: 9.72, Zadbanie: 9.95, Dostatek uwagi: 10
+
+[0d 1h 26m] Drobne wydarzenie:kaslanie
+Najedzenie: 9.72, Zadbanie: 9.7, Dostatek uwagi: 10
+
+[0d 1h 29m] Drobne wydarzenie:koci_marazm
+Najedzenie: 9.69, Zadbanie: 9.67, Dostatek uwagi: 9.72
+
+[0d 1h 30m] Drobne wydarzenie:upadek_z_krzesla
+Najedzenie: 9.68, Zadbanie: 9.42, Dostatek uwagi: 9.72
+
+[0d 1h 30m] Drobne wydarzenie:upadek_z_krzesla
+Najedzenie: 9.68, Zadbanie: 9.17, Dostatek uwagi: 9.72
+
+[0d 1h 31m] Drobne wydarzenie:gonitwa_po_meblach
+Najedzenie: 9.42, Zadbanie: 9.16, Dostatek uwagi: 9.71
+
+[0d 1h 36m] Drobne wydarzenie:spotkanie_z_jezem
+Najedzenie: 9.38, Zadbanie: 9.12, Dostatek uwagi: 9.92
+
+[0d 1h 37m] Drobne wydarzenie:utkniecie_pod_zlewem
+Najedzenie: 9.37, Zadbanie: 9.11, Dostatek uwagi: 9.66
+
+[0d 1h 39m] Drobne wydarzenie:koci_marazm
+Najedzenie: 9.36, Zadbanie: 9.09, Dostatek uwagi: 9.39
+
+[0d 1h 44m] Drobne wydarzenie:przeciaganie
+Najedzenie: 9.32, Zadbanie: 9.3, Dostatek uwagi: 9.35
+
+[0d 1h 49m] Drobne wydarzenie:przeciaganie
+Najedzenie: 9.27, Zadbanie: 9.51, Dostatek uwagi: 9.31
+
+[0d 1h 50m] WAŻNE WYDARZENIE: szwedanie
+Najedzenie: 9.27, Zadbanie: 9.5, Dostatek uwagi: 9.3
+
+[0d 1h 54m] Drobne wydarzenie:gonitwa_po_meblach
+Najedzenie: 8.99, Zadbanie: 9.48, Dostatek uwagi: 9.28
+
+[0d 1h 55m] Drobne wydarzenie:gonitwa_po_meblach
+Najedzenie: 8.73, Zadbanie: 9.47, Dostatek uwagi: 9.27
+
+[0d 1h 57m] Drobne wydarzenie:upadek_z_krzesla
+Najedzenie: 8.72, Zadbanie: 9.2, Dostatek uwagi: 9.25
+
+[0d 1h 59m] Drobne wydarzenie:wycieczka_na_dach
+Najedzenie: 8.45, Zadbanie: 9.18, Dostatek uwagi: 9.23
+
+[0d 2h 2m] Drobne wydarzenie:utkniecie_pod_zlewem
+Najedzenie: 8.42, Zadbanie: 9.16, Dostatek uwagi: 8.96
+
+[0d 2h 3m] Drobne wydarzenie:spotkanie_z_jezem
+Najedzenie: 8.42, Zadbanie: 9.15, Dostatek uwagi: 9.2
+
+[0d 2h 5m] Drobne wydarzenie:koci_marazm
+Najedzenie: 8.4, Zadbanie: 9.13, Dostatek uwagi: 8.93
+
+[0d 2h 7m] Drobne wydarzenie:upadek_z_krzesla
+Najedzenie: 8.38, Zadbanie: 8.87, Dostatek uwagi: 8.92
+
+[0d 2h 9m] Drobne wydarzenie:mruczenie
+Najedzenie: 8.37, Zadbanie: 9.1, Dostatek uwagi: 8.9
+
+[0d 2h 11m] Drobne wydarzenie:gonitwa_po_meblach
+Najedzenie: 8.1, Zadbanie: 9.08, Dostatek uwagi: 8.88
+
+[0d 2h 12m] Drobne wydarzenie:upolowanie_muchy
+Najedzenie: 8.34, Zadbanie: 9.07, Dostatek uwagi: 8.87
+
+[0d 2h 13m] Drobne wydarzenie:upolowanie_muchy
+Najedzenie: 8.58, Zadbanie: 9.07, Dostatek uwagi: 8.87
+
+[0d 2h 15m] Drobne wydarzenie:mruczenie
+Najedzenie: 8.57, Zadbanie: 9.3, Dostatek uwagi: 8.85
+
+[0d 2h 15m] WAŻNE WYDARZENIE: upolowanie_myszy
+Najedzenie: 10, Zadbanie: 9.3, Dostatek uwagi: 8.85
+
+[0d 2h 20m] Drobne wydarzenie:upolowanie_pajaka
+Najedzenie: 10, Zadbanie: 9.26, Dostatek uwagi: 8.81
+
+[0d 2h 25m] Drobne wydarzenie:upolowanie_muchy
+Najedzenie: 10, Zadbanie: 9.22, Dostatek uwagi: 8.77
+
+[0d 2h 25m] WAŻNE WYDARZENIE: upolowanie_myszy
+Najedzenie: 10, Zadbanie: 9.22, Dostatek uwagi: 8.77
+
+[0d 2h 27m] Drobne wydarzenie:kaslanie
+Najedzenie: 9.98, Zadbanie: 8.95, Dostatek uwagi: 8.75
+
+[0d 2h 29m] Drobne wydarzenie:upadek_z_krzesla
+Najedzenie: 9.97, Zadbanie: 8.68, Dostatek uwagi: 8.73
+
+[0d 2h 29m] Drobne wydarzenie:spotkanie_z_jezem
+Najedzenie: 9.97, Zadbanie: 8.68, Dostatek uwagi: 8.98
+
+[0d 2h 32m] Drobne wydarzenie:spotkanie_z_jezem
+Najedzenie: 9.94, Zadbanie: 8.66, Dostatek uwagi: 9.21
+
+[0d 2h 32m] Drobne wydarzenie:wycieczka_na_dach
+Najedzenie: 9.69, Zadbanie: 8.66, Dostatek uwagi: 9.21
+
+[0d 2h 33m] Drobne wydarzenie:gonitwa_po_meblach
+Najedzenie: 9.43, Zadbanie: 8.65, Dostatek uwagi: 9.2
+
+[0d 2h 35m] Drobne wydarzenie:upolowanie_muchy
+Najedzenie: 9.67, Zadbanie: 8.63, Dostatek uwagi: 9.18
+
+[0d 2h 37m] Drobne wydarzenie:szwedanie
+Najedzenie: 9.65, Zadbanie: 8.62, Dostatek uwagi: 9.17
+
+[0d 2h 39m] Drobne wydarzenie:szwedanie
+Najedzenie: 9.63, Zadbanie: 8.6, Dostatek uwagi: 9.15
+
+[0d 2h 40m] Drobne wydarzenie:gonitwa_po_meblach
+Najedzenie: 9.37, Zadbanie: 8.59, Dostatek uwagi: 9.14
+
+[0d 2h 43m] Drobne wydarzenie:wycieczka_na_dach
+Najedzenie: 9.1, Zadbanie: 8.57, Dostatek uwagi: 9.12
+
+[0d 2h 45m] Drobne wydarzenie:szwedanie
+Najedzenie: 9.08, Zadbanie: 8.55, Dostatek uwagi: 9.1
+
+[0d 2h 45m] Drobne wydarzenie:upadek_z_krzesla
+Najedzenie: 9.08, Zadbanie: 8.3, Dostatek uwagi: 9.1
+
+[0d 2h 47m] Drobne wydarzenie:szwedanie
+Najedzenie: 9.07, Zadbanie: 8.28, Dostatek uwagi: 9.08
+
+[0d 2h 48m] Drobne wydarzenie:upadek_z_krzesla
+Najedzenie: 9.06, Zadbanie: 8.02, Dostatek uwagi: 9.07
+
+[0d 2h 50m] WAŻNE WYDARZENIE: upolowanie_myszy
+Najedzenie: 10, Zadbanie: 8.02, Dostatek uwagi: 9.07
+
+[0d 2h 50m] Drobne wydarzenie:koci_marazm
+Najedzenie: 10, Zadbanie: 8.02, Dostatek uwagi: 8.82
+
+[0d 2h 52m] Drobne wydarzenie:gonitwa_po_meblach
+Najedzenie: 9.73, Zadbanie: 8.0, Dostatek uwagi: 8.8
+
+[0d 2h 57m] Drobne wydarzenie:koci_marazm
+Najedzenie: 9.69, Zadbanie: 7.96, Dostatek uwagi: 8.51
+
+[0d 3h 0m] WAŻNE WYDARZENIE: szwedanie
+Najedzenie: 9.67, Zadbanie: 7.94, Dostatek uwagi: 8.49
+
+[0d 3h 2m] Drobne wydarzenie:spotkanie_z_jezem
+Najedzenie: 9.66, Zadbanie: 7.92, Dostatek uwagi: 8.72
+
+[0d 3h 4m] Drobne wydarzenie:wycieczka_na_dach
+Najedzenie: 9.39, Zadbanie: 7.91, Dostatek uwagi: 8.71
+
+[0d 3h 6m] Drobne wydarzenie:spotkanie_z_jezem
+Najedzenie: 9.37, Zadbanie: 7.89, Dostatek uwagi: 8.94
+
+[0d 3h 8m] Drobne wydarzenie:mruczenie
+Najedzenie: 9.36, Zadbanie: 8.12, Dostatek uwagi: 8.92
+
+[0d 3h 10m] WAŻNE WYDARZENIE: psia_inwazja
+Najedzenie: 9.35, Zadbanie: 6.12, Dostatek uwagi: 8.92
+
+[0d 3h 10m] Drobne wydarzenie:upolowanie_pajaka
+Najedzenie: 9.6, Zadbanie: 6.12, Dostatek uwagi: 8.92
+
+[0d 3h 15m] Drobne wydarzenie:upolowanie_muchy
+Najedzenie: 9.81, Zadbanie: 6.07, Dostatek uwagi: 8.87
+
+[0d 3h 16m] Drobne wydarzenie:utkniecie_pod_zlewem
+Najedzenie: 9.8, Zadbanie: 6.07, Dostatek uwagi: 8.62
+
+[0d 3h 21m] Drobne wydarzenie:utkniecie_pod_zlewem
+Najedzenie: 9.76, Zadbanie: 6.02, Dostatek uwagi: 8.32
+
+[0d 3h 23m] Drobne wydarzenie:wizyta_kota_sasiada
+Najedzenie: 9.74, Zadbanie: 6.01, Dostatek uwagi: 8.56
+
+[0d 3h 25m] WAŻNE WYDARZENIE: biegunka
+Najedzenie: 7.73, Zadbanie: 6.0, Dostatek uwagi: 8.55
+
+[0d 3h 25m] Drobne wydarzenie:wizyta_kota_sasiada
+Najedzenie: 7.73, Zadbanie: 6.0, Dostatek uwagi: 8.8
+
+[0d 3h 30m] Drobne wydarzenie:wycieczka_na_dach
+Najedzenie: 7.44, Zadbanie: 5.96, Dostatek uwagi: 8.76
+
+[0d 3h 32m] Drobne wydarzenie:wycieczka_na_dach
+Najedzenie: 7.17, Zadbanie: 5.94, Dostatek uwagi: 8.74
+
+[0d 3h 34m] Drobne wydarzenie:mruczenie
+Najedzenie: 7.16, Zadbanie: 6.17, Dostatek uwagi: 8.72
+
+[0d 3h 36m] Drobne wydarzenie:wizyta_kota_sasiada
+Najedzenie: 7.14, Zadbanie: 6.16, Dostatek uwagi: 8.96
+
+[0d 3h 41m] Drobne wydarzenie:wizyta_kota_sasiada
+Najedzenie: 7.1, Zadbanie: 6.12, Dostatek uwagi: 9.17
+
+[0d 3h 44m] Drobne wydarzenie:wycieczka_na_dach
+Najedzenie: 6.82, Zadbanie: 6.09, Dostatek uwagi: 9.14
+
+[0d 3h 45m] Drobne wydarzenie:spotkanie_z_jezem
+Najedzenie: 6.82, Zadbanie: 6.08, Dostatek uwagi: 9.38
+
+[0d 3h 47m] Drobne wydarzenie:koci_marazm
+Najedzenie: 6.8, Zadbanie: 6.07, Dostatek uwagi: 9.12
+
+[0d 3h 48m] Drobne wydarzenie:upolowanie_muchy
+Najedzenie: 7.05, Zadbanie: 6.07, Dostatek uwagi: 9.12
+
+[0d 3h 49m] Drobne wydarzenie:utkniecie_pod_zlewem
+Najedzenie: 7.04, Zadbanie: 6.06, Dostatek uwagi: 8.86
+
+[0d 3h 50m] Drobne wydarzenie:wizyta_kota_sasiada
+Najedzenie: 7.03, Zadbanie: 6.05, Dostatek uwagi: 9.1
+
+[0d 3h 50m] WAŻNE WYDARZENIE: spotkanie_kocich_znajomych
+Najedzenie: 7.03, Zadbanie: 6.05, Dostatek uwagi: 10
+
+[0d 3h 52m] Drobne wydarzenie:przeciaganie
+Najedzenie: 7.02, Zadbanie: 6.28, Dostatek uwagi: 9.98
+
+[0d 3h 54m] Drobne wydarzenie:kaslanie
+Najedzenie: 7.0, Zadbanie: 6.02, Dostatek uwagi: 9.97
+
+[0d 3h 54m] Drobne wydarzenie:utkniecie_pod_zlewem
+Najedzenie: 7.0, Zadbanie: 6.02, Dostatek uwagi: 9.72
+
+[0d 3h 55m] Drobne wydarzenie:upadek_z_krzesla
+Najedzenie: 6.99, Zadbanie: 5.76, Dostatek uwagi: 9.71
+
+[0d 3h 57m] Drobne wydarzenie:gonitwa_po_meblach
+Najedzenie: 6.72, Zadbanie: 5.74, Dostatek uwagi: 9.69
+
+[0d 3h 59m] Drobne wydarzenie:kaslanie
+Najedzenie: 6.71, Zadbanie: 5.47, Dostatek uwagi: 9.67
+
+[0d 4h 0m] Drobne wydarzenie:szwedanie
+Najedzenie: 6.7, Zadbanie: 5.47, Dostatek uwagi: 9.67
+
+[0d 4h 0m] WAŻNE WYDARZENIE: psia_inwazja
+Najedzenie: 6.7, Zadbanie: 3.47, Dostatek uwagi: 9.67
+
+[0d 4h 2m] Drobne wydarzenie:koci_marazm
+Najedzenie: 6.68, Zadbanie: 3.45, Dostatek uwagi: 9.4
+
+[0d 4h 4m] Drobne wydarzenie:gonitwa_po_meblach
+Najedzenie: 6.42, Zadbanie: 3.43, Dostatek uwagi: 9.38
+
+[0d 4h 7m] Drobne wydarzenie:utkniecie_pod_zlewem
+Najedzenie: 6.39, Zadbanie: 3.41, Dostatek uwagi: 9.11
+
+[0d 4h 8m] Drobne wydarzenie:upadek_z_krzesla
+Najedzenie: 6.38, Zadbanie: 3.15, Dostatek uwagi: 9.1
+
+[0d 4h 10m] Drobne wydarzenie:spotkanie_z_jezem
+Najedzenie: 6.37, Zadbanie: 3.13, Dostatek uwagi: 9.33
+
+[0d 4h 12m] Drobne wydarzenie:upolowanie_muchy
+Najedzenie: 6.6, Zadbanie: 3.12, Dostatek uwagi: 9.32
+
+[0d 4h 14m] Drobne wydarzenie:koci_marazm
+Najedzenie: 6.58, Zadbanie: 3.1, Dostatek uwagi: 9.05
+
+[0d 4h 15m] WAŻNE WYDARZENIE: upolowanie_myszy
+Najedzenie: 8.57, Zadbanie: 3.09, Dostatek uwagi: 9.04
+
+[0d 4h 16m] Drobne wydarzenie:upolowanie_muchy
+Najedzenie: 8.82, Zadbanie: 3.09, Dostatek uwagi: 9.04
+
+[0d 4h 18m] Drobne wydarzenie:utkniecie_pod_zlewem
+Najedzenie: 8.81, Zadbanie: 3.07, Dostatek uwagi: 8.77
+
+[0d 4h 21m] Drobne wydarzenie:wizyta_kota_sasiada
+Najedzenie: 8.78, Zadbanie: 3.05, Dostatek uwagi: 9.0
+
+[0d 4h 24m] Drobne wydarzenie:kaslanie
+Najedzenie: 8.76, Zadbanie: 2.77, Dostatek uwagi: 8.97
+
+[0d 4h 26m] Drobne wydarzenie:upadek_z_krzesla
+Najedzenie: 8.74, Zadbanie: 2.51, Dostatek uwagi: 8.96
+
+[0d 4h 27m] Drobne wydarzenie:spotkanie_z_jezem
+Najedzenie: 8.73, Zadbanie: 2.5, Dostatek uwagi: 9.2
+
+[0d 4h 29m] Drobne wydarzenie:upadek_z_krzesla
+Najedzenie: 8.72, Zadbanie: 2.23, Dostatek uwagi: 9.18
+
+[0d 4h 31m] Drobne wydarzenie:przeciaganie
+Najedzenie: 8.7, Zadbanie: 2.47, Dostatek uwagi: 9.17
+
+[0d 4h 35m] WAŻNE WYDARZENIE: smutek
+Najedzenie: 8.67, Zadbanie: 2.43, Dostatek uwagi: 7.13
+
+[0d 4h 36m] Drobne wydarzenie:spotkanie_z_jezem
+Najedzenie: 8.67, Zadbanie: 2.43, Dostatek uwagi: 7.38
+
+[0d 4h 38m] Akcja: Głaskanie kota
+Najedzenie: 8.67, Zadbanie: 4.43, Dostatek uwagi: 7.38
+
+[0d 4h 38m] Akcja: Głaskanie kota
+Najedzenie: 8.65, Zadbanie: 6.42, Dostatek uwagi: 7.37
+
+[0d 4h 38m] Akcja: Głaskanie kota
+Najedzenie: 8.65, Zadbanie: 8.42, Dostatek uwagi: 7.37
+
+[0d 4h 39m] Drobne wydarzenie:utkniecie_pod_zlewem
+Najedzenie: 8.65, Zadbanie: 8.42, Dostatek uwagi: 7.12
+
+[0d 4h 41m] Drobne wydarzenie:szwedanie
+Najedzenie: 8.63, Zadbanie: 8.4, Dostatek uwagi: 7.1
+
+[0d 4h 44m] Drobne wydarzenie:przeciaganie
+Najedzenie: 8.61, Zadbanie: 8.62, Dostatek uwagi: 7.07
+
+[0d 4h 46m] Drobne wydarzenie:gonitwa_po_meblach
+Najedzenie: 8.34, Zadbanie: 8.61, Dostatek uwagi: 7.06
+
+[0d 4h 51m] Drobne wydarzenie:gonitwa_po_meblach
+Najedzenie: 8.05, Zadbanie: 8.57, Dostatek uwagi: 7.02
+
+[0d 4h 53m] Drobne wydarzenie:koci_marazm
+Najedzenie: 8.03, Zadbanie: 8.55, Dostatek uwagi: 6.75
+
+[0d 4h 55m] WAŻNE WYDARZENIE: spotkanie_kocich_znajomych
+Najedzenie: 8.02, Zadbanie: 8.53, Dostatek uwagi: 8.73
+
+[0d 4h 56m] Drobne wydarzenie:upolowanie_muchy
+Najedzenie: 8.27, Zadbanie: 8.53, Dostatek uwagi: 8.73
+
+[0d 4h 57m] Drobne wydarzenie:szwedanie
+Najedzenie: 8.26, Zadbanie: 8.52, Dostatek uwagi: 8.72
+
+[0d 4h 58m] Drobne wydarzenie:mruczenie
+Najedzenie: 8.25, Zadbanie: 8.77, Dostatek uwagi: 8.72
+
+[0d 5h 3m] Drobne wydarzenie:utkniecie_pod_zlewem
+Najedzenie: 8.21, Zadbanie: 8.72, Dostatek uwagi: 8.42
+
+[0d 5h 5m] Drobne wydarzenie:szwedanie
+Najedzenie: 8.19, Zadbanie: 8.71, Dostatek uwagi: 8.41
+
+[0d 5h 7m] Drobne wydarzenie:przeciaganie
+Najedzenie: 8.17, Zadbanie: 8.94, Dostatek uwagi: 8.39
+
+[0d 5h 8m] Drobne wydarzenie:wizyta_kota_sasiada
+Najedzenie: 8.17, Zadbanie: 8.93, Dostatek uwagi: 8.63
+
+[0d 5h 10m] Drobne wydarzenie:wizyta_kota_sasiada
+Najedzenie: 8.15, Zadbanie: 8.92, Dostatek uwagi: 8.87
+
+[0d 5h 10m] WAŻNE WYDARZENIE: dzieci_głaszcza
+Najedzenie: 8.15, Zadbanie: 10, Dostatek uwagi: 8.87
+
+[0d 5h 13m] Drobne wydarzenie:wizyta_kota_sasiada
+Najedzenie: 8.12, Zadbanie: 9.97, Dostatek uwagi: 9.09
+
+[0d 5h 14m] Drobne wydarzenie:upolowanie_pajaka
+Najedzenie: 8.37, Zadbanie: 9.97, Dostatek uwagi: 9.08
+
+[0d 5h 14m] Drobne wydarzenie:upolowanie_muchy
+Najedzenie: 8.62, Zadbanie: 9.97, Dostatek uwagi: 9.08
+
+[0d 5h 14m] Drobne wydarzenie:upolowanie_pajaka
+Najedzenie: 8.87, Zadbanie: 9.97, Dostatek uwagi: 9.08
+
+[0d 5h 14m] Drobne wydarzenie:upadek_z_krzesla
+Najedzenie: 8.87, Zadbanie: 9.72, Dostatek uwagi: 9.08
+
+[0d 5h 15m] Drobne wydarzenie:spotkanie_z_jezem
+Najedzenie: 8.86, Zadbanie: 9.71, Dostatek uwagi: 9.32
+
+[0d 5h 17m] Drobne wydarzenie:upadek_z_krzesla
+Najedzenie: 8.84, Zadbanie: 9.44, Dostatek uwagi: 9.31
+
+[0d 5h 20m] Drobne wydarzenie:wizyta_kota_sasiada
+Najedzenie: 8.82, Zadbanie: 9.42, Dostatek uwagi: 9.53
+
+[0d 5h 25m] Drobne wydarzenie:kaslanie
+Najedzenie: 8.77, Zadbanie: 9.12, Dostatek uwagi: 9.49
+
+[0d 5h 27m] Drobne wydarzenie:mruczenie
+Najedzenie: 8.76, Zadbanie: 9.36, Dostatek uwagi: 9.47
+
+[0d 5h 30m] WAŻNE WYDARZENIE: dzieci_głaszcza
+Najedzenie: 8.74, Zadbanie: 10, Dostatek uwagi: 9.46
+
+[0d 5h 30m] Drobne wydarzenie:przeciaganie
+Najedzenie: 8.74, Zadbanie: 10, Dostatek uwagi: 9.46
+
+[0d 5h 31m] Drobne wydarzenie:szwedanie
+Najedzenie: 8.73, Zadbanie: 9.99, Dostatek uwagi: 9.45
+
+[0d 5h 33m] Drobne wydarzenie:gonitwa_po_meblach
+Najedzenie: 8.47, Zadbanie: 9.97, Dostatek uwagi: 9.43
+
+[0d 5h 34m] Drobne wydarzenie:spotkanie_z_jezem
+Najedzenie: 8.46, Zadbanie: 9.97, Dostatek uwagi: 9.67
+
+[0d 5h 36m] Drobne wydarzenie:mruczenie
+Najedzenie: 8.44, Zadbanie: 10, Dostatek uwagi: 9.66
+
+[0d 5h 38m] Drobne wydarzenie:koci_marazm
+Najedzenie: 8.42, Zadbanie: 9.98, Dostatek uwagi: 9.39
+
+[0d 5h 39m] Drobne wydarzenie:spotkanie_z_jezem
+Najedzenie: 8.42, Zadbanie: 9.97, Dostatek uwagi: 9.63
+
+[0d 5h 41m] Drobne wydarzenie:wizyta_kota_sasiada
+Najedzenie: 8.4, Zadbanie: 9.96, Dostatek uwagi: 9.87
+
+[0d 5h 42m] Drobne wydarzenie:upolowanie_muchy
+Najedzenie: 8.64, Zadbanie: 9.95, Dostatek uwagi: 9.86
+
+[0d 5h 45m] Drobne wydarzenie:kaslanie
+Najedzenie: 8.62, Zadbanie: 9.67, Dostatek uwagi: 9.83
+
+[0d 5h 45m] Drobne wydarzenie:koci_marazm
+Najedzenie: 8.62, Zadbanie: 9.67, Dostatek uwagi: 9.58
+
+[0d 5h 46m] Drobne wydarzenie:mruczenie
+Najedzenie: 8.61, Zadbanie: 9.92, Dostatek uwagi: 9.57
+
+[0d 5h 49m] Drobne wydarzenie:upolowanie_pajaka
+Najedzenie: 8.83, Zadbanie: 9.89, Dostatek uwagi: 9.55
+
+[0d 5h 50m] WAŻNE WYDARZENIE: smutek
+Najedzenie: 8.83, Zadbanie: 9.89, Dostatek uwagi: 7.55
+
+[0d 5h 51m] Drobne wydarzenie:gonitwa_po_meblach
+Najedzenie: 8.57, Zadbanie: 9.87, Dostatek uwagi: 7.53
+
+[0d 5h 52m] Drobne wydarzenie:mruczenie
+Najedzenie: 8.56, Zadbanie: 10, Dostatek uwagi: 7.52
+
+[0d 5h 53m] Drobne wydarzenie:spotkanie_z_jezem
+Najedzenie: 8.55, Zadbanie: 9.99, Dostatek uwagi: 7.77
+
+[0d 5h 54m] Drobne wydarzenie:koci_marazm
+Najedzenie: 8.54, Zadbanie: 9.98, Dostatek uwagi: 7.51
+
+[0d 5h 55m] Drobne wydarzenie:upolowanie_pajaka
+Najedzenie: 8.79, Zadbanie: 9.98, Dostatek uwagi: 7.51
+
+[0d 5h 57m] Drobne wydarzenie:koci_marazm
+Najedzenie: 8.77, Zadbanie: 9.97, Dostatek uwagi: 7.24
+
+[0d 6h 2m] Drobne wydarzenie:upadek_z_krzesla
+Najedzenie: 8.73, Zadbanie: 9.68, Dostatek uwagi: 7.2
