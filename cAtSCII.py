@@ -9,16 +9,31 @@ from links.nagrobek import nagrobek #import asci artow
 from links.portret import portret #import asci arto
 from links.ASCIIdrobne_wydarzenia import *
 from links.ASCIIwazne_wydarzenia import *
-
+from links.ASCIIinne import *
+przelacznik1 = False #przełącznik, który pozwala na włączanie i wyłączanie wątku wydarzeń losowych
 
 
 # ponizej definicja funkcji wazne wydarzenia uruchamianej w wątku dodatkowym
 
 def wazne_wydarzenia(kot): # definicja funkcji 
     ostatnia_aktualizacja = time.time() # aktualizacja czasu ostatniej aktualizacji by pokazywaly sie aktualne statsy podczas wydarzen losowych
+    global przelacznik1  # deklarujemy użycie zmiennej globalnej
+    
     while True:
+        if przelacznik1: # jeśli przełącznik włączony, czekamy w pierwszej pętli (sen)
+            time.sleep(2)
+            continue
+
         czas_oczekiwania = random.choice([600, 900, 900, 1200, 1500])  # losuje czas oczekiwania w sekundach
-        time.sleep(czas_oczekiwania)  # czeka wylosowaną liczbę sekund
+
+        # zamiast jednego długiego czekania, dzielimy je na sekundowe interwały i co sekunde sprawdzamy czy nie włączylismy kociego spanka
+        for _ in range(czas_oczekiwania): #tworzy pętlę, która będzie wykonywać się tyle razy, ile wynosi wartość czas_oczekiwania
+            if przelacznik1:  # sprawdzamy przełącznik co 1 sekunde
+                break  # jeśli włączony, przerywamy czekanie
+            time.sleep(1)           
+        if przelacznik1:  # jeśli przełącznik został włączony, wracamy na początek głównej pętli
+            continue
+        
 
         # aktualizacja statsow przed wydarzeniami
         teraz = time.time()
@@ -47,9 +62,24 @@ def wazne_wydarzenia(kot): # definicja funkcji
 
 def drobne_wydarzenia(kot): # definicja funkcji 
     ostatnia_aktualizacja = time.time() # aktualizacja czasu ostatniej aktualizacji by pokazywaly sie aktualne statsy podczas wydarzen losowych
+    global przelacznik1  # deklarujemy użycie zmiennej globalnej
+    
+    
     while True:
+        if przelacznik1: # jeśli przełącznik włączony, czekamy w pierwszej pętli (sen)
+            time.sleep(2)
+            continue
+
         czas_oczekiwania = random.choice([120, 120, 120, 120, 120, 120, 60, 60, 60, 60, 180, 180, 300, 300, 10])  # losuje czas oczekiwania w sekundach
-        time.sleep(czas_oczekiwania)  # czeka wylosowaną liczbę sekund
+        
+        # zamiast jednego długiego czekania, dzielimy je na sekundowe interwały i co sekunde sprawdzamy czy nie włączylismy kociego spanka
+        for _ in range(czas_oczekiwania): #tworzy pętlę, która będzie wykonywać się tyle razy, ile wynosi wartość czas_oczekiwania
+            if przelacznik1:  # sprawdzamy przełącznik co 1 sekunde
+                break  # jeśli włączony, przerywamy czekanie
+            time.sleep(1)           
+        if przelacznik1:  # jeśli przełącznik został włączony, wracamy na początek głównej pętli
+            continue
+
 
         # aktualizacja statsow przed wydarzeniami
         teraz = time.time()
@@ -246,6 +276,8 @@ class Cat:
 
 
 def main():
+    
+    global przelacznik1 #deklaracja uzycia
 
     # To się wykonuje RAZ na początku programu
     kot = Cat() # tutaj wywołuje się __init__
@@ -298,11 +330,15 @@ def main():
 
         # Wyświetl stan i menu
         kot.pokaz_stan()
-        print("\n1 - Nakarm kota")
-        print("2 - Pogłaszcz kota")
-        print("3 - Spójrz na kota")
-        print("H - Help")
-        print("0 - Wyjdź z gry")
+        if przelacznik1:
+            print("\nKot śpi. By go obudzić wpisz 4")
+        else:
+            print("\n1 - Nakarm kota")
+            print("2 - Pogłaszcz kota")
+            print("3 - Spójrz na kota")
+            print("4 - Połóż kota spać")
+            print("h - Help")
+            print("0 - Wyjdź z gry")
         
         wybor = input("?: ") #wyswietla linie i zapisuje co wpisał użytkownik
 
@@ -331,6 +367,12 @@ def main():
             kot.zapisz_log("Akcja: Patrzenie na kota") #zapis logu
             print(random.choice(kotyogladane))# wybiera losowo jedną z listy
             print("↑ Widzisz kota")
+
+        elif wybor == "4":            
+            przelacznik1 = not przelacznik1  # zmienia wartość na przeciwną
+            print((random.choice(ASCIIzasypia))if przelacznik1 else(random.choice(ASCIIsiebudzi)))# wybiera losowo jedną z listy
+            print(f"Kot {'zasypia' if przelacznik1 else 'sie budzi'}")
+
 
         elif wybor == "h":
             print("""Obserwuj jak żyje twój kot. Dbaj o niego, karmiąc, głaszcząc i poświęcając mu uwagę. Stan kota (najedzenie, zadbanie, dostatek uwagi) ciągle powoli spada. W międzyczasie pojawią się drobne wydarzenia które lekko wpłyną na jego samopoczucie – pozytywnie lub negatywnie. Rzadziej pojawią się ważne wydarzenia które znacznie mocniej wpływają na kota (oprócz szwendania które w ogóle nie zmienia statystyk kota). Jakie wydarzenia jak wpływają na kota? Tego dowiesz się obserwując jego stan. [na razie nie ma mechaniki pauzowania i kot puki co nie przeżyje nocy]""")
