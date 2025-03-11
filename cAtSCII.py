@@ -16,7 +16,6 @@ przelacznik1 = False #przełącznik, który pozwala na włączanie i wyłączani
 # ponizej definicja funkcji wazne wydarzenia uruchamianej w wątku dodatkowym
 
 def wazne_wydarzenia(kot): # definicja funkcji 
-    ostatnia_aktualizacja = time.time() # aktualizacja czasu ostatniej aktualizacji by pokazywaly sie aktualne statsy podczas wydarzen losowych
     global przelacznik1  # deklarujemy użycie zmiennej globalnej
     
     while True:
@@ -35,14 +34,8 @@ def wazne_wydarzenia(kot): # definicja funkcji
             continue
         
 
-        # aktualizacja statsow przed wydarzeniami
-        teraz = time.time()
-        minuty = int((teraz - ostatnia_aktualizacja) // 60)
-        if minuty > 0:
-            kot.najedzenie -= minuty / 120 # odejmuje część punkyu na minutę od statystyki ( np minuty / 30 - spadek 2 punktów na godzinę, minuty / 120 - spadek 0.5 punktu na godzinę )
-            kot.zadbanie -= minuty / 120 # odejmuje część punkyu na minutę od statystyki
-            kot.dostatekuwagi -= minuty / 120 # odejmuje część punkyu na minutę od statystyki
-            ostatnia_aktualizacja = teraz
+        kot.aktualizuj_statystyki() # aktualizacja statsow przed wydarzeniami
+
 
         if not kot.zyje():  # sprawdź czy kot żyje przed wydarzeniem
             print("\nTwój kot zmarł!") 
@@ -61,7 +54,6 @@ def wazne_wydarzenia(kot): # definicja funkcji
 # ponizej definicja funkcji drobnych wydarzeń uruchamianej w wątku dodatkowym
 
 def drobne_wydarzenia(kot): # definicja funkcji 
-    ostatnia_aktualizacja = time.time() # aktualizacja czasu ostatniej aktualizacji by pokazywaly sie aktualne statsy podczas wydarzen losowych
     global przelacznik1  # deklarujemy użycie zmiennej globalnej
     
     
@@ -81,14 +73,8 @@ def drobne_wydarzenia(kot): # definicja funkcji
             continue
 
 
-        # aktualizacja statsow przed wydarzeniami
-        teraz = time.time()
-        minuty = int((teraz - ostatnia_aktualizacja) // 60) 
-        if minuty > 0:
-            kot.najedzenie -= minuty / 120 # odejmuje część punkyu na minutę od statystyki ( np minuty / 30 - spadek 2 punktów na godzinę, minuty / 120 - spadek 0.5 punktu na godzinę )
-            kot.zadbanie -= minuty / 120 # odejmuje część punkyu na minutę od statystyki
-            kot.dostatekuwagi -= minuty / 120 # odejmuje część punkyu na minutę od statystyki
-            ostatnia_aktualizacja = teraz
+        kot.aktualizuj_statystyki() # aktualizacja statsow przed wydarzeniami
+
 
         if not kot.zyje():  # sprawdź czy kot żyje przed wydarzeniem
             print("\nTwój kot zmarł!") 
@@ -122,6 +108,7 @@ class Cat:
         self.zadbanie = 10 # podobnie
         self.dostatekuwagi = 10
         self.moment_adopcji = time.time()  # dodajemy czas startu jako właściwość kota
+        self.ostatnia_aktualizacja = time.time()  # to tu ma niby usunac bledy z czasem
 
 
 
@@ -139,6 +126,16 @@ class Cat:
             log += f"Dostatek uwagi: {round(self.dostatekuwagi, 2)}\n"
 
             plik.write(log)
+
+
+    def aktualizuj_statystyki(self): # metoda aktualizująca statystyki kota jedna dla wszystkich procesow
+        teraz = time.time()
+        minuty = int((teraz - self.ostatnia_aktualizacja) // 60)
+        if minuty > 0:
+            self.najedzenie -= minuty / 120
+            self.zadbanie -= minuty / 120
+            self.dostatekuwagi -= minuty / 120
+            self.ostatnia_aktualizacja = teraz
 
 
 
@@ -284,7 +281,6 @@ def main():
     print(portret)
     time.sleep(4)  # czeka x sekundy
     # clear_screen() #-  wyłączoneczyszczenie ekranu startoweego
-    ostatnia_aktualizacja = time.time()
 
 
 
@@ -311,14 +307,8 @@ def main():
       
 
 
-        # Aktualizacja statystyk
-        teraz = time.time() #aktualizacja czasu by pokazywaly się aktualne statystyki pod wydarzeniami losowymi
-        minuty = int((teraz - ostatnia_aktualizacja) // 60)  # ile minut minęło - dotyczy opadania statystyk
-        if minuty > 0:
-            kot.najedzenie -= minuty / 120  # odejmuje część punkyu na minutę od statystyki
-            kot.zadbanie -= minuty / 120 # odejmuje część punkyu na minutę od statystyki
-            kot.dostatekuwagi -= minuty / 120 # odejmuje część punkyu na minutę od statystyki
-            ostatnia_aktualizacja = teraz #???
+        kot.aktualizuj_statystyki() # aktualizacja statsow przed wydarzeniami
+
 
         if not kot.zyje(): #jesli zyje jest false to wyświetla się to
             print("\nTwój kot zmarł!") 
