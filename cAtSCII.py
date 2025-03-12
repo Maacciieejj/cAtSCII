@@ -130,13 +130,18 @@ class Cat:
 
     def aktualizuj_statystyki(self): # metoda aktualizująca statystyki kota jedna dla wszystkich procesow
         teraz = time.time()
+        
+        #ponizej zakomentowany emulator upływu 4 godzin (do testow co sie dzieje po snie)
+        #if przelacznik1:  # jeśli kot śpi
+        #    teraz += 14400  # dodaj 4 godziny (4 * 60 * 60 sekund)             
+
         minuty = int((teraz - self.ostatnia_aktualizacja) // 60)
         if minuty > 0:
-            self.najedzenie -= minuty / 120
-            self.zadbanie -= minuty / 120
-            self.dostatekuwagi -= minuty / 120
+            spadek = minuty / 120
+            self.najedzenie = max(0, self.najedzenie - spadek)
+            self.zadbanie = max(0, self.zadbanie - spadek)
+            self.dostatekuwagi = max(0, self.dostatekuwagi - spadek)
             self.ostatnia_aktualizacja = teraz
-
 
 
 
