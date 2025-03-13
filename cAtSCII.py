@@ -10,7 +10,25 @@ from links.portret import portret #import asci arto
 from links.ASCIIdrobne_wydarzenia import *
 from links.ASCIIwazne_wydarzenia import *
 from links.ASCIIinne import *
+import sys  # by zapisywaz zawartosc konsoli  TeeOutput:
 przelacznik1 = False #przełącznik, który pozwala na włączanie i wyłączanie wątku wydarzeń losowych
+
+# ponizej funkcja zapisuje zawartość konsoli do pliku
+class TeeOutput:
+    def __init__(self, filename):
+        self.terminal = sys.stdout
+        self.logfile = open(filename, 'a', encoding='utf-8')
+
+    def write(self, message):
+        self.terminal.write(message)
+        self.logfile.write(message)
+        self.logfile.flush()
+
+    def flush(self):
+        self.terminal.flush()
+        self.logfile.flush()
+
+sys.stdout = TeeOutput('zawartosc.txt')
 
 
 # ponizej definicja funkcji wazne wydarzenia uruchamianej w wątku dodatkowym

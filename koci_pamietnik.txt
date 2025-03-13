@@ -94,3 +94,9 @@ Najedzenie: 7.5, Zadbanie: 10, Dostatek uwagi: 8.5
 
 [0d 0h 59m] Drobne wydarzenie:wycieczka_na_dach
 Najedzenie: 7.25, Zadbanie: 10, Dostatek uwagi: 8.5
+
+[0d 0h 0m] Akcja: Głaskanie kota
+Najedzenie: 10, Zadbanie: 10, Dostatek uwagi: 10
+
+[0d 0h 0m] Akcja: Patrzenie na kota
+Najedzenie: 10, Zadbanie: 10, Dostatek uwagi: 10

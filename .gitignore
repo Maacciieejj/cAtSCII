@@ -162,3 +162,5 @@ cython_debug/
 start win.bat
 start win.bat
 Info.txt
+koci_pamietnik.txt
+zawartosc.txt
