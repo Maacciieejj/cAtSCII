@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>accurate kot simulator cAtSCII live</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            font-family: monospace;
+            white-space: pre-wrap;
+            background-color: black;
+            color: white;
+        }
+        #output-text {
+            margin: 0;
+            padding: 10px;
+            min-height: calc(100vh - 100px); /* Dostosuj tę wartość w zależności od wysokości h1 */
+        }
+        h1 {
+            margin: 0;
+            padding: 10px;
+        }
+    </style>
+    <meta http-equiv="refresh" content="60">
+</head>
+<body>
+    <h1>accurate kot simulator cAtSCII live</h1>
+    <pre id="output-text">{{ output_text }}</pre>
+
+    <script>
+        window.onload = function() {
+            setTimeout(function() {
+                // Przewijanie głównego okna
+                window.scrollTo(0, document.documentElement.scrollHeight);
+
+                // Dodatkowe przewijanie elementu <pre> (dla pewności)
+                var outputDiv = document.getElementById("output-text");
+                if (outputDiv) {
+                    outputDiv.scrollTop = outputDiv.scrollHeight;
+                }
+            }, 100); // Opóźnienie 100ms dla stabilności
+        };
+    </script>
+</body>
+</html>
