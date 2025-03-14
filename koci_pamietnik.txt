@@ -100,3 +100,42 @@ Najedzenie: 10, Zadbanie: 10, Dostatek uwagi: 10
 
 [0d 0h 0m] Akcja: Patrzenie na kota
 Najedzenie: 10, Zadbanie: 10, Dostatek uwagi: 10
+
+[0d 0h 0m] Akcja: Głaskanie kota
+Najedzenie: 10, Zadbanie: 10, Dostatek uwagi: 10
+
+[0d 0h 0m] Akcja: Karmienie kota
+Najedzenie: 10, Zadbanie: 10, Dostatek uwagi: 10
+
+[0d 0h 0m] Akcja: Patrzenie na kota
+Najedzenie: 10, Zadbanie: 10, Dostatek uwagi: 10
+
+[0d 0h 1m] Kot zasypia
+Najedzenie: 10, Zadbanie: 10, Dostatek uwagi: 10
+
+[0d 0h 1m] Kot się budzi
+Najedzenie: 9.99, Zadbanie: 9.99, Dostatek uwagi: 9.99
+
+[0d 0h 1m] Kot zasypia
+Najedzenie: 9.99, Zadbanie: 9.99, Dostatek uwagi: 9.99
+
+[0d 0h 1m] Kot się budzi
+Najedzenie: 9.99, Zadbanie: 9.99, Dostatek uwagi: 9.99
+
+[0d 0h 1m] Akcja: Karmienie kota
+Najedzenie: 10, Zadbanie: 9.99, Dostatek uwagi: 9.99
+
+[0d 0h 2m] Akcja: Karmienie kota
+Najedzenie: 10, Zadbanie: 9.99, Dostatek uwagi: 9.99
+
+[0d 0h 4m] Drobne wydarzenie:upolowanie_pajaka
+Najedzenie: 10, Zadbanie: 9.97, Dostatek uwagi: 9.97
+
+[0d 0h 5m] Akcja: Patrzenie na kota
+Najedzenie: 10, Zadbanie: 9.97, Dostatek uwagi: 10
+
+[0d 0h 5m] Akcja: Patrzenie na kota
+Najedzenie: 10, Zadbanie: 9.97, Dostatek uwagi: 10
+
+[0d 0h 6m] Drobne wydarzenie:spotkanie_z_jezem
+Najedzenie: 9.99, Zadbanie: 9.96, Dostatek uwagi: 10

@@ -2,15 +2,18 @@ import time #import mehanizmu czasu
 import random #import mehanizmu losowego
 import threading  # import mehanizmu wątków
 import os  # bibioteka os do czyszczenia ekranu
-from links.karmione import kotykarmione #import asci artow
-from links.glaskane import kotyglaskane #import asci artow
-from links.ogladane import kotyogladane #import asci artow
+
 from links.nagrobek import nagrobek #import asci artow
 from links.portret import portret #import asci arto
 from links.ASCIIdrobne_wydarzenia import *
 from links.ASCIIwazne_wydarzenia import *
 from links.ASCIIinne import *
 import sys  # by zapisywaz zawartosc konsoli  TeeOutput:
+from PIL import Image
+import requests
+from io import BytesIO
+from duckduckgo_search import DDGS
+
 przelacznik1 = False #przełącznik, który pozwala na włączanie i wyłączanie wątku wydarzeń losowych
 
 # ponizej funkcja zapisuje zawartość konsoli do pliku
@@ -29,6 +32,76 @@ class TeeOutput:
         self.logfile.flush()
 
 sys.stdout = TeeOutput('zawartosc.txt')
+
+
+#**** ponizej funkcje z programu gasci (wyszukiwanie obrazow i zamienianie na ascii)***************
+
+def obraz_na_ascii(sciezka_lub_url, szerokosc_wyjscia=100):
+    """Konwertuje obraz na ASCII art. Obsługuje zarówno lokalne pliki jak i URL-e."""
+
+    try:
+        # Sprawdź czy to URL czy ścieżka lokalna
+        if sciezka_lub_url.startswith(('http://', 'https://')):
+            # Pobierz obraz z URL
+            response = requests.get(sciezka_lub_url)
+            obraz = Image.open(BytesIO(response.content)).convert('L')
+        else:
+            # Otwórz lokalny plik
+            obraz = Image.open(sciezka_lub_url).convert('L') # Otwórz obraz i przekonwertuj na skalę szarości ('L')
+    except Exception as e:
+        return f"Błąd podczas otwierania obrazu: {str(e)}"
+
+    szerokosc_obrazu, wysokosc_obrazu = obraz.size
+    stosunek_aspektu = wysokosc_obrazu / szerokosc_obrazu
+    wysokosc_wyjscia = int(szerokosc_wyjscia * stosunek_aspektu * 0.5) # Dostosowanie wysokości, 0.5 bo znaki nie są kwadratowe
+
+    obraz = obraz.resize((szerokosc_wyjscia, wysokosc_wyjscia))
+    piksele = obraz.getdata()
+
+    znaki_ascii = [" ", ".", ",", "-", "+", "*", "#", "@"] # Im dalej w prawo, tym gęstszy znak
+    dlugosc_znakow = len(znaki_ascii)
+
+    ascii_art = ""
+    for i in range(0, wysokosc_wyjscia):
+        for j in range(0, szerokosc_wyjscia):
+            piksel_index = i * szerokosc_wyjscia + j
+            jasnosc_piksela = piksele[piksel_index]
+            index_znaku = int(jasnosc_piksela / 255 * (dlugosc_znakow - 1)) # Mapowanie jasności na index znaku
+            ascii_art += znaki_ascii[index_znaku]
+        ascii_art += "\n" # Nowa linia po każdym rzędzie
+
+    return ascii_art
+
+def wyszukaj_i_konwertuj(zapytanie, max_wynikow=20):
+    """Wyszukuje obrazy za pomocą DuckDuckGo, losuje jeden i konwertuje na ASCII art."""
+    try:
+        with DDGS() as ddgs:
+            # Pobieramy więcej wyników, aby mieć większą pulę do losowania
+            wyniki = list(ddgs.images(zapytanie, max_results=max_wynikow))
+        
+        if not wyniki:
+            raise Exception("Nie znaleziono wyników")
+            
+        # Wyciągnij URL-e obrazów z wyników
+        url_obrazow = [wynik['image'] for wynik in wyniki]
+        
+        # Losowo wybierz jeden obraz
+        losowy_url = random.choice(url_obrazow)
+        
+        # Konwertuj na ASCII art
+        return obraz_na_ascii(losowy_url)
+    except Exception as e:
+        print(f"Błąd podczas wyszukiwania obrazów: {str(e)}")
+        print("Napotkano limit zapytań. Używanie alternatywnej metody...")
+        
+        # Alternatywna metoda - używamy przykładowego URL-a obrazu
+        przykladowy_url = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg"
+        
+        # Konwertuj na ASCII art
+        return obraz_na_ascii(przykladowy_url)
+
+#******** koniec funcji z programu gasci (wyszukiwanie i zamienianie na asci)**********
+
 
 
 # ponizej definicja funkcji wazne wydarzenia uruchamianej w wątku dodatkowym
@@ -166,12 +239,18 @@ class Cat:
     # ponizej są metody, które zmieniają wartość statystyk kota
     def karmienie(self): # definicja metody karmienie w klasie Cat
         self.najedzenie = min(10, self.najedzenie + 2)
+        return wyszukaj_i_konwertuj("feeding cat")  #        # Zwracamy ASCII art zamiast go wyświetlać
+
         
     def glaskanie(self): #itd
         self.zadbanie = min(10, self.zadbanie + 2)
+        return wyszukaj_i_konwertuj("petting cat")
+
 
     def patrzenie(self):
         self.dostatekuwagi = min(10, self.dostatekuwagi + 2)
+        return wyszukaj_i_konwertuj("watching cat")
+
 
     def zyje(self):
         return self.najedzenie > 0 and self.zadbanie > 0 and self.dostatekuwagi > 0
@@ -182,34 +261,34 @@ class Cat:
     # ponizej metody - wazne wydarzenia 
 
     def biegunka(self):
-        print(random.choice(ASCIIbiegunka))  # wybiera losowo jeden art
+        print(wyszukaj_i_konwertuj("cat shits"))
         self.najedzenie = max(0, self.najedzenie - 2) 
  
     def upolowanie_myszy(self):
-        print(random.choice(ASCIIupolowanie_myszy))  # wybiera losowo jeden art
+        print(wyszukaj_i_konwertuj("cat hunting mouse"))
         self.najedzenie = min(10, self.najedzenie + 2)
  
  
     def psia_inwazja(self):
-        print(random.choice(ASCIIpsia_inwazja))  # wybiera losowo jeden art
+        print(wyszukaj_i_konwertuj("aggressive dog"))
         self.zadbanie = max(0, self.zadbanie - 2) 
 
     def dzieci_głaszcza(self):
-        print(random.choice(ASCIIdzieci_głaszcza))  # wybiera losowo jeden art
+        print(wyszukaj_i_konwertuj("children cat"))
         self.zadbanie = min(10, self.zadbanie + 2)
 
 
     def smutek(self):
-        print(random.choice(ASCIIsmutek))  # wybiera losowo jeden art
+        print(wyszukaj_i_konwertuj("sad cat"))
         self.dostatekuwagi = max(0, self.dostatekuwagi - 2)
 
     def spotkanie_kocich_znajomych(self):
-        print(random.choice(ASCIIspotkanie_kocich_znajomych))  # wybiera losowo jeden art
+        print(wyszukaj_i_konwertuj("cats meeting"))
         self.dostatekuwagi = min(10, self.dostatekuwagi + 2)
 
 
     def szwedanie(self):
-        print(random.choice(ASCIIszwedanie))  # wybiera losowo jeden art ze szwedania
+        print(wyszukaj_i_konwertuj("cat wandering"))
         pass  # ta metoda celowo nic nie robi
 
 
@@ -219,57 +298,57 @@ class Cat:
     # zadbanie
 
     def przeciaganie(self):
-        print(random.choice(ASCIIprzeciaganie))  # wybiera losowo jeden art
+        print(wyszukaj_i_konwertuj("cat stretching"))
         self.zadbanie = min(10, self.zadbanie + 0.25)  
 
     def upadek_z_krzesla(self):
-        print(random.choice(ASCIIupadek_z_krzesla))  # wybiera losowo jeden art
+        print(wyszukaj_i_konwertuj("cat fall"))
         self.zadbanie = max(0, self.zadbanie - 0.25)  
 
     def mruczenie(self):
-        print(random.choice(ASCIImruczenie))  # wybiera losowo jeden art
+        print(wyszukaj_i_konwertuj("cat purrs"))
         self.zadbanie = min(10, self.zadbanie + 0.25)  
 
     def kaslanie(self):
-        print(random.choice(ASCIIkaslanie))  # wybiera losowo jeden art
+        print(wyszukaj_i_konwertuj("cat cough"))
         self.zadbanie = max(0, self.zadbanie - 0.25) 
 
 
     # najedzenie
 
     def upolowanie_muchy(self):
-        print(random.choice(ASCIIupolowanie_muchy))  # wybiera losowo jeden art
+        print(wyszukaj_i_konwertuj("fly"))
         self.najedzenie = min(10, self.najedzenie + 0.25)  
 
     def gonitwa_po_meblach(self):
-        print(random.choice(ASCIIgonitwa_po_meblach))  # wybiera losowo jeden art
+        print(wyszukaj_i_konwertuj("cat run"))
         self.najedzenie = max(0, self.najedzenie - 0.25) 
 
     def upolowanie_pajaka(self):
-        print(random.choice(ASCIIupolowanie_pajaka))  # wybiera losowo jeden art
+        print(wyszukaj_i_konwertuj("spider"))
         self.najedzenie = min(10, self.najedzenie + 0.25)  
 
     def wycieczka_na_dach(self):
-        print(random.choice(ASCIIwycieczka_na_dach))  # wybiera losowo jeden art
+        print(wyszukaj_i_konwertuj("cat roof"))
         self.najedzenie = max(0, self.najedzenie - 0.25) 
 
 
     # dostatekuwagi
 
     def wizyta_kota_sasiada(self):
-        print(random.choice(ASCIIwizyta_kota_sasiada))  # wybiera losowo jeden art
+        print(wyszukaj_i_konwertuj("2 cats"))
         self.dostatekuwagi = min(10, self.dostatekuwagi + 0.25)  
 
     def utkniecie_pod_zlewem(self):
-        print(random.choice(ASCIIutkniecie_pod_zlewem))  # wybiera losowo jeden art
+        print(wyszukaj_i_konwertuj("sink"))
         self.dostatekuwagi = max(0, self.dostatekuwagi - 0.25) 
 
     def spotkanie_z_jezem(self):
-        print(random.choice(ASCIIspotkanie_z_jezem))  # wybiera losowo jeden art
+        print(wyszukaj_i_konwertuj("hedgehog"))
         self.dostatekuwagi = min(10, self.dostatekuwagi + 0.25)  
 
     def koci_marazm(self):
-        print(random.choice(ASCIIkoci_marazm))  # wybiera losowo jeden art
+        print(wyszukaj_i_konwertuj("lazy cat"))
         self.dostatekuwagi = max(0, self.dostatekuwagi - 0.25) 
 
 
@@ -362,13 +441,13 @@ def main():
         if wybor == "1":
             kot.karmienie()
             kot.zapisz_log("Akcja: Karmienie kota") #zapis logu
-            print(random.choice(kotykarmione))# wybiera losowo jedną z listy
+            print(wyszukaj_i_konwertuj("cat eat"))
             print("↑ Karmisz kota")
 
         elif wybor == "2":
             kot.glaskanie()
             kot.zapisz_log("Akcja: Głaskanie kota") #zapis logu
-            print(random.choice(kotyglaskane))# wybiera losowo jedną z listy
+            print(wyszukaj_i_konwertuj("petting cat"))
             print("↑ Głaszczesz kota")
 
 
@@ -378,12 +457,12 @@ def main():
         elif wybor == "3":
             kot.patrzenie()
             kot.zapisz_log("Akcja: Patrzenie na kota") #zapis logu
-            print(random.choice(kotyogladane))# wybiera losowo jedną z listy
+            print(wyszukaj_i_konwertuj("cat portrait"))
             print("↑ Widzisz kota")
 
         elif wybor == "4":            
             przelacznik1 = not przelacznik1  # zmienia wartość na przeciwną
-            print((random.choice(ASCIIzasypia))if przelacznik1 else(random.choice(ASCIIsiebudzi)))# wybiera losowo jedną z listy
+            print(wyszukaj_i_konwertuj("sleeping cat" if przelacznik1 else "waking up cat"))
             print(f"Kot {'zasypia' if przelacznik1 else 'się budzi'}")
             kot.zapisz_log("Kot zasypia" if przelacznik1 else "Kot się budzi") #zapis logu
 
@@ -414,95 +493,3 @@ if __name__ == "__main__":
 
 
 
-
-    #poniżej program do generowania ascii artów z wyszukiwania duckduckgo, robocza nazwa "gasci"
-
-    from PIL import Image
-import requests
-from io import BytesIO
-from duckduckgo_search import DDGS
-import random
-
-def obraz_na_ascii(sciezka_lub_url, szerokosc_wyjscia=100):
-    """Konwertuje obraz na ASCII art. Obsługuje zarówno lokalne pliki jak i URL-e."""
-
-    try:
-        # Sprawdź czy to URL czy ścieżka lokalna
-        if sciezka_lub_url.startswith(('http://', 'https://')):
-            # Pobierz obraz z URL
-            response = requests.get(sciezka_lub_url)
-            obraz = Image.open(BytesIO(response.content)).convert('L')
-        else:
-            # Otwórz lokalny plik
-            obraz = Image.open(sciezka_lub_url).convert('L') # Otwórz obraz i przekonwertuj na skalę szarości ('L')
-    except Exception as e:
-        return f"Błąd podczas otwierania obrazu: {str(e)}"
-
-    szerokosc_obrazu, wysokosc_obrazu = obraz.size
-    stosunek_aspektu = wysokosc_obrazu / szerokosc_obrazu
-    wysokosc_wyjscia = int(szerokosc_wyjscia * stosunek_aspektu * 0.5) # Dostosowanie wysokości, 0.5 bo znaki nie są kwadratowe
-
-    obraz = obraz.resize((szerokosc_wyjscia, wysokosc_wyjscia))
-    piksele = obraz.getdata()
-
-    znaki_ascii = [" ", ".", ",", "-", "+", "*", "#", "@"] # Im dalej w prawo, tym gęstszy znak
-    dlugosc_znakow = len(znaki_ascii)
-
-    ascii_art = ""
-    for i in range(0, wysokosc_wyjscia):
-        for j in range(0, szerokosc_wyjscia):
-            piksel_index = i * szerokosc_wyjscia + j
-            jasnosc_piksela = piksele[piksel_index]
-            index_znaku = int(jasnosc_piksela / 255 * (dlugosc_znakow - 1)) # Mapowanie jasności na index znaku
-            ascii_art += znaki_ascii[index_znaku]
-        ascii_art += "\n" # Nowa linia po każdym rzędzie
-
-    return ascii_art
-
-def wyszukaj_obrazy(zapytanie, max_wynikow=20):
-    """Wyszukuje obrazy za pomocą DuckDuckGo i zwraca losowy URL obrazu."""
-    try:
-        with DDGS() as ddgs:
-            # Pobieramy więcej wyników, aby mieć większą pulę do losowania
-            wyniki = list(ddgs.images(zapytanie, max_results=max_wynikow))
-        
-        if not wyniki:
-            raise Exception("Nie znaleziono wyników")
-            
-        # Wyciągnij URL-e obrazów z wyników
-        url_obrazow = [wynik['image'] for wynik in wyniki]
-        
-        # Losowo wybierz jeden obraz
-        losowy_url = random.choice(url_obrazow)
-        
-        return losowy_url
-    except Exception as e:
-        print(f"Błąd podczas wyszukiwania obrazów: {str(e)}")
-        print("Napotkano limit zapytań. Używanie alternatywnej metody...")
-        
-        # Alternatywna metoda - używamy kilku przykładowych URL-i obrazów
-        przykladowe_url = [
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg",
-        ]
-        
-        # Losowo wybierz jeden obraz z przykładowych
-        losowy_url = random.choice(przykladowe_url)
-        
-        return losowy_url
-
-# Przykład użycia:
-def main():
-    zapytanie = input("Podaj frazę do wyszukania obrazu: ")
-    
-    print(f"Wyszukuję obrazy dla: {zapytanie}...")
-    url_obrazu = wyszukaj_obrazy(zapytanie)
-    
-    print(f"Znaleziono obraz. Konwertuję na ASCII...")
-    try:
-        ascii_result = obraz_na_ascii(url_obrazu)
-        print(ascii_result)
-    except Exception as e:
-        print(f"Błąd podczas przetwarzania obrazu: {str(e)}")
-
-if __name__ == "__main__":
-    main()
