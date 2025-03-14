@@ -1,0 +1,5 @@
+flask
+pillow
+requests
+duckduckgo_search==5.3.1b1
+gunicorn
