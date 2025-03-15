@@ -376,3 +376,24 @@ Najedzenie: 9.75, Zadbanie: 9.61, Dostatek uwagi: 9.61
 
 [0d 0h 49m] Wczytano sejw
 Najedzenie: 9.87, Zadbanie: 9.61, Dostatek uwagi: 9.61
+
+[0d 1h 18m] Wczytano sejw
+Najedzenie: 9.62, Zadbanie: 9.37, Dostatek uwagi: 9.37
+
+[0d 3h 33m] Wczytano sejw
+Najedzenie: 8.5, Zadbanie: 8.24, Dostatek uwagi: 8.24
+
+[0d 3h 33m] Akcja: Karmienie kota
+Najedzenie: 10, Zadbanie: 8.24, Dostatek uwagi: 8.24
+
+[0d 3h 34m] Akcja: Karmienie kota
+Najedzenie: 10, Zadbanie: 8.24, Dostatek uwagi: 8.24
+
+[0d 3h 34m] Akcja: Karmienie kota
+Najedzenie: 10, Zadbanie: 8.24, Dostatek uwagi: 8.24
+
+[0d 3h 35m] Drobne wydarzenie:przeciaganie
+Najedzenie: 9.98, Zadbanie: 8.47, Dostatek uwagi: 8.22
+
+[0d 3h 37m] Akcja: Patrzenie na kota
+Najedzenie: 9.98, Zadbanie: 8.47, Dostatek uwagi: 10
