@@ -159,7 +159,8 @@ class Cat:
             self.zadbanie = dane_sejwu['zadbanie']
             self.dostatekuwagi = dane_sejwu['dostatekuwagi']
             self.moment_adopcji = dane_sejwu['moment_adopcji']
-            self.ostatnia_aktualizacja = time.time()  # Dodajemy to przed aktualizacją statystyk
+            self.ostatnia_aktualizacja = dane_sejwu['ostatnia_aktualizacja'] ##to zamiast tego na dole. do obserwacji :)
+            #### self.ostatnia_aktualizacja = time.time()  # Dodajemy to przed aktualizacją statystyk - sprawia ze kotu nie spadaja stasty za czas niedziaalnia programu)
 
 
 

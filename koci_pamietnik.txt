@@ -331,3 +331,48 @@ Najedzenie: 10, Zadbanie: 9.99, Dostatek uwagi: 9.74
 
 [0d 0h 33m] Drobne wydarzenie:upadek_z_krzesla
 Najedzenie: 9.98, Zadbanie: 9.72, Dostatek uwagi: 9.72
+
+[0d 0h 38m] Wczytano sejw
+Najedzenie: 9.98, Zadbanie: 9.72, Dostatek uwagi: 9.72
+
+[0d 0h 38m] Akcja: Karmienie kota
+Najedzenie: 10, Zadbanie: 9.72, Dostatek uwagi: 9.72
+
+[0d 0h 42m] Wczytano sejw
+Najedzenie: 9.92, Zadbanie: 9.67, Dostatek uwagi: 9.67
+
+[0d 0h 42m] Akcja: Karmienie kota
+Najedzenie: 10, Zadbanie: 9.67, Dostatek uwagi: 9.67
+
+[0d 0h 42m] Drobne wydarzenie:wycieczka_na_dach
+Najedzenie: 9.75, Zadbanie: 9.67, Dostatek uwagi: 9.67
+
+[0d 0h 47m] Wczytano sejw
+Najedzenie: 9.88, Zadbanie: 9.62, Dostatek uwagi: 9.62
+
+[0d 0h 47m] Akcja: Karmienie kota
+Najedzenie: 10, Zadbanie: 9.62, Dostatek uwagi: 9.62
+
+[0d 0h 47m] Wczytano sejw
+Najedzenie: 9.88, Zadbanie: 9.62, Dostatek uwagi: 9.62
+
+[0d 0h 47m] Akcja: Karmienie kota
+Najedzenie: 10, Zadbanie: 9.62, Dostatek uwagi: 9.62
+
+[0d 0h 48m] Wczytano sejw
+Najedzenie: 9.88, Zadbanie: 9.62, Dostatek uwagi: 9.62
+
+[0d 0h 48m] Akcja: Głaskanie kota
+Najedzenie: 9.88, Zadbanie: 10, Dostatek uwagi: 9.62
+
+[0d 0h 48m] Wczytano sejw
+Najedzenie: 9.87, Zadbanie: 9.61, Dostatek uwagi: 9.61
+
+[0d 0h 48m] Akcja: Karmienie kota
+Najedzenie: 10, Zadbanie: 9.61, Dostatek uwagi: 9.61
+
+[0d 0h 48m] Drobne wydarzenie:wycieczka_na_dach
+Najedzenie: 9.75, Zadbanie: 9.61, Dostatek uwagi: 9.61
+
+[0d 0h 49m] Wczytano sejw
+Najedzenie: 9.87, Zadbanie: 9.61, Dostatek uwagi: 9.61
