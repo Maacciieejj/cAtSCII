@@ -13,6 +13,7 @@ from PIL import Image
 import requests
 from io import BytesIO
 from duckduckgo_search import DDGS
+import json  # Dodajemy import dla obsługi formatu JSON dla sejwowania
 
 przelacznik1 = False #przełącznik, który pozwala na włączanie i wyłączanie wątku wydarzeń losowych
 
@@ -195,11 +196,57 @@ class Cat:
 
     #poniżej konstruktor klasy Cat
     def __init__(self): # konstruktor klasy Cat
-        self.najedzenie = 10 #Tworzy zmienną przechowującą poziom najedzenia kota. Self oznacza, że zmienna należy do instancji klasy
-        self.zadbanie = 10 # podobnie
-        self.dostatekuwagi = 10
-        self.moment_adopcji = time.time()  # dodajemy czas startu jako właściwość kota
-        self.ostatnia_aktualizacja = time.time()  # to tu ma niby usunac bledy z czasem
+               
+        # Próbujemy wczytać sejw, jeśli istnieje
+        if os.path.exists('sejw.json'):
+            self.wczytaj_sejw()
+        else:
+            # Inicjalizacja nowej gry
+            self.najedzenie = 10 #Tworzy zmienną przechowującą poziom najedzenia kota. Self oznacza, że zmienna należy do instancji klasy
+            self.zadbanie = 10 # podobnie
+            self.dostatekuwagi = 10
+            self.moment_adopcji = time.time()  # dodajemy czas startu jako właściwość kota
+            self.ostatnia_aktualizacja = time.time()  # to tu ma niby usunac bledy z czasem
+
+
+    # Nowa metoda do zapisywania stanu gry
+    def zapisz_sejw(self):
+        dane_sejwu = {
+            'najedzenie': self.najedzenie,
+            'zadbanie': self.zadbanie,
+            'dostatekuwagi': self.dostatekuwagi,
+            'moment_adopcji': self.moment_adopcji,
+            'ostatnia_aktualizacja': time.time()  # Zapisujemy aktualny czas
+        }
+
+        with open('sejw.json', 'w', encoding='utf-8') as plik:
+            json.dump(dane_sejwu, plik)
+
+
+    # Nowa metoda do wczytywania stanu gry
+    def wczytaj_sejw(self):
+        try:
+            with open('sejw.json', 'r', encoding='utf-8') as plik:
+                dane_sejwu = json.load(plik)
+                
+            self.najedzenie = dane_sejwu['najedzenie']
+            self.zadbanie = dane_sejwu['zadbanie']
+            self.dostatekuwagi = dane_sejwu['dostatekuwagi']
+            self.moment_adopcji = dane_sejwu['moment_adopcji']
+            self.ostatnia_aktualizacja = time.time()  # Dodajemy to przed aktualizacją statystyk
+
+
+
+            # Po wczytaniu sejwu, aktualizuj_statystyki() samo obliczy upływ czasu
+            # i odpowiednio zaktualizuje statystyki kota
+            self.aktualizuj_statystyki()
+            print("Wczytano stan kota:")
+            self.zapisz_log("Wczytano sejw")
+        
+        except Exception as e:
+            print(f"Błąd podczas wczytywania sejwu: {e}")
+            print("Bierzesz nowego kota...")
+            self.__init__()  # Po prostu wywołujemy konstruktor ponownie
 
 
 
@@ -380,13 +427,22 @@ def main():
 
     # To się wykonuje RAZ na początku programu
     kot = Cat() # tutaj wywołuje się __init__
-    print(portret)
-    time.sleep(4)  # czeka x sekundy
-    # clear_screen() #-  wyłączoneczyszczenie ekranu startoweego
+    if not os.path.exists('sejw.json'):  # Wyświetl portret tylko przy nowej grze
+        print(portret)
+        time.sleep(4)  # czeka x sekundy
 
 
+    def auto_sejw(kot):
+        while True:
+            time.sleep(60)  # Czekamy minutę
+            if kot.zyje():
+                kot.zapisz_sejw()
+    
+    # Uruchamiamy wątek automatycznego zapisywania
+    watek_sejwu = threading.Thread(target=auto_sejw, args=(kot,))
+    watek_sejwu.daemon = True
+    watek_sejwu.start()
 
-    # Ponizej wątki - funkcje, które będą działać równolegle z główną funkcją programu
 
     # Uruchom WĄTEK wydarzeń losowych
     watek_waznych = threading.Thread(target=wazne_wydarzenia, args=(kot,)) #Tworzy nowy wątek i mówi, jaką funkcję ma wykonywać i rzekazuje argumenty do tej funkcj - tu kot

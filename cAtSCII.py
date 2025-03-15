@@ -11,6 +11,7 @@ from links.ASCIIdrobne_wydarzenia import *
 from links.ASCIIwazne_wydarzenia import *
 from links.ASCIIinne import *
 import sys  # by zapisywaz zawartosc konsoli  TeeOutput:
+import json  # Dodajemy import dla obsługi formatu JSON dla sejwowania
 przelacznik1 = False #przełącznik, który pozwala na włączanie i wyłączanie wątku wydarzeń losowych
 
 # ponizej funkcja zapisuje zawartość konsoli do pliku
@@ -122,11 +123,56 @@ class Cat:
 
     #poniżej konstruktor klasy Cat
     def __init__(self): # konstruktor klasy Cat
-        self.najedzenie = 10 #Tworzy zmienną przechowującą poziom najedzenia kota. Self oznacza, że zmienna należy do instancji klasy
-        self.zadbanie = 10 # podobnie
-        self.dostatekuwagi = 10
-        self.moment_adopcji = time.time()  # dodajemy czas startu jako właściwość kota
-        self.ostatnia_aktualizacja = time.time()  # to tu ma niby usunac bledy z czasem
+        
+        # Próbujemy wczytać sejw, jeśli istnieje
+        if os.path.exists('sejw.json'):
+            self.wczytaj_sejw()
+        else:
+            # Inicjalizacja nowej gry
+            self.najedzenie = 10 #Tworzy zmienną przechowującą poziom najedzenia kota. Self oznacza, że zmienna należy do instancji klasy
+            self.zadbanie = 10 # podobnie
+            self.dostatekuwagi = 10
+            self.moment_adopcji = time.time()  # dodajemy czas startu jako właściwość kota
+            self.ostatnia_aktualizacja = time.time()  # to tu ma niby usunac bledy z czasem
+
+    # Nowa metoda do zapisywania stanu gry
+    def zapisz_sejw(self):
+        dane_sejwu = {
+            'najedzenie': self.najedzenie,
+            'zadbanie': self.zadbanie,
+            'dostatekuwagi': self.dostatekuwagi,
+            'moment_adopcji': self.moment_adopcji,
+            'ostatnia_aktualizacja': time.time()  # Zapisujemy aktualny czas
+        }
+
+        with open('sejw.json', 'w', encoding='utf-8') as plik:
+            json.dump(dane_sejwu, plik)
+
+
+    # Nowa metoda do wczytywania stanu gry
+    def wczytaj_sejw(self):
+        try:
+            with open('sejw.json', 'r', encoding='utf-8') as plik:
+                dane_sejwu = json.load(plik)
+                
+            self.najedzenie = dane_sejwu['najedzenie']
+            self.zadbanie = dane_sejwu['zadbanie']
+            self.dostatekuwagi = dane_sejwu['dostatekuwagi']
+            self.moment_adopcji = dane_sejwu['moment_adopcji']
+            self.ostatnia_aktualizacja = time.time()  # Dodajemy to przed aktualizacją statystyk
+
+
+
+            # Po wczytaniu sejwu, aktualizuj_statystyki() samo obliczy upływ czasu
+            # i odpowiednio zaktualizuje statystyki kota
+            self.aktualizuj_statystyki()
+            print("Wczytano stan kota:")
+            self.zapisz_log("Wczytano sejw")
+        
+        except Exception as e:
+            print(f"Błąd podczas wczytywania sejwu: {e}")
+            print("Bierzesz nowego kota...")
+            self.__init__()  # Po prostu wywołujemy konstruktor ponownie
 
 
 
@@ -301,13 +347,22 @@ def main():
 
     # To się wykonuje RAZ na początku programu
     kot = Cat() # tutaj wywołuje się __init__
-    print(portret)
-    time.sleep(4)  # czeka x sekundy
-    # clear_screen() #-  wyłączoneczyszczenie ekranu startoweego
+    if not os.path.exists('sejw.json'):  # Wyświetl portret tylko przy nowej grze
+        print(portret)
+        time.sleep(4)  # czeka x sekundy
 
 
+    def auto_sejw(kot):
+        while True:
+            time.sleep(60)  # Czekamy minutę
+            if kot.zyje():
+                kot.zapisz_sejw()
+    
+    # Uruchamiamy wątek automatycznego zapisywania
+    watek_sejwu = threading.Thread(target=auto_sejw, args=(kot,))
+    watek_sejwu.daemon = True
+    watek_sejwu.start()
 
-    # Ponizej wątki - funkcje, które będą działać równolegle z główną funkcją programu
 
     # Uruchom WĄTEK wydarzeń losowych
     watek_waznych = threading.Thread(target=wazne_wydarzenia, args=(kot,)) #Tworzy nowy wątek i mówi, jaką funkcję ma wykonywać i rzekazuje argumenty do tej funkcj - tu kot
@@ -415,94 +470,4 @@ if __name__ == "__main__":
 
 
 
-    #poniżej program do generowania ascii artów z wyszukiwania duckduckgo, robocza nazwa "gasci"
-
-    from PIL import Image
-import requests
-from io import BytesIO
-from duckduckgo_search import DDGS
-import random
-
-def obraz_na_ascii(sciezka_lub_url, szerokosc_wyjscia=100):
-    """Konwertuje obraz na ASCII art. Obsługuje zarówno lokalne pliki jak i URL-e."""
-
-    try:
-        # Sprawdź czy to URL czy ścieżka lokalna
-        if sciezka_lub_url.startswith(('http://', 'https://')):
-            # Pobierz obraz z URL
-            response = requests.get(sciezka_lub_url)
-            obraz = Image.open(BytesIO(response.content)).convert('L')
-        else:
-            # Otwórz lokalny plik
-            obraz = Image.open(sciezka_lub_url).convert('L') # Otwórz obraz i przekonwertuj na skalę szarości ('L')
-    except Exception as e:
-        return f"Błąd podczas otwierania obrazu: {str(e)}"
-
-    szerokosc_obrazu, wysokosc_obrazu = obraz.size
-    stosunek_aspektu = wysokosc_obrazu / szerokosc_obrazu
-    wysokosc_wyjscia = int(szerokosc_wyjscia * stosunek_aspektu * 0.5) # Dostosowanie wysokości, 0.5 bo znaki nie są kwadratowe
-
-    obraz = obraz.resize((szerokosc_wyjscia, wysokosc_wyjscia))
-    piksele = obraz.getdata()
-
-    znaki_ascii = [" ", ".", ",", "-", "+", "*", "#", "@"] # Im dalej w prawo, tym gęstszy znak
-    dlugosc_znakow = len(znaki_ascii)
-
-    ascii_art = ""
-    for i in range(0, wysokosc_wyjscia):
-        for j in range(0, szerokosc_wyjscia):
-            piksel_index = i * szerokosc_wyjscia + j
-            jasnosc_piksela = piksele[piksel_index]
-            index_znaku = int(jasnosc_piksela / 255 * (dlugosc_znakow - 1)) # Mapowanie jasności na index znaku
-            ascii_art += znaki_ascii[index_znaku]
-        ascii_art += "\n" # Nowa linia po każdym rzędzie
-
-    return ascii_art
-
-def wyszukaj_obrazy(zapytanie, max_wynikow=20):
-    """Wyszukuje obrazy za pomocą DuckDuckGo i zwraca losowy URL obrazu."""
-    try:
-        with DDGS() as ddgs:
-            # Pobieramy więcej wyników, aby mieć większą pulę do losowania
-            wyniki = list(ddgs.images(zapytanie, max_results=max_wynikow))
-        
-        if not wyniki:
-            raise Exception("Nie znaleziono wyników")
-            
-        # Wyciągnij URL-e obrazów z wyników
-        url_obrazow = [wynik['image'] for wynik in wyniki]
-        
-        # Losowo wybierz jeden obraz
-        losowy_url = random.choice(url_obrazow)
-        
-        return losowy_url
-    except Exception as e:
-        print(f"Błąd podczas wyszukiwania obrazów: {str(e)}")
-        print("Napotkano limit zapytań. Używanie alternatywnej metody...")
-        
-        # Alternatywna metoda - używamy kilku przykładowych URL-i obrazów
-        przykladowe_url = [
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg",
-        ]
-        
-        # Losowo wybierz jeden obraz z przykładowych
-        losowy_url = random.choice(przykladowe_url)
-        
-        return losowy_url
-
-# Przykład użycia:
-def main():
-    zapytanie = input("Podaj frazę do wyszukania obrazu: ")
-    
-    print(f"Wyszukuję obrazy dla: {zapytanie}...")
-    url_obrazu = wyszukaj_obrazy(zapytanie)
-    
-    print(f"Znaleziono obraz. Konwertuję na ASCII...")
-    try:
-        ascii_result = obraz_na_ascii(url_obrazu)
-        print(ascii_result)
-    except Exception as e:
-        print(f"Błąd podczas przetwarzania obrazu: {str(e)}")
-
-if __name__ == "__main__":
-    main()
+ 
