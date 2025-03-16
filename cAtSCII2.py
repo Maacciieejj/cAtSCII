@@ -82,9 +82,12 @@ def wyszukaj_i_konwertuj(zapytanie, max_wynikow=20):
         
         if not wyniki:
             raise Exception("Nie znaleziono wyników")
-            
+        
+        # Używamy miniatur zamiast pełnych obrazów (a nie jak to zakomentowane ponizej)
+        url_obrazow = [wynik['thumbnail'] for wynik in wyniki]        
+
         # Wyciągnij URL-e obrazów z wyników
-        url_obrazow = [wynik['image'] for wynik in wyniki]
+        #url_obrazow = [wynik['image'] for wynik in wyniki] #tu pobierane byly pelne obrazy
         
         # Losowo wybierz jeden obraz
         losowy_url = random.choice(url_obrazow)
