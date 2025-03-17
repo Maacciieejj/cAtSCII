@@ -349,14 +349,14 @@ class Cat:
     def biegunka(self):
         print()
         print(wyszukaj_i_konwertuj("cat shits"))
-        historyjka = generuj_historyjke("Napisz krótką, 3-zdaniową historyjkę po polsku tym że kot dostał biegunki. Nie używaj imion i nie wskazuj na płeć. Niech historyjka nie będzie zbyt słodka i niech nie brzmi jak tekst z reklamy. Zacznij od słowa kot. Nie zwracaj się w tekście bezpośrednio do czytającego, nie przełamuj czwartej ściany.")
+        historyjka = generuj_historyjke("Napisz krótką, 2-zdaniową historyjkę po polsku tym że kot dostał biegunki. Nie używaj imion i nie wskazuj na płeć. Niech historyjka nie będzie zbyt słodka i niech nie brzmi jak tekst z reklamy. Zacznij od słowa kot. Nie zwracaj się w tekście bezpośrednio do czytającego, nie przełamuj czwartej ściany.")
         print(f"↑ WAŻNE WYDARZENIE: {historyjka}")
         self.najedzenie = max(0, self.najedzenie - 2) 
  
     def upolowanie_myszy(self):
         print()
         print(wyszukaj_i_konwertuj("cat hunting mouse"))
-        historyjka = generuj_historyjke("Napisz krótką, 3-zdaniową historyjkę po polsku tym że kot urządził polowanie na mysz i ją  i zjadł. Zacznij od słowa kot. Nie używaj imion i nie wskazuj na płeć. Niech historyjka nie będzie zbyt słodka i niech nie brzmi jak tekst z reklamy. Nie używaj imion i nie wskazuj na płeć. Niech historyjka nie będzie zbyt słodka i niech nie brzmi jak tekst z reklamy. Nie zwracaj się w tekście bezpośrednio do czytającego, nie przełamuj czwartej ściany.")
+        historyjka = generuj_historyjke("Napisz krótką, 2-zdaniową historyjkę po polsku tym że kot urządził polowanie na mysz i ją  i zjadł. Zacznij od słowa kot. Nie używaj imion i nie wskazuj na płeć. Niech historyjka nie będzie zbyt słodka i niech nie brzmi jak tekst z reklamy. Nie używaj imion i nie wskazuj na płeć. Niech historyjka nie będzie zbyt słodka i niech nie brzmi jak tekst z reklamy. Nie zwracaj się w tekście bezpośrednio do czytającego, nie przełamuj czwartej ściany.")
         print(f"↑ WAŻNE WYDARZENIE: {historyjka}")
         self.najedzenie = min(10, self.najedzenie + 2)
  
@@ -364,7 +364,7 @@ class Cat:
     def psia_inwazja(self):
         print()
         print(wyszukaj_i_konwertuj("aggressive dog"))
-        historyjka = generuj_historyjke("Napisz krótką, 3-zdaniową historyjkę po polsku tym że kot padł ofiarą agresji pas lub psów. Wyszedł bez uszczerbku fizycznego ale z psychicznym. Nie używaj imion i nie wskazuj na płeć.Niech historyjka nie będzie zbyt słodka i niech nie brzmi jak tekst z reklamy. Nie używaj imion i nie wskazuj na płeć. Niech historyjka nie będzie zbyt słodka i niech nie brzmi jak tekst z reklamy. Nie zwracaj się w tekście bezpośrednio do czytającego, nie przełamuj czwartej ściany. Zacznij od słowa kot. ")
+        historyjka = generuj_historyjke("Napisz krótką, 2-zdaniową historyjkę po polsku tym że kot padł ofiarą agresji pas lub psów. Wyszedł bez uszczerbku fizycznego ale z psychicznym. Nie używaj imion i nie wskazuj na płeć.Niech historyjka nie będzie zbyt słodka i niech nie brzmi jak tekst z reklamy. Nie używaj imion i nie wskazuj na płeć. Niech historyjka nie będzie zbyt słodka i niech nie brzmi jak tekst z reklamy. Nie zwracaj się w tekście bezpośrednio do czytającego, nie przełamuj czwartej ściany. Zacznij od słowa kot. ")
         print(f"↑ WAŻNE WYDARZENIE: {historyjka}")
         self.zadbanie = max(0, self.zadbanie - 2) 
 
@@ -379,14 +379,14 @@ class Cat:
     def smutek(self):
         print()
         print(wyszukaj_i_konwertuj("sad cat"))
-        historyjka = generuj_historyjke("Napisz krótką, 3-zdaniową historyjkę po polsku tym że kot poczuł się samotny i smutny. Nie używaj imion i nie wskazuj na płeć. Niech historyjka nie będzie zbyt słodka i niech nie brzmi jak tekst z reklamy. Nie używaj imion i nie wskazuj na płeć. Niech historyjka nie będzie zbyt słodka i niech nie brzmi jak tekst z reklamy. Nie zwracaj się w tekście bezpośrednio do czytającego, nie przełamuj czwartej ściany.")
+        historyjka = generuj_historyjke("Napisz krótką, 2-zdaniową historyjkę po polsku tym że kot poczuł się samotny i smutny. Nie używaj imion i nie wskazuj na płeć. Niech historyjka nie będzie zbyt słodka i niech nie brzmi jak tekst z reklamy. Nie używaj imion i nie wskazuj na płeć. Niech historyjka nie będzie zbyt słodka i niech nie brzmi jak tekst z reklamy. Nie zwracaj się w tekście bezpośrednio do czytającego, nie przełamuj czwartej ściany.")
         print(f"↑ WAŻNE WYDARZENIE: {historyjka}")
         self.dostatekuwagi = max(0, self.dostatekuwagi - 2)
 
     def spotkanie_kocich_znajomych(self):
         print()
         print(wyszukaj_i_konwertuj("cats meeting"))
-        historyjka = generuj_historyjke("Napisz krótką, 3-zdaniową pozytywną historyjkę po polsku tym że kot spotkał swoich  kocich znajomych. Nie używaj imion i nie wskazuj na płeć. Niech historyjka nie będzie zbyt słodka i niech nie brzmi jak tekst z reklamy, ale niech będzie pozytywne. Nie używaj imion i nie wskazuj na płeć. Niech historyjka nie będzie zbyt słodka i niech nie brzmi jak tekst z reklamy. Nie zwracaj się w tekście bezpośrednio do czytającego, nie przełamuj czwartej ściany.")
+        historyjka = generuj_historyjke("Napisz krótką, 2-zdaniową pozytywną historyjkę po polsku tym że kot spotkał swoich  kocich znajomych. Nie używaj imion i nie wskazuj na płeć. Niech historyjka nie będzie zbyt słodka i niech nie brzmi jak tekst z reklamy, ale niech będzie pozytywne. Nie używaj imion i nie wskazuj na płeć. Niech historyjka nie będzie zbyt słodka i niech nie brzmi jak tekst z reklamy. Nie zwracaj się w tekście bezpośrednio do czytającego, nie przełamuj czwartej ściany.")
         print(f"↑ WAŻNE WYDARZENIE: {historyjka}")
         self.dostatekuwagi = min(10, self.dostatekuwagi + 2)
 
@@ -469,14 +469,14 @@ class Cat:
     def wizyta_kota_sasiada(self):
         print()
         print(wyszukaj_i_konwertuj("2 cats"))
-        historyjka = generuj_historyjke("Napisz krótką, 3-zdaniową historyjkę po polsku tym że do kota przyszedł znajomy kot sąsiada. Zacznij od słowa kot. Nie używaj imion i nie wskazuj na płeć. Niech historyjka nie będzie zbyt słodka i niech nie brzmi jak tekst z reklamy, ale niech to będzie pozytywne. Nie używaj imion i nie wskazuj na płeć. Niech historyjka nie będzie zbyt słodka i niech nie brzmi jak tekst z reklamy. Nie zwracaj się w tekście bezpośrednio do czytającego, nie przełamuj czwartej ściany.")
+        historyjka = generuj_historyjke("Napisz krótką, 2-zdaniową historyjkę po polsku tym że do kota przyszedł znajomy kot sąsiada. Zacznij od słowa kot. Nie używaj imion i nie wskazuj na płeć. Niech historyjka nie będzie zbyt słodka i niech nie brzmi jak tekst z reklamy, ale niech to będzie pozytywne. Nie używaj imion i nie wskazuj na płeć. Niech historyjka nie będzie zbyt słodka i niech nie brzmi jak tekst z reklamy. Nie zwracaj się w tekście bezpośrednio do czytającego, nie przełamuj czwartej ściany.")
         print(f"↑ Drobne wydarzenie: {historyjka}")
         self.dostatekuwagi = min(10, self.dostatekuwagi + 0.25)  
 
     def utkniecie_pod_zlewem(self):
         print()
         print(wyszukaj_i_konwertuj("sink"))
-        historyjka = generuj_historyjke("Napisz krótką, 3-zdaniową historyjkę po polsku tym że kot utknął pod zlewem gdzie go nikt nie widział i poczuł się tam trochę samotny. Nie używaj imion i nie wskazuj na płeć. Niech historyjka nie będzie zbyt słodka i niech nie brzmi jak tekst z reklamy. Nie używaj imion i nie wskazuj na płeć. Niech historyjka nie będzie zbyt słodka i niech nie brzmi jak tekst z reklamy. Nie zwracaj się w tekście bezpośrednio do czytającego, nie przełamuj czwartej ściany.")
+        historyjka = generuj_historyjke("Napisz krótką, 2-zdaniową historyjkę po polsku tym że kot utknął pod zlewem gdzie go nikt nie widział i poczuł się tam trochę samotny. Nie używaj imion i nie wskazuj na płeć. Niech historyjka nie będzie zbyt słodka i niech nie brzmi jak tekst z reklamy. Nie używaj imion i nie wskazuj na płeć. Niech historyjka nie będzie zbyt słodka i niech nie brzmi jak tekst z reklamy. Nie zwracaj się w tekście bezpośrednio do czytającego, nie przełamuj czwartej ściany.")
         print(f"↑ Drobne wydarzenie: {historyjka}")
         self.dostatekuwagi = max(0, self.dostatekuwagi - 0.25) 
 
