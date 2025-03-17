@@ -190,10 +190,23 @@ def drobne_wydarzenia(kot): # definicja funkcji
 #ponizej funkcja do generowania historyjki
 def generuj_historyjke(prompt):
     try:
+
+        # Wczytaj klucz API z pliku konfiguracyjnego
+        try:
+            with open('links/config.json', 'r', encoding='utf-8') as config_file:
+                config = json.load(config_file)
+                api_key = config.get('api_key')
+        except FileNotFoundError:
+            return "Błąd: Brak pliku konfiguracyjnego links/config.json"
+        except json.JSONDecodeError:
+            return "Błąd: Nieprawidłowy format pliku config.json"
+
+            
+                    
         response = requests.post(
             "https://openrouter.ai/api/v1/chat/completions",
             headers={
-                "Authorization": "Bearer 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",
+                "Authorization": f"Bearer {api_key}", #pobieramy api key do llm z pliku config.json
                 "HTTP-Referer": "https://localhost:5000",
                 "X-Title": "Local Test"
             },
@@ -271,7 +284,7 @@ class Cat:
             # Po wczytaniu sejwu, aktualizuj_statystyki() samo obliczy upływ czasu
             # i odpowiednio zaktualizuje statystyki kota
             self.aktualizuj_statystyki()
-            print("Wczytano stan kota:")
+            print("\nWczytano stan kota:")
             self.zapisz_log("Wczytano sejw")
         
         except Exception as e:
@@ -587,18 +600,18 @@ def main():
             kot.zapisz_log("Akcja: Karmienie kota") #zapis logu
             print(wyszukaj_i_konwertuj("cat eat"))
             historyjka = generuj_historyjke("Napisz krótką, 3-zdaniową historyjkę po polsku, w drugiej osobie liczby pojedynczej, o tym jak właśnie nakarmiono kota. Nie używaj imion i ni wskazuj na płcie. Niech historyjka nie będzie zbyt słodka i niech nie brzmi jak tekst z reklamy.")
-            print(f"↑ {historyjka}")
+            print(f"\n↑ {historyjka}")
 
         elif wybor == "2":
             kot.glaskanie()
             kot.zapisz_log("Akcja: Głaskanie kota") #zapis logu
             print(wyszukaj_i_konwertuj("petting cat"))
             historyjka = generuj_historyjke("Napisz krótką, 3-zdaniową historyjkę po polsku, w drugiej osobie liczby pojedynczej, o tym jak właśnie pogłaskano kota. Nie używaj imion i ni wskazuj na płcie. Niech historyjka nie będzie zbyt słodka i niech nie brzmi jak tekst z reklamy ale niech to będzie pozytywne.")
-            print(f"↑ {historyjka}")
+            print(f"\n↑ {historyjka}")
 
 
         elif wybor == "0":
-            print("Koniec gry")
+            print("\nKoniec gry")
             break
 
         elif wybor == "3":
@@ -606,7 +619,7 @@ def main():
             kot.zapisz_log("Akcja: Patrzenie na kota") #zapis logu
             print(wyszukaj_i_konwertuj("cat portrait"))
             historyjka = generuj_historyjke("Napisz krótką, 3-zdaniową historyjkę po polsku, w drugiej osobie liczby pojedynczej, o tym jak właśnie patrzono na swojego kota i kot odwzajemniał lub odwzajemnił spojrzenie. Nie używaj imion i ni wskazuj na płcie. Niech historyjka nie będzie zbyt słodka i niech nie brzmi jak tekst z reklamy ale niech to będzie pozytywne.")
-            print(f"↑ {historyjka}")
+            print(f"\n↑ {historyjka}")
 
         elif wybor == "4":            
             przelacznik1 = not przelacznik1  # zmienia wartość na przeciwną
