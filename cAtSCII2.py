@@ -452,7 +452,7 @@ class Cat:
     def upolowanie_pajaka(self):
         print()
         print(wyszukaj_i_konwertuj("spider"))
-        historyjka = generuj_historyjke("Napisz krótką, 2-zdaniową historyjkę po polsku tym że kot urządził polowanie na pająka i go upolował i zjadł. Nie używaj imion i nie wskazuj na płeć. Niech historyjka nie będzie zbyt słodka i niech nie brzmi jak tekst z reklamy. Nie używaj imion i nie wskazuj na płeć. Niech historyjka nie będzie zbyt słodka i niech nie brzmi jak tekst z reklamy. Nie zwracaj się w tekście bezpośrednio do czytającego, nie przełamuj czwartej ściany.")
+        historyjka = generuj_historyjke("Napisz krótką, 1-zdaniową historyjkę po polsku tym że kot urządził polowanie na pająka i go upolował i zjadł. Nie używaj imion i nie wskazuj na płeć. Niech historyjka nie będzie zbyt słodka i niech nie brzmi jak tekst z reklamy. Nie używaj imion i nie wskazuj na płeć. Niech historyjka nie będzie zbyt słodka i niech nie brzmi jak tekst z reklamy. Nie zwracaj się w tekście bezpośrednio do czytającego, nie przełamuj czwartej ściany.")
         print(f"↑ Drobne wydarzenie: {historyjka}")
         self.najedzenie = min(10, self.najedzenie + 0.25)  
 
