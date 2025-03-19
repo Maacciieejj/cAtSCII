@@ -8,7 +8,7 @@ import random #import mehanizmu losowego
 
 # Funkcje do konwersji obrazów na ASCII art i wyszukiwania obrazów
 
-def obraz_na_ascii(sciezka_lub_url, szerokosc_wyjscia=100):
+def obraz_na_ascii(sciezka_lub_url, szerokosc_wyjscia=70):
     """Konwertuje obraz na ASCII art. Obsługuje zarówno lokalne pliki jak i URL-e."""
 
     try:

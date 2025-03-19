@@ -1,17 +1,15 @@
 import time #import mehanizmu czasu
 import random
 from links.nagrobek import nagrobek #import asci artow
-
+from src.shared.switches import get_switch_state # to jest zmienna przełącznika, która będzie sprawdzana w każdym momencie
 
 
 
 # ponizej definicja funkcji wazne wydarzenia uruchamianej w wątku dodatkowym
 
 def wazne_wydarzenia(kot): # definicja funkcji 
-    global przelacznik1  # deklarujemy użycie zmiennej globalnej
-    
     while True:
-        if przelacznik1: # jeśli przełącznik włączony, czekamy w pierwszej pętli (sen)
+        if get_switch_state():  # sprawdzamy aktualny stan z pliku
             time.sleep(2)
             continue
 
@@ -19,10 +17,10 @@ def wazne_wydarzenia(kot): # definicja funkcji
 
         # zamiast jednego długiego czekania, dzielimy je na sekundowe interwały i co sekunde sprawdzamy czy nie włączylismy kociego spanka
         for _ in range(czas_oczekiwania): #tworzy pętlę, która będzie wykonywać się tyle razy, ile wynosi wartość czas_oczekiwania
-            if przelacznik1:  # sprawdzamy przełącznik co 1 sekunde
+            if get_switch_state():  # sprawdzamy  co 1 sekunde
                 break  # jeśli włączony, przerywamy czekanie
             time.sleep(1)           
-        if przelacznik1:  # jeśli przełącznik został włączony, wracamy na początek głównej pętli
+        if get_switch_state():  # jeśli przełącznik został włączony, wracamy na początek głównej pętli
             continue
         
 

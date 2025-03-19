@@ -28,7 +28,7 @@ def generuj_historyjke(prompt):
        # Dostosowanie do formatu odpowiedzi z Google AI
         if 'candidates' in data and len(data['candidates']) > 0:
             text = data['candidates'][0]['content']['parts'][0]['text']
-            return textwrap.fill(text, width=80)
+            return textwrap.fill(text, width=70)
         else:
             return "Nie udało się wygenerować historyjki: Nieprawidłowa odpowiedź"
             

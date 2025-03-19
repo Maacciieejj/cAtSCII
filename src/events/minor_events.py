@@ -1,29 +1,26 @@
 import time #import mehanizmu czasu
 import random
 from links.nagrobek import nagrobek #import asci artow
-
+from src.shared.switches import get_switch_state # importujemy stan przełącznika chyba
 
 
 
 # ponizej definicja funkcji drobnych wydarzeń uruchamianej w wątku dodatkowym
 
 def drobne_wydarzenia(kot): # definicja funkcji 
-    global przelacznik1  # deklarujemy użycie zmiennej globalnej
-    
-    
     while True:
-        if przelacznik1: # jeśli przełącznik włączony, czekamy w pierwszej pętli (sen)
+        if get_switch_state():  # sprawdzamy aktualny stan z pliku
             time.sleep(2)
             continue
-
+    
         czas_oczekiwania = random.choice([120, 120, 120, 120, 120, 120, 60, 60, 60, 60, 180, 180, 300, 300])  # losuje czas oczekiwania w sekundach
         
-        # zamiast jednego długiego czekania, dzielimy je na sekundowe interwały i co sekunde sprawdzamy czy nie włączylismy kociego spanka
-        for _ in range(czas_oczekiwania): #tworzy pętlę, która będzie wykonywać się tyle razy, ile wynosi wartość czas_oczekiwania
-            if przelacznik1:  # sprawdzamy przełącznik co 1 sekunde
-                break  # jeśli włączony, przerywamy czekanie
+        
+        for _ in range(czas_oczekiwania):
+            if get_switch_state():  #
+                break
             time.sleep(1)           
-        if przelacznik1:  # jeśli przełącznik został włączony, wracamy na początek głównej pętli
+        if get_switch_state():  
             continue
 
 
