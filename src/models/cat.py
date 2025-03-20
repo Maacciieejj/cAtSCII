@@ -136,6 +136,16 @@ class Cat:
 
 
 
+    # ponizej metoda zpisu historyjki do spis_wydarzen.txt
+    def zapisz_historyjke(self, historyjka):
+        # Wyciągamy samą treść historyjki (bez tytułu)
+        tresc = historyjka[historyjka.find('**', historyjka.find('**')+2)+2:].strip()
+        with open('links/spis_wydarzen.txt', 'a', encoding='utf-8') as file:
+            file.write(f"\n{tresc}")
+
+
+
+
     # ponizej metody - WAZNE WYDARZENIA****************************** 
 
     # najedzenie
@@ -145,6 +155,7 @@ class Cat:
         print(wyszukaj_i_konwertuj("cat shits"))
         historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen+ " Do tej pory to tyle. Najedzenie (sytość) " + prompt2 + " utracił aż 2 " + prompt3)
         print(f"↑ WAŻNE WYDARZENIE: \n{historyjka}")
+        self.zapisz_historyjke(historyjka)  # Zapisujemy historyjkę do pliku
         self.najedzenie = max(0, self.najedzenie - 2) 
  
     def najedz_up2(self): #Wazne
@@ -152,6 +163,7 @@ class Cat:
         print(wyszukaj_i_konwertuj("cat hunting mouse"))
         historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen+ " Do tej pory to tyle. Najedzenie (sytość) " + prompt2 + " zyskał aż 2 " + prompt3)
         print(f"↑ WAŻNE WYDARZENIE: \n{historyjka}")
+        self.zapisz_historyjke(historyjka)  # Zapisujemy historyjkę do pliku
         self.najedzenie = min(10, self.najedzenie + 2)
  
     # zadbanie
@@ -161,6 +173,7 @@ class Cat:
         print(wyszukaj_i_konwertuj("aggressive dog"))
         historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen+ " Do tej pory to tyle. Dobrostan psychiczny " + prompt2 + " utracił aż 2 " + prompt3)
         print(f"↑ WAŻNE WYDARZENIE: \n{historyjka}")
+        self.zapisz_historyjke(historyjka)  # Zapisujemy historyjkę do pliku
         self.zadbanie = max(0, self.zadbanie - 2) 
 
     def zadb_up2(self): #Wazne
@@ -168,6 +181,7 @@ class Cat:
         print(wyszukaj_i_konwertuj("children cat"))
         historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen+ " Do tej pory to tyle. Dobrostan psychiczny " + prompt2 + " zyskał aż 2 " + prompt3)
         print(f"↑ WAŻNE WYDARZENIE: \n{historyjka}")
+        self.zapisz_historyjke(historyjka)  # Zapisujemy historyjkę do pliku
         self.zadbanie = min(10, self.zadbanie + 2)
 
 
@@ -179,6 +193,7 @@ class Cat:
         print(wyszukaj_i_konwertuj("sad cat"))
         historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen+ " Do tej pory to tyle. Przynależność społeczna (im jest niższa ta statystyka tym bardziej kot czuje sie samotny) " + prompt2 + " utracił aż 2 " + prompt3)
         print(f"↑ WAŻNE WYDARZENIE: \n{historyjka}")
+        self.zapisz_historyjke(historyjka)  # Zapisujemy historyjkę do pliku
         self.dostatekuwagi = max(0, self.dostatekuwagi - 2)
 
 
@@ -187,6 +202,7 @@ class Cat:
         print(wyszukaj_i_konwertuj("cats meeting"))
         historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen+ " Do tej pory to tyle. Przynależność społeczna (im jest niższa ta statystyka tym bardziej kot czuje sie samotny) " + prompt2 + " zyskał aż 2 " + prompt3)
         print(f"↑ WAŻNE WYDARZENIE: \n{historyjka}")
+        self.zapisz_historyjke(historyjka)  # Zapisujemy historyjkę do pliku
         self.dostatekuwagi = min(10, self.dostatekuwagi + 2)
 
 
@@ -217,6 +233,7 @@ class Cat:
         # Teraz wyświetlamy w odpowiedniej kolejności
         print(ascii_art)
         print(f"↑ Drobne wydarzenie: \n{historyjka[historyjka.find('**', historyjka.find('**')+2)+2:]}") # Wyświetla tekst po drugim **
+        self.zapisz_historyjke(historyjka)  # Zapisujemy historyjkę do pliku
         self.zadbanie = min(10, self.zadbanie + 0.25)  
 
                 
@@ -228,6 +245,7 @@ class Cat:
         ascii_art = wyszukaj_i_konwertuj(f"cat and {tytul}")
         print(ascii_art)
         print(f"↑ Drobne wydarzenie: \n{historyjka[historyjka.find('**', historyjka.find('**')+2)+2:]}") # Wyświetla tekst po drugim **
+        self.zapisz_historyjke(historyjka)  # Zapisujemy historyjkę do pliku
         self.zadbanie = max(0, self.zadbanie - 0.25)  
   
 
@@ -242,6 +260,7 @@ class Cat:
         ascii_art = wyszukaj_i_konwertuj(f"cat and {tytul}")
         print(ascii_art)
         print(f"↑ Drobne wydarzenie: \n{historyjka[historyjka.find('**', historyjka.find('**')+2)+2:]}") # Wyświetla tekst po drugim **
+        self.zapisz_historyjke(historyjka)  # Zapisujemy historyjkę do pliku
         self.najedzenie = min(10, self.najedzenie + 0.25)  
 
     def najedz_down(self):#drobne
@@ -252,6 +271,7 @@ class Cat:
         ascii_art = wyszukaj_i_konwertuj(f"cat and {tytul}")
         print(ascii_art)
         print(f"↑ Drobne wydarzenie: \n{historyjka[historyjka.find('**', historyjka.find('**')+2)+2:]}") # Wyświetla tekst po drugim **
+        self.zapisz_historyjke(historyjka)  # Zapisujemy historyjkę do pliku
         self.najedzenie = max(0, self.najedzenie - 0.25) 
 
   
@@ -266,6 +286,7 @@ class Cat:
         ascii_art = wyszukaj_i_konwertuj(f"cat and {tytul}")
         print(ascii_art)
         print(f"↑ Drobne wydarzenie: \n{historyjka[historyjka.find('**', historyjka.find('**')+2)+2:]}") # Wyświetla tekst po drugim **
+        self.zapisz_historyjke(historyjka)  # Zapisujemy historyjkę do pliku
         self.dostatekuwagi = min(10, self.dostatekuwagi + 0.25)  
 
     def dostatekuw_down(self): #drobne
@@ -276,6 +297,7 @@ class Cat:
         ascii_art = wyszukaj_i_konwertuj(f"cat and {tytul}")
         print(ascii_art)
         print(f"↑ Drobne wydarzenie: \n{historyjka[historyjka.find('**', historyjka.find('**')+2)+2:]}") # Wyświetla tekst po drugim **
+        self.zapisz_historyjke(historyjka)  # Zapisujemy historyjkę do pliku
         self.dostatekuwagi = max(0, self.dostatekuwagi - 0.25) 
 
 
