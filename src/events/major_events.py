@@ -33,7 +33,7 @@ def wazne_wydarzenia(kot): # definicja funkcji
             kot.zapisz_log("R. I. P.") #zapis logu
             break
 
-        wydarzenie = random.choice(["najedz_down2", "dostatekuw_down2", "najedz_up2", "dostatekuw_up2", "zadb_down2", "zadb_up2", "szwedanie"]) # losowanie wydarzenia
+        wydarzenie = random.choice(["najedz_down2", "dostatekuw_down2", "najedz_up2", "dostatekuw_up2", "zadb_down2", "zadb_up2"]) # losowanie wydarzenia
         getattr(kot, wydarzenie)()  # Wywołuje metodę o nazwie wylosowanego wydarzenia na obiekcie kot . Na przykład, jeśli wylosowano "biegunka", to wykona się kot.biegunka()
         kot.zapisz_log(f"WAŻNE WYDARZENIE: {wydarzenie}") # zapisuje log
         kot.pokaz_stan()

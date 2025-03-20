@@ -207,17 +207,6 @@ class Cat:
 
 
 
-        # szwedanie  ----------------------------
-
-    def szwedanie(self):
-        print()
-        print(wyszukaj_i_konwertuj("cat wandering"))
-        historyjka = generuj_historyjke("Napisz krótką, 1-zdaniową historyjkę o tym że kot się szwęda i nic szczególnego się nie dzieje. Nie używaj imion i nie wskazuj na płeć. Niech historyjka nie będzie zbyt słodka i niech nie brzmi jak tekst z reklamy. Nie używaj imion i nie wskazuj na płeć. Niech historyjka nie będzie zbyt słodka i niech nie brzmi jak tekst z reklamy. Nie zwracaj się w tekście bezpośrednio do czytającego, nie przełamuj czwartej ściany.")
-        print(f"↑ {historyjka}")
-        pass  # ta metoda celowo nic nie robi
-
-
-
     # ponizej metody - DROBNE WYDARZEIA***************************************************
 
     # zadbanie
