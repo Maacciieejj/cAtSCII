@@ -13,8 +13,8 @@ def drobne_wydarzenia(kot): # definicja funkcji
             time.sleep(2)
             continue
     
-        czas_oczekiwania = random.choice([120, 120, 120, 120, 120, 120, 60, 60, 60, 60, 180, 180, 300, 300])  # losuje czas oczekiwania w sekundach
-        
+        czas_oczekiwania = random.choice([10,10,10])  # losuje czas oczekiwania w sekundach
+        #120, 120, 120, 120, 120, 120, 60, 60, 60, 60, 180, 180, 300, 300
         
         for _ in range(czas_oczekiwania):
             if get_switch_state():  #
@@ -28,12 +28,12 @@ def drobne_wydarzenia(kot): # definicja funkcji
 
 
         if not kot.zyje():  # sprawdź czy kot żyje przed wydarzeniem
-            print("\nTwój kot zmarł!") 
+            print("\nTwój kot zmarł") 
             print(nagrobek)
             kot.zapisz_log("R. I. P.") #zapis logu
             break
 
-        wydarzenie = random.choice(["szwedanie","przeciaganie", "upadek_z_krzesla", "mruczenie", "kaslanie", "upolowanie_muchy", "gonitwa_po_meblach", "upolowanie_pajaka", "wycieczka_na_dach", "wizyta_kota_sasiada", "utkniecie_pod_zlewem", "spotkanie_z_jezem", "koci_marazm"]) # losowanie wydarzenia
+        wydarzenie = random.choice(["szwedanie","zadb_up", "zadb_down", "zadb_up", "zadb_down", "najedz_up", "najedz_down", "najedz_up", "najedz_down", "dostatekuw_up", "dostatekuw_down", "dostatekuw_up", "dostatekuw_down"]) # losowanie wydarzenia
         getattr(kot, wydarzenie)()  # Wywołuje metodę o nazwie wylosowanego wydarzenia na obiekcie kot . Na przykład, jeśli wylosowano "biegunka", to wykona się kot.biegunka()
         kot.zapisz_log(f"Drobne wydarzenie:{ wydarzenie}") # zapisuje log
         kot.pokaz_stan()
