@@ -5,6 +5,11 @@ from src.utils.story_generator import generuj_historyjke  # import funkcji gener
 from src.utils.ascii_converter import wyszukaj_i_konwertuj  # import funkcji konwertującej obrazy na ASCII
 from links.prompty import *
 
+with open('links/spis_wydarzen.txt', 'r', encoding='utf-8') as file:
+    ze_spisu_wydarzen = file.read()
+
+#print(spis_wydarzen) # Wyświetlamy cały tekst
+
 #   |\---/|
 #   | o_o |
 #    \_^_/
@@ -131,37 +136,37 @@ class Cat:
 
 
 
-    # ponizej metody - wazne wydarzenia 
+    # ponizej metody - WAZNE WYDARZENIA****************************** 
 
     # najedzenie
 
-    def najedz_down2(self):
+    def najedz_down2(self): #Wazne
         print()
         print(wyszukaj_i_konwertuj("cat shits"))
-        historyjka = generuj_historyjke(prompt1 + " najedzenie (sytość) " + prompt2 + " utracił aż 2 " + prompt3)
+        historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen+ " Do tej pory to tyle. Najedzenie (sytość) " + prompt2 + " utracił aż 2 " + prompt3)
         print(f"↑ WAŻNE WYDARZENIE: \n{historyjka}")
         self.najedzenie = max(0, self.najedzenie - 2) 
  
-    def najedz_up2(self):
+    def najedz_up2(self): #Wazne
         print()
         print(wyszukaj_i_konwertuj("cat hunting mouse"))
-        historyjka = generuj_historyjke(prompt1 + " najedzenie (sytość) " + prompt2 + " zyskał aż 2 " + prompt3)
+        historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen+ " Do tej pory to tyle. Najedzenie (sytość) " + prompt2 + " zyskał aż 2 " + prompt3)
         print(f"↑ WAŻNE WYDARZENIE: \n{historyjka}")
         self.najedzenie = min(10, self.najedzenie + 2)
  
     # zadbanie
 
-    def zadb_down2(self):
+    def zadb_down2(self): #Wazne
         print()
         print(wyszukaj_i_konwertuj("aggressive dog"))
-        historyjka = generuj_historyjke(prompt1 + " dobrostan psychiczny " + prompt2 + " utracił aż 2 " + prompt3)
+        historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen+ " Do tej pory to tyle. Dobrostan psychiczny " + prompt2 + " utracił aż 2 " + prompt3)
         print(f"↑ WAŻNE WYDARZENIE: \n{historyjka}")
         self.zadbanie = max(0, self.zadbanie - 2) 
 
-    def zadb_up2(self):
+    def zadb_up2(self): #Wazne
         print()
         print(wyszukaj_i_konwertuj("children cat"))
-        historyjka = generuj_historyjke(prompt1 + " dobrostan psychiczny " + prompt2 + " zyskał aż 2 " + prompt3)
+        historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen+ " Do tej pory to tyle. Dobrostan psychiczny " + prompt2 + " zyskał aż 2 " + prompt3)
         print(f"↑ WAŻNE WYDARZENIE: \n{historyjka}")
         self.zadbanie = min(10, self.zadbanie + 2)
 
@@ -169,21 +174,24 @@ class Cat:
     # dostatek uwagi
 
 
-    def dostatekuw_down2(self):
+    def dostatekuw_down2(self): #Wazne
         print()
         print(wyszukaj_i_konwertuj("sad cat"))
-        historyjka = generuj_historyjke(prompt1 + " przynależność społeczna (im jest niższa ta statystyka tym bardziej kot czuje sie samotny) " + prompt2 + " utracił aż 2 " + prompt3)
+        historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen+ " Do tej pory to tyle. Przynależność społeczna (im jest niższa ta statystyka tym bardziej kot czuje sie samotny) " + prompt2 + " utracił aż 2 " + prompt3)
         print(f"↑ WAŻNE WYDARZENIE: \n{historyjka}")
         self.dostatekuwagi = max(0, self.dostatekuwagi - 2)
 
 
-    def dostatekuw_up2(self):
+    def dostatekuw_up2(self):#Wazne
         print()
         print(wyszukaj_i_konwertuj("cats meeting"))
-        historyjka = generuj_historyjke(prompt1 + " przynależność społeczna (im jest niższa ta statystyka tym bardziej kot czuje sie samotny) " + prompt2 + " zyskał aż 2 " + prompt3)
+        historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen+ " Do tej pory to tyle. Przynależność społeczna (im jest niższa ta statystyka tym bardziej kot czuje sie samotny) " + prompt2 + " zyskał aż 2 " + prompt3)
         print(f"↑ WAŻNE WYDARZENIE: \n{historyjka}")
         self.dostatekuwagi = min(10, self.dostatekuwagi + 2)
 
+
+
+        # szwedanie  ----------------------------
 
     def szwedanie(self):
         print()
@@ -194,28 +202,30 @@ class Cat:
 
 
 
-    # ponizej metody - drobne wydarzenia***************************************************
+    # ponizej metody - DROBNE WYDARZEIA***************************************************
 
     # zadbanie
 
-    def zadb_up(self):
+    def zadb_up(self):#drobne
         print()
         # Najpierw generujemy historyjkę, ale jej nie wyświetlamy
-        historyjka = generuj_historyjke(prompt1 + " dobrostan psychiczny " + prompt2 + " zyskał 0,25 " + prompt3)
+        historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen+ " Do tej pory to tyle. Dobrostan psychiczny " + prompt2 + " zyskał 0,25 " + prompt3)
         # Wyciągamy tytuł i generujemy ASCII art
         tytul = self.wyciagnij_tytul(historyjka)
-        ascii_art = wyszukaj_i_konwertuj(f"kot i {tytul}")
+        print("Debug "), print(f"cat and {tytul}")
+        ascii_art = wyszukaj_i_konwertuj(f"cat and {tytul}")
         # Teraz wyświetlamy w odpowiedniej kolejności
         print(ascii_art)
         print(f"↑ Drobne wydarzenie: \n{historyjka[historyjka.find('**', historyjka.find('**')+2)+2:]}") # Wyświetla tekst po drugim **
         self.zadbanie = min(10, self.zadbanie + 0.25)  
 
                 
-    def zadb_down(self):
+    def zadb_down(self):#drobne
         print()
-        historyjka = generuj_historyjke(prompt1 + " dobrostan psychiczny " + prompt2 + " utracił 0,25 " + prompt3)
+        historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen+ " Do tej pory to tyle. Dobrostan psychiczny " + prompt2 + " utracił 0,25 " + prompt3)
         tytul = self.wyciagnij_tytul(historyjka)
-        ascii_art = wyszukaj_i_konwertuj(f"kot i {tytul}")
+        print("Debug "), print(f"cat and {tytul}")
+        ascii_art = wyszukaj_i_konwertuj(f"cat and {tytul}")
         print(ascii_art)
         print(f"↑ Drobne wydarzenie: \n{historyjka[historyjka.find('**', historyjka.find('**')+2)+2:]}") # Wyświetla tekst po drugim **
         self.zadbanie = max(0, self.zadbanie - 0.25)  
@@ -224,20 +234,22 @@ class Cat:
 
     # najedzenie
 
-    def najedz_up(self):
+    def najedz_up(self):#drobne
         print()
-        historyjka = generuj_historyjke(prompt1 + " najedzenie (sytość) " + prompt2 + " zyskał 0,25 " + prompt3)
+        historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen+ " Do tej pory to tyle. Najedzenie (sytość) " + prompt2 + " zyskał 0,25 " + prompt3)
         tytul = self.wyciagnij_tytul(historyjka)
-        ascii_art = wyszukaj_i_konwertuj(f"kot i {tytul}")
+        print("Debug "), print(f"cat and {tytul}")
+        ascii_art = wyszukaj_i_konwertuj(f"cat and {tytul}")
         print(ascii_art)
         print(f"↑ Drobne wydarzenie: \n{historyjka[historyjka.find('**', historyjka.find('**')+2)+2:]}") # Wyświetla tekst po drugim **
         self.najedzenie = min(10, self.najedzenie + 0.25)  
 
-    def najedz_down(self):
+    def najedz_down(self):#drobne
         print()
-        historyjka = generuj_historyjke(prompt1 + " najedzenie (sytość) " + prompt2 + " utracił 0,25 " + prompt3)
+        historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen+ " Do tej pory to tyle. Najedzenie (sytość) " + prompt2 + " utracił 0,25 " + prompt3)
         tytul = self.wyciagnij_tytul(historyjka)
-        ascii_art = wyszukaj_i_konwertuj(f"kot i {tytul}")
+        print("Debug "), print(f"cat and {tytul}")
+        ascii_art = wyszukaj_i_konwertuj(f"cat and {tytul}")
         print(ascii_art)
         print(f"↑ Drobne wydarzenie: \n{historyjka[historyjka.find('**', historyjka.find('**')+2)+2:]}") # Wyświetla tekst po drugim **
         self.najedzenie = max(0, self.najedzenie - 0.25) 
@@ -246,20 +258,22 @@ class Cat:
 
     # dostatekuwagi
 
-    def dostatekuw_up(self):
+    def dostatekuw_up(self): #drobne
         print()
-        historyjka = generuj_historyjke(prompt1 + " przynależność społeczna (im jest niższa ta statystyka tym bardziej kot czuje sie samotny) " + prompt2 + " zyskał 0,25 " + prompt3)
+        historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen+ " Do tej pory to tyle. Przynależność społeczna (im jest niższa ta statystyka tym bardziej kot czuje sie samotny) " + prompt2 + " zyskał 0,25 " + prompt3)
         tytul = self.wyciagnij_tytul(historyjka)
-        ascii_art = wyszukaj_i_konwertuj(f"kot i {tytul}")
+        print("Debug "), print(f"cat and {tytul}")
+        ascii_art = wyszukaj_i_konwertuj(f"cat and {tytul}")
         print(ascii_art)
         print(f"↑ Drobne wydarzenie: \n{historyjka[historyjka.find('**', historyjka.find('**')+2)+2:]}") # Wyświetla tekst po drugim **
         self.dostatekuwagi = min(10, self.dostatekuwagi + 0.25)  
 
-    def dostatekuw_down(self):
+    def dostatekuw_down(self): #drobne
         print()
-        historyjka = generuj_historyjke(prompt1 + " przynależność społeczna (im jest niższa ta statystyka tym bardziej kot czuje sie samotny) " + prompt2 + " utracił 0,25 " + prompt3)
+        historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen+ " Do tej pory to tyle. Przynależność społeczna (im jest niższa ta statystyka tym bardziej kot czuje sie samotny) " + prompt2 + " utracił 0,25 " + prompt3)
         tytul = self.wyciagnij_tytul(historyjka)
-        ascii_art = wyszukaj_i_konwertuj(f"kot i {tytul}")
+        print("Debug "), print(f"cat and {tytul}")
+        ascii_art = wyszukaj_i_konwertuj(f"cat and {tytul}")
         print(ascii_art)
         print(f"↑ Drobne wydarzenie: \n{historyjka[historyjka.find('**', historyjka.find('**')+2)+2:]}") # Wyświetla tekst po drugim **
         self.dostatekuwagi = max(0, self.dostatekuwagi - 0.25) 
