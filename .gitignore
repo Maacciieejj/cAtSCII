@@ -186,3 +186,4 @@ Start cAtSCII3.bat
 t.py
 /Stare wersje
 Make exe.bat
+START  t.bat

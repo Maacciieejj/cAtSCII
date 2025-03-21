@@ -26,6 +26,7 @@ class Cat:
 
     #poniżej konstruktor klasy Cat
     def __init__(self): # konstruktor klasy Cat
+        
                
         # Próbujemy wczytać sejw, jeśli istnieje
         if os.path.exists('sejw.json'):
@@ -144,6 +145,9 @@ class Cat:
             file.write(f"\n{tresc}")
 
 
+    def get_prompt_stats(self):   # to tworzy prompt z aktualnymi statystykami kota (do 2 miejsc po przecinku)
+        return f" W tym momencie kot ma 'najedzenie': {round(self.najedzenie, 2)}, 'dobrostan emocjonalny':{round(self.dobrostan_emocjonalny, 2)}, 'przynaleznosc': {round(self.przynaleznosc, 2)}. " 
+    
 
 
     # ponizej metody - WAZNE WYDARZENIA****************************** 
@@ -213,8 +217,12 @@ class Cat:
 
     def dobrostan_emo_up(self):#drobne
         print()
+        #### DEBUG PONIZEJ DO WYWALENIA ale narazie zostawiamy
+        print("DEBUG PROMPT:         ", prompt1 +" " +ze_spisu_wydarzen +" "+prompt2+  self.get_prompt_stats() + prompt3 + " zyskał 0,25 Dobrostanu emocjonalnego.  " + prompt4)
+        
         # Najpierw generujemy historyjkę, ale jej nie wyświetlamy
-        historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen+ " Do tej pory to tyle. Dobrostan emocjonalny " + prompt2 + " zyskał 0,25 " + prompt3)
+        historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen +" "+prompt2+  self.get_prompt_stats() + prompt3 + " zyskał 0,25 Dobrostanu emocjonalnego.  " + prompt4)
+        
         # Wyciągamy tytuł i generujemy ASCII art
         tytul = self.wyciagnij_tytul(historyjka)
         print("Debug "), print(f"cat and {tytul}")

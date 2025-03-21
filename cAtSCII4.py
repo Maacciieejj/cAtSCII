@@ -149,6 +149,9 @@ def main():  #
             print(HELP_TEXT)
             kot.zapisz_sejw()  # Save
 
+        elif wybor == "d": #####DEBUG DO WYWALENIA
+             kot.dobrostan_emo_up()  # Debug: test drobnego wydarzenia dobrostanu
+
 
 
 
