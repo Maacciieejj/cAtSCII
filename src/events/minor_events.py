@@ -13,8 +13,8 @@ def drobne_wydarzenia(kot): # definicja funkcji
             time.sleep(2)
             continue
     
-        czas_oczekiwania = random.choice([10,10,10])  # losuje czas oczekiwania w sekundach
-        #120, 120, 120, 120, 120, 120, 60, 60, 60, 60, 180, 180, 300, 300
+        czas_oczekiwania = random.choice([120, 120, 120, 120, 120, 120, 60, 60, 60, 60, 180, 180, 300, 300])  # losuje czas oczekiwania w sekundach
+
         
         for _ in range(czas_oczekiwania):
             if get_switch_state():  #

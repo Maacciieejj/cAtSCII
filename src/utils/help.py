@@ -1,5 +1,8 @@
 HELP_TEXT = """
-\n(nieaktualny) Obserwuj jak żyje twój kot. Dbaj o niego, karmiąc, 
+\n(nieaktualny do zmiany)
+(Capslock- debug prompta dla tworzenia asciartu.) 
+Obserwuj jak żyje twój kot. 
+Dbaj o niego, karmiąc, 
 głaszcząc i poświęcając mu uwagę. 
 tan kota (najedzenie, zadbanie, dostatek uwagi) 
 ciągle powoli spada. W międzyczasie pojawią się 

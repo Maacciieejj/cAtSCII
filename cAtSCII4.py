@@ -45,11 +45,19 @@ def main():  #
     if not os.path.exists('sejw.json'):  # Wyświetl portret tylko przy nowej grze
         print(portret)
         time.sleep(4)  # czeka x sekundy
+        print("""
+...i niby jest on normalnym kotkiem, ale w nocy wykrada
+się i prowadzi inne życie. Jest członkiem ruchu oporu przeciwko psim 
+imperialnym siłom. Zmutowane promieniowaniem psy chcą rzdzić podwórkami 
+postapokaliptycznego Radomia 2050.
 
+Gdy po zabraniu kota ze schroniska pierwszy raz wypuściłeś go na podwórko,
+napadł go Burek, miejscowy złoczyńca. Ale z pomocą kotu przyszedł Jeż.
+Odtąd Burek jest wrogiem kota a Jeż przyjacielem.\n""")
 
     def auto_sejw(kot):
         while True:
-            time.sleep(60)  # Czekamy minutę
+            time.sleep(20)  # co tyle sek jest zapis
             if kot.zyje():
                 kot.zapisz_sejw()
     
@@ -149,8 +157,8 @@ def main():  #
             print(HELP_TEXT)
             kot.zapisz_sejw()  # Save
 
-        elif wybor == "d": #####DEBUG DO WYWALENIA
-             kot.dobrostan_emo_up()  # Debug: test drobnego wydarzenia dobrostanu
+        #elif wybor == "d": #####DEBUG zakomanrtowany
+             #kot.dobrostan_emo_up()  # Debug: test drobnego wydarzenia dobrostanu z printem calego promptu
 
 
 

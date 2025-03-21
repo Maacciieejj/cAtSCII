@@ -1,6 +1,7 @@
 import time
 import os  # bibioteka os do czyszczenia ekranu
 import json  # Dodajemy import dla obsługi formatu JSON dla sejwowania
+import win32api #do wlaczania capslocka debugu prompta dla duckduckgo 
 from src.utils.ascii_converter import wyszukaj_i_konwertuj  # import funkcji konwertującej obrazy na ASCII
 from src.utils.story_generator import generuj_historyjke, formatuj_do_wyswietlenia  # import funkcji generującej historyjki i formatującej tekst
 from links.prompty import *
@@ -140,6 +141,7 @@ class Cat:
 # / __| __| '__/ _ \/ __|_  / __/ __|_  / _` |/ __|_  /
 # \__ \ |_| | |  __/\__ \/ / (_| (__ / / (_| | (__ / / 
 # |___/\__|_|  \___||___/___\___\___/___\__,_|\___/___|
+# To poniżej w epicki sposób zapisuje treść historyjek do pliku spis_wydarzen.txt i po osiągnięciu 80 linijek, piwrwsze 40 linijek zostaje wysłane dostereszczenia do ai, skasowane z pliku, potem streszczenie jest zapisywane na początku pliku a niestreszczeone na końcu pliku. Na końcu dopisana zostaje nowe ydażenie.
 
 
     # ponizej metoda zpisu historyjki do spis_wydarzen
@@ -152,21 +154,21 @@ class Cat:
             lines = file.readlines()
         
         # Jeśli mamy 80 lub więcej linii
-        if len(lines) >= 8:
+        if len(lines) >= 80:
             # Bierzemy pierwsze 40 linii do streszczenia
-            pierwsza_polowa = ''.join(lines[:4])
+            pierwsza_polowa = ''.join(lines[:40])
             # Bierzemy pozostałe linie
-            druga_polowa = lines[4:]
+            druga_polowa = lines[40:]
             
             # Generujemy streszczenie pierwszej połowy
-            prompt_streszczenia = f"Streść poniższe wydarzenia z życia kota w 3 zdaniach, zachowując najważniejsze momenty:\n{pierwsza_polowa}"
+            prompt_streszczenia = f"Streść poniższe wydarzenia z życia kota w 5 zdaniach, zachowując najważniejsze momenty i stan relacji:\n{pierwsza_polowa}"
             streszczenie = generuj_historyjke(prompt_streszczenia)
             # Wyciągamy samą treść streszczenia bez tytułu
-            streszczenie = streszczenie[streszczenie.find('**', streszczenie.find('**')+2)+2:].strip()
+            streszczenie = streszczenie.strip()
             
             # Zapisujemy: streszczenie + druga połowa + nowa historyjka
             with open('links/spis_wydarzen.txt', 'w', encoding='utf-8') as file:
-                file.write(f"STRESZCZENIE WCZEŚNIEJSZYCH WYDARZEŃ: {streszczenie}\n")
+                file.write(f"Streszczenie wcześniejszych wydarzeń: {streszczenie} Kolejne wydarzenia:\n")
                 file.writelines(druga_polowa)
                 file.write(f"\n{tresc}")
         else:
@@ -189,15 +191,16 @@ class Cat:
 
 
     #ponizej - kawalek kodu co sie powtarza się w każdej z metod poniżej wiec jest zapisany jako metoda. po rostu skompresowany kawalek kodu
-    def kawalek_kodu_wydarzenwydarzen(self, historyjka):
+    def kawalek_kodu_wydarzenwydarzen(self, historyjka, waga=""):
         # Wyciągamy tytuł i generujemy ASCII art
         tytul = self.wyciagnij_tytul(historyjka)
-        print("Debug "), print(f"cat and {tytul}")
+        if win32api.GetKeyState(0x14):  # Sprawdza czy Caps Lock jest włączony
+            print("Debug "), print(f"cat and {tytul}")
         ascii_art = wyszukaj_i_konwertuj(f"cat and {tytul}")
         # Teraz wyświetlamy w odpowiedniej kolejności
         print(ascii_art)
         tekst_do_wyswietlenia = historyjka[historyjka.find('**', historyjka.find('**')+2)+2:] #polamany text z  story_generator
-        print(f"↑ wydarzenie: \n{formatuj_do_wyswietlenia(tekst_do_wyswietlenia)}") # Wyświetla tekst po drugim **
+        print(f"↑ {waga} wydarzenie: \n{formatuj_do_wyswietlenia(tekst_do_wyswietlenia)}") # Wyświetla tekst po drugim **
         self.zapisz_historyjke(historyjka)  # Zapisujemy historyjkę do pliku
 
 
@@ -213,18 +216,18 @@ class Cat:
 
     def dobrostan_emo_up(self):#drobne DEBUGOWANE POD D <<<******
         print()
-        #### DEBUG PONIZEJ DO WYWALENIA ale narazie zostawiamy
-        print("DEBUG PROMPT:         ", prompt1 +" " +ze_spisu_wydarzen +" "+prompt2+  self.get_prompt_stats() + prompt3 + " zyskał 0,25 Dobrostanu emocjonalnego.  " + prompt4)
+        #### DEBUG PONIZEJ zakomentowany
+        #print("DEBUG PROMPT:         ", prompt1 +" " +ze_spisu_wydarzen +" "+prompt2+  self.get_prompt_stats() + prompt3 + " zyskał 0,25 Dobrostanu emocjonalnego.  " + prompt4)
         # Najpierw generujemy historyjkę, ale jej nie wyświetlamy
         historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen +" "+prompt2+  self.get_prompt_stats() + prompt3 + " zyskał 0,25 Dobrostanu emocjonalnego.  " + prompt4)     
-        self.kawalek_kodu_wydarzenwydarzen(historyjka) #skompresowany kawalek kodu co sie powtarza w wydarzeniach
+        self.kawalek_kodu_wydarzenwydarzen(historyjka, "Drobne") #skompresowany kawalek kodu co sie powtarza w wydarzeniach
         self.dobrostan_emocjonalny = min(10, self.dobrostan_emocjonalny + 0.25)  
 
                 
     def dobrostan_emo_down(self):#drobne
         print()
         historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen +" "+prompt2+  self.get_prompt_stats() + prompt3 + " utracił 0,25 Dobrostanu emocjonalnego.  " + prompt4)      
-        self.kawalek_kodu_wydarzenwydarzen(historyjka) #skompresowany kawalek kodu co sie powtarza w wydarzeniach
+        self.kawalek_kodu_wydarzenwydarzen(historyjka, "Drobne") #skompresowany kawalek kodu co sie powtarza w wydarzeniach
         self.dobrostan_emocjonalny = max(0, self.dobrostan_emocjonalny - 0.25)  
   
   
@@ -233,13 +236,13 @@ class Cat:
     def najedz_up(self):#drobne
         print()
         historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen +" "+prompt2+  self.get_prompt_stats() + prompt3 + " zyskał 0,25  Najedzenia.  " + prompt4)
-        self.kawalek_kodu_wydarzenwydarzen(historyjka) #skompresowany kawalek kodu co sie powtarza w wydarzeniach
+        self.kawalek_kodu_wydarzenwydarzen(historyjka, "Drobne") #skompresowany kawalek kodu co sie powtarza w wydarzeniach
         self.najedzenie = min(10, self.najedzenie + 0.25)  
 
     def najedz_down(self):#drobne
         print()
         historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen +" "+prompt2+  self.get_prompt_stats() + prompt3 + " utracił 0,25 Najedzenia.  " + prompt4)
-        self.kawalek_kodu_wydarzenwydarzen(historyjka) #skompresowany kawalek kodu co sie powtarza w wydarzeniach
+        self.kawalek_kodu_wydarzenwydarzen(historyjka, "Drobne") #skompresowany kawalek kodu co sie powtarza w wydarzeniach
         self.najedzenie = max(0, self.najedzenie - 0.25) 
 
   
@@ -249,13 +252,13 @@ class Cat:
     def przynalez_up(self): #drobne
         print()
         historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen +" "+prompt2+  self.get_prompt_stats() + prompt3 + " zyskał 0,25 Przynależności.  " + prompt4)
-        self.kawalek_kodu_wydarzenwydarzen(historyjka) #skompresowany kawalek kodu co sie powtarza w wydarzeniach
+        self.kawalek_kodu_wydarzenwydarzen(historyjka, "Drobne") #skompresowany kawalek kodu co sie powtarza w wydarzeniach
         self.przynaleznosc = min(10, self.przynaleznosc + 0.25)  
 
     def przynalez_down(self): #drobne
         print()
         historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen +" "+prompt2+  self.get_prompt_stats() + prompt3 + " utracił 0,25  Przynależności.  " + prompt4)     
-        self.kawalek_kodu_wydarzenwydarzen(historyjka) #skompresowany kawalek kodu co sie powtarza w wydarzeniach
+        self.kawalek_kodu_wydarzenwydarzen(historyjka, "Drobne") #skompresowany kawalek kodu co sie powtarza w wydarzeniach
         self.przynaleznosc = max(0, self.przynaleznosc - 0.25) 
 
 
@@ -271,13 +274,13 @@ class Cat:
     def najedz_down2(self): #Wazne
         print()
         historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen +" "+prompt2+  self.get_prompt_stats() + prompt3 + " utracił aż 2 pkt  Najedzenia.  " + prompt4)
-        self.kawalek_kodu_wydarzenwydarzen(historyjka) #skompresowany kawalek kodu co sie powtarza w wydarzeniach
+        self.kawalek_kodu_wydarzenwydarzen(historyjka, "Ważne") #skompresowany kawalek kodu co sie powtarza w wydarzeniach
         self.najedzenie = max(0, self.najedzenie - 2) 
  
     def najedz_up2(self): #Wazne
         print()
         historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen +" "+prompt2+  self.get_prompt_stats() + prompt3 + " zyskał aż 2 pkt  Najedzenia.  " + prompt4)
-        self.kawalek_kodu_wydarzenwydarzen(historyjka) #skompresowany kawalek kodu co sie powtarza w wydarzeniach
+        self.kawalek_kodu_wydarzenwydarzen(historyjka, "Ważne") #skompresowany kawalek kodu co sie powtarza w wydarzeniach
         self.najedzenie = min(10, self.najedzenie + 2)
  
     # dobrostan_emocjonalny
@@ -285,13 +288,13 @@ class Cat:
     def dobrostan_emo_down2(self): #Wazne
         print()
         historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen +" "+prompt2+  self.get_prompt_stats() + prompt3 + " utracił aż 2 pkt Dobrostanu emocjonalnego.  " + prompt4)
-        self.kawalek_kodu_wydarzenwydarzen(historyjka) #skompresowany kawalek kodu co sie powtarza w wydarzeniach
+        self.kawalek_kodu_wydarzenwydarzen(historyjka, "Ważne") #skompresowany kawalek kodu co sie powtarza w wydarzeniach
         self.dobrostan_emocjonalny = max(0, self.dobrostan_emocjonalny - 2) 
 
     def dobrostan_emo_up2(self): #Wazne
         print()
         historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen +" "+prompt2+  self.get_prompt_stats() + prompt3 + " zyskał aż 2 pkt Dobrostanu emocjonalnego.  " + prompt4)
-        self.kawalek_kodu_wydarzenwydarzen(historyjka) #skompresowany kawalek kodu co sie powtarza w wydarzeniach
+        self.kawalek_kodu_wydarzenwydarzen(historyjka, "Ważne") #skompresowany kawalek kodu co sie powtarza w wydarzeniach
         self.dobrostan_emocjonalny = min(10, self.dobrostan_emocjonalny + 2)
 
 
@@ -301,14 +304,14 @@ class Cat:
     def przynalez_down2(self): #Wazne
         print()
         historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen +" "+prompt2+  self.get_prompt_stats() + prompt3 + " stracił aż 2 pkt Przynależności.  " + prompt4)
-        self.kawalek_kodu_wydarzenwydarzen(historyjka) #skompresowany kawalek kodu co sie powtarza w wydarzeniach
+        self.kawalek_kodu_wydarzenwydarzen(historyjka, "Ważne") #skompresowany kawalek kodu co sie powtarza w wydarzeniach
         self.przynaleznosc = max(0, self.przynaleznosc - 2)
 
 
     def przynalez_up2(self):#Wazne
         print()
         historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen +" "+prompt2+  self.get_prompt_stats() + prompt3 + " zyskał aż 2 pkt Przynależności.  " + prompt4)
-        self.kawalek_kodu_wydarzenwydarzen(historyjka) #skompresowany kawalek kodu co sie powtarza w wydarzeniach
+        self.kawalek_kodu_wydarzenwydarzen(historyjka, "Ważne") #skompresowany kawalek kodu co sie powtarza w wydarzeniach
         self.przynaleznosc = min(10, self.przynaleznosc + 2)
 
 

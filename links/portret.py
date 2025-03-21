@@ -26,9 +26,4 @@ portret = r"""
 --==-==--==+=============+####%%@%%+.     by Panm
 ---==-=+====+*++===++====-=%%%%%%%#:.
 ------=+=+++++++=++==++=-==+%%@@%%+...
- 
-  ...i niby jest on normalnym kotkiem, ale w nocy wykrada
-się i prowadzi inne życie. Jest członkiem ruchu oporu przeciwko psim 
-imperialnym siłom. Zmutowane promieniowaniem psy chcą rzdzić podwórkami 
-postapokaliptycznej Warszawy 2050.\n
  """
