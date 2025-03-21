@@ -135,13 +135,52 @@ class Cat:
         return self.najedzenie > 0 and self.dobrostan_emocjonalny > 0 and self.przynaleznosc > 0
 
 
+#      _                                               
+#  ___| |_ _ __ ___  ___ _______ ___ ______ _  ___ ____
+# / __| __| '__/ _ \/ __|_  / __/ __|_  / _` |/ __|_  /
+# \__ \ |_| | |  __/\__ \/ / (_| (__ / / (_| | (__ / / 
+# |___/\__|_|  \___||___/___\___\___/___\__,_|\___/___|
+
 
     # ponizej metoda zpisu historyjki do spis_wydarzen
     def zapisz_historyjke(self, historyjka):
         # Wyciągamy samą treść historyjki (bez tytułu)
         tresc = historyjka[historyjka.find('**', historyjka.find('**')+2)+2:].strip()
-        with open('links/spis_wydarzen.txt', 'a', encoding='utf-8') as file:
-            file.write(f"\n{tresc}")
+
+        # Czytamy istniejące historyjki
+        with open('links/spis_wydarzen.txt', 'r', encoding='utf-8') as file:
+            lines = file.readlines()
+        
+        # Jeśli mamy 80 lub więcej linii
+        if len(lines) >= 8:
+            # Bierzemy pierwsze 40 linii do streszczenia
+            pierwsza_polowa = ''.join(lines[:4])
+            # Bierzemy pozostałe linie
+            druga_polowa = lines[4:]
+            
+            # Generujemy streszczenie pierwszej połowy
+            prompt_streszczenia = f"Streść poniższe wydarzenia z życia kota w 3 zdaniach, zachowując najważniejsze momenty:\n{pierwsza_polowa}"
+            streszczenie = generuj_historyjke(prompt_streszczenia)
+            # Wyciągamy samą treść streszczenia bez tytułu
+            streszczenie = streszczenie[streszczenie.find('**', streszczenie.find('**')+2)+2:].strip()
+            
+            # Zapisujemy: streszczenie + druga połowa + nowa historyjka
+            with open('links/spis_wydarzen.txt', 'w', encoding='utf-8') as file:
+                file.write(f"STRESZCZENIE WCZEŚNIEJSZYCH WYDARZEŃ: {streszczenie}\n")
+                file.writelines(druga_polowa)
+                file.write(f"\n{tresc}")
+        else:
+            # Jeśli mniej niż 80 linii, po prostu dopisujemy nową historyjkę
+            with open('links/spis_wydarzen.txt', 'a', encoding='utf-8') as file:
+                file.write(f"\n{tresc}")
+
+
+# __        ____        ____        ____        ____        __
+# \ \      / /\ \      / /\ \      / /\ \      / /\ \      / /
+#  \ \    / /  \ \    / /  \ \    / /  \ \    / /  \ \    / / 
+#   \ \  / /    \ \  / /    \ \  / /    \ \  / /    \ \  / /  
+#    \_\/_/      \_\/_/      \_\/_/      \_\/_/      \_\/_/   
+
 
 
     def get_prompt_stats(self):   # to tworzy prompt z aktualnymi statystykami kota (do 2 miejsc po przecinku)
