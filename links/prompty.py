@@ -4,7 +4,7 @@ prompt1 = ("Jesteś mistrzem gry fabularnej. Gracz, czyli odbiorca twojej wypowi
 
 #dobrostan psychiczny
 
-prompt2 = ("\nDo tej pory to wszystkie wydarzenia. Kot ma 3 statystyki, każda o wartości od 0 do 10: "
+prompt2 = ("\n\nDo tej pory to wszystkie wydarzenia. Kot ma 3 statystyki, każda o wartości od 0 do 10: "
 "Najedzenie - oznacza jak bardzo kot jest syty lub głodny; "
 " Dobrostan emocjonalny - oznacza dobre lub złe zamopoczucie emocjonalne kota;"
 " Przynależność - oznacza stopień zaspokojenia potrzebyb przynajeżności i bliskości, czy kot czuje sie samotny czy nie. Spadek którejkolwiek statystyki do 0 sprawi że kot umrze.")

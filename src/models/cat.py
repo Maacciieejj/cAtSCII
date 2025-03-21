@@ -1,8 +1,8 @@
 import time
 import os  # bibioteka os do czyszczenia ekranu
 import json  # Dodajemy import dla obsługi formatu JSON dla sejwowania
-from src.utils.story_generator import generuj_historyjke  # import funkcji generującej historyjki
 from src.utils.ascii_converter import wyszukaj_i_konwertuj  # import funkcji konwertującej obrazy na ASCII
+from src.utils.story_generator import generuj_historyjke, formatuj_do_wyswietlenia  # import funkcji generującej historyjki i formatującej tekst
 from links.prompty import *
 
 with open('links/spis_wydarzen.txt', 'r', encoding='utf-8') as file:
@@ -157,8 +157,10 @@ class Cat:
         ascii_art = wyszukaj_i_konwertuj(f"cat and {tytul}")
         # Teraz wyświetlamy w odpowiedniej kolejności
         print(ascii_art)
-        print(f"↑ Drobne wydarzenie: \n{historyjka[historyjka.find('**', historyjka.find('**')+2)+2:]}") # Wyświetla tekst po drugim **
+        tekst_do_wyswietlenia = historyjka[historyjka.find('**', historyjka.find('**')+2)+2:] #polamany text z  story_generator
+        print(f"↑ wydarzenie: \n{formatuj_do_wyswietlenia(tekst_do_wyswietlenia)}") # Wyświetla tekst po drugim **
         self.zapisz_historyjke(historyjka)  # Zapisujemy historyjkę do pliku
+
 
 #      _           _                                     _                          _       
 #   __| |_ __ ___ | |__  _ __   ___  __      ___   _  __| | __ _ _ __ _______ _ __ (_) __ _ 

@@ -25,13 +25,17 @@ def generuj_historyjke(prompt):
         if 'error' in data:
             return f"Error: {data['error']}"
 
-       # Dostosowanie do formatu odpowiedzi z Google AI
+        ## ponizej generujemy tekst na 2 wyjscia - niepolamany do spis_wydarzen i polamany do gry
         if 'candidates' in data and len(data['candidates']) > 0:
             text = data['candidates'][0]['content']['parts'][0]['text']
-            return textwrap.fill(text, width=70)
+            return text  # Zwracamy czysty tekst
         else:
             return "Nie udało się wygenerować historyjki: Nieprawidłowa odpowiedź"
             
     except Exception as e:
         return f"Nie udało się wygenerować historyjki: {str(e)}"
+
+# Nowa funkcja do formatowania tekstu do wyświetlenia
+def formatuj_do_wyswietlenia(text):   
+    return textwrap.fill(text, width=70)
 
