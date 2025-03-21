@@ -136,7 +136,6 @@ class Cat:
 
 
 
-
     # ponizej metoda zpisu historyjki do spis_wydarzen
     def zapisz_historyjke(self, historyjka):
         # Wyciągamy samą treść historyjki (bez tytułu)
@@ -150,79 +149,8 @@ class Cat:
     
 
 
-    # ponizej metody - WAZNE WYDARZENIA****************************** 
-
-    # najedzenie
-
-    def najedz_down2(self): #Wazne
-        print()
-        print(wyszukaj_i_konwertuj("cat shits"))
-        historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen+ " Do tej pory to tyle. Najedzenie (sytość) " + prompt2 + " utracił aż 2 " + prompt3)
-        print(f"↑ WAŻNE WYDARZENIE: \n{historyjka}")
-        self.zapisz_historyjke(historyjka)  # Zapisujemy historyjkę do pliku
-        self.najedzenie = max(0, self.najedzenie - 2) 
- 
-    def najedz_up2(self): #Wazne
-        print()
-        print(wyszukaj_i_konwertuj("cat hunting mouse"))
-        historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen+ " Do tej pory to tyle. Najedzenie (sytość) " + prompt2 + " zyskał aż 2 " + prompt3)
-        print(f"↑ WAŻNE WYDARZENIE: \n{historyjka}")
-        self.zapisz_historyjke(historyjka)  # Zapisujemy historyjkę do pliku
-        self.najedzenie = min(10, self.najedzenie + 2)
- 
-    # dobrostan_emocjonalny
-
-    def dobrostan_emo_down2(self): #Wazne
-        print()
-        print(wyszukaj_i_konwertuj("aggressive dog"))
-        historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen+ " Do tej pory to tyle. Dobrostan emocjonalny " + prompt2 + " utracił aż 2 " + prompt3)
-        print(f"↑ WAŻNE WYDARZENIE: \n{historyjka}")
-        self.zapisz_historyjke(historyjka)  # Zapisujemy historyjkę do pliku
-        self.dobrostan_emocjonalny = max(0, self.dobrostan_emocjonalny - 2) 
-
-    def dobrostan_emo_up2(self): #Wazne
-        print()
-        print(wyszukaj_i_konwertuj("children cat"))
-        historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen+ " Do tej pory to tyle. Dobrostan emocjonalny " + prompt2 + " zyskał aż 2 " + prompt3)
-        print(f"↑ WAŻNE WYDARZENIE: \n{historyjka}")
-        self.zapisz_historyjke(historyjka)  # Zapisujemy historyjkę do pliku
-        self.dobrostan_emocjonalny = min(10, self.dobrostan_emocjonalny + 2)
-
-
-    # przynaleznosc
-
-
-    def przynalez_down2(self): #Wazne
-        print()
-        print(wyszukaj_i_konwertuj("sad cat"))
-        historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen+ " Do tej pory to tyle. Przynależność społeczna (im jest niższa ta statystyka tym bardziej kot czuje sie samotny) " + prompt2 + " utracił aż 2 " + prompt3)
-        print(f"↑ WAŻNE WYDARZENIE: \n{historyjka}")
-        self.zapisz_historyjke(historyjka)  # Zapisujemy historyjkę do pliku
-        self.przynaleznosc = max(0, self.przynaleznosc - 2)
-
-
-    def przynalez_up2(self):#Wazne
-        print()
-        print(wyszukaj_i_konwertuj("cats meeting"))
-        historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen+ " Do tej pory to tyle. Przynależność społeczna (im jest niższa ta statystyka tym bardziej kot czuje sie samotny) " + prompt2 + " zyskał aż 2 " + prompt3)
-        print(f"↑ WAŻNE WYDARZENIE: \n{historyjka}")
-        self.zapisz_historyjke(historyjka)  # Zapisujemy historyjkę do pliku
-        self.przynaleznosc = min(10, self.przynaleznosc + 2)
-
-
-
-    # ponizej metody - DROBNE WYDARZEIA***************************************************
-
-    # dobrostan_emocjonalny
-
-    def dobrostan_emo_up(self):#drobne
-        print()
-        #### DEBUG PONIZEJ DO WYWALENIA ale narazie zostawiamy
-        print("DEBUG PROMPT:         ", prompt1 +" " +ze_spisu_wydarzen +" "+prompt2+  self.get_prompt_stats() + prompt3 + " zyskał 0,25 Dobrostanu emocjonalnego.  " + prompt4)
-        
-        # Najpierw generujemy historyjkę, ale jej nie wyświetlamy
-        historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen +" "+prompt2+  self.get_prompt_stats() + prompt3 + " zyskał 0,25 Dobrostanu emocjonalnego.  " + prompt4)
-        
+    #ponizej - kawalek kodu co sie powtarza się w każdej z metod poniżej wiec jest zapisany jako metoda. po rostu skompresowany kawalek kodu
+    def kawalek_kodu_wydarzenwydarzen(self, historyjka):
         # Wyciągamy tytuł i generujemy ASCII art
         tytul = self.wyciagnij_tytul(historyjka)
         print("Debug "), print(f"cat and {tytul}")
@@ -231,44 +159,46 @@ class Cat:
         print(ascii_art)
         print(f"↑ Drobne wydarzenie: \n{historyjka[historyjka.find('**', historyjka.find('**')+2)+2:]}") # Wyświetla tekst po drugim **
         self.zapisz_historyjke(historyjka)  # Zapisujemy historyjkę do pliku
+
+#      _           _                                     _                          _       
+#   __| |_ __ ___ | |__  _ __   ___  __      ___   _  __| | __ _ _ __ _______ _ __ (_) __ _ 
+#  / _` | '__/ _ \| '_ \| '_ \ / _ \ \ \ /\ / / | | |/ _` |/ _` | '__|_  / _ \ '_ \| |/ _` |
+# | (_| | | | (_) | |_) | | | |  __/  \ V  V /| |_| | (_| | (_| | |   / /  __/ | | | | (_| |
+#  \__,_|_|  \___/|_.__/|_| |_|\___|   \_/\_/  \__, |\__,_|\__,_|_|  /___\___|_| |_|_|\__,_|
+#                                              |___/        
+
+
+    # dobrostan_emocjonalny
+
+    def dobrostan_emo_up(self):#drobne DEBUGOWANE POD D <<<******
+        print()
+        #### DEBUG PONIZEJ DO WYWALENIA ale narazie zostawiamy
+        print("DEBUG PROMPT:         ", prompt1 +" " +ze_spisu_wydarzen +" "+prompt2+  self.get_prompt_stats() + prompt3 + " zyskał 0,25 Dobrostanu emocjonalnego.  " + prompt4)
+        # Najpierw generujemy historyjkę, ale jej nie wyświetlamy
+        historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen +" "+prompt2+  self.get_prompt_stats() + prompt3 + " zyskał 0,25 Dobrostanu emocjonalnego.  " + prompt4)     
+        self.kawalek_kodu_wydarzenwydarzen(historyjka) #skompresowany kawalek kodu co sie powtarza w wydarzeniach
         self.dobrostan_emocjonalny = min(10, self.dobrostan_emocjonalny + 0.25)  
 
                 
     def dobrostan_emo_down(self):#drobne
         print()
-        historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen+ " Do tej pory to tyle. Dobrostan emocjonalny " + prompt2 + " utracił 0,25 " + prompt3)
-        tytul = self.wyciagnij_tytul(historyjka)
-        print("Debug "), print(f"cat and {tytul}")
-        ascii_art = wyszukaj_i_konwertuj(f"cat and {tytul}")
-        print(ascii_art)
-        print(f"↑ Drobne wydarzenie: \n{historyjka[historyjka.find('**', historyjka.find('**')+2)+2:]}") # Wyświetla tekst po drugim **
-        self.zapisz_historyjke(historyjka)  # Zapisujemy historyjkę do pliku
+        historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen +" "+prompt2+  self.get_prompt_stats() + prompt3 + " utracił 0,25 Dobrostanu emocjonalnego.  " + prompt4)      
+        self.kawalek_kodu_wydarzenwydarzen(historyjka) #skompresowany kawalek kodu co sie powtarza w wydarzeniach
         self.dobrostan_emocjonalny = max(0, self.dobrostan_emocjonalny - 0.25)  
   
-
-
+  
     # najedzenie
 
     def najedz_up(self):#drobne
         print()
-        historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen+ " Do tej pory to tyle. Najedzenie (sytość) " + prompt2 + " zyskał 0,25 " + prompt3)
-        tytul = self.wyciagnij_tytul(historyjka)
-        print("Debug "), print(f"cat and {tytul}")
-        ascii_art = wyszukaj_i_konwertuj(f"cat and {tytul}")
-        print(ascii_art)
-        print(f"↑ Drobne wydarzenie: \n{historyjka[historyjka.find('**', historyjka.find('**')+2)+2:]}") # Wyświetla tekst po drugim **
-        self.zapisz_historyjke(historyjka)  # Zapisujemy historyjkę do pliku
+        historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen +" "+prompt2+  self.get_prompt_stats() + prompt3 + " zyskał 0,25  Najedzenia.  " + prompt4)
+        self.kawalek_kodu_wydarzenwydarzen(historyjka) #skompresowany kawalek kodu co sie powtarza w wydarzeniach
         self.najedzenie = min(10, self.najedzenie + 0.25)  
 
     def najedz_down(self):#drobne
         print()
-        historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen+ " Do tej pory to tyle. Najedzenie (sytość) " + prompt2 + " utracił 0,25 " + prompt3)
-        tytul = self.wyciagnij_tytul(historyjka)
-        print("Debug "), print(f"cat and {tytul}")
-        ascii_art = wyszukaj_i_konwertuj(f"cat and {tytul}")
-        print(ascii_art)
-        print(f"↑ Drobne wydarzenie: \n{historyjka[historyjka.find('**', historyjka.find('**')+2)+2:]}") # Wyświetla tekst po drugim **
-        self.zapisz_historyjke(historyjka)  # Zapisujemy historyjkę do pliku
+        historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen +" "+prompt2+  self.get_prompt_stats() + prompt3 + " utracił 0,25 Najedzenia.  " + prompt4)
+        self.kawalek_kodu_wydarzenwydarzen(historyjka) #skompresowany kawalek kodu co sie powtarza w wydarzeniach
         self.najedzenie = max(0, self.najedzenie - 0.25) 
 
   
@@ -277,27 +207,75 @@ class Cat:
 
     def przynalez_up(self): #drobne
         print()
-        historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen+ " Do tej pory to tyle. Przynależność społeczna (im jest niższa ta statystyka tym bardziej kot czuje sie samotny) " + prompt2 + " zyskał 0,25 " + prompt3)
-        tytul = self.wyciagnij_tytul(historyjka)
-        print("Debug "), print(f"cat and {tytul}")
-        ascii_art = wyszukaj_i_konwertuj(f"cat and {tytul}")
-        print(ascii_art)
-        print(f"↑ Drobne wydarzenie: \n{historyjka[historyjka.find('**', historyjka.find('**')+2)+2:]}") # Wyświetla tekst po drugim **
-        self.zapisz_historyjke(historyjka)  # Zapisujemy historyjkę do pliku
+        historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen +" "+prompt2+  self.get_prompt_stats() + prompt3 + " zyskał 0,25 Przynależności.  " + prompt4)
+        self.kawalek_kodu_wydarzenwydarzen(historyjka) #skompresowany kawalek kodu co sie powtarza w wydarzeniach
         self.przynaleznosc = min(10, self.przynaleznosc + 0.25)  
 
     def przynalez_down(self): #drobne
         print()
-        historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen+ " Do tej pory to tyle. Przynależność społeczna (im jest niższa ta statystyka tym bardziej kot czuje sie samotny) " + prompt2 + " utracił 0,25 " + prompt3)
-        tytul = self.wyciagnij_tytul(historyjka)
-        print("Debug "), print(f"cat and {tytul}")
-        ascii_art = wyszukaj_i_konwertuj(f"cat and {tytul}")
-        print(ascii_art)
-        print(f"↑ Drobne wydarzenie: \n{historyjka[historyjka.find('**', historyjka.find('**')+2)+2:]}") # Wyświetla tekst po drugim **
-        self.zapisz_historyjke(historyjka)  # Zapisujemy historyjkę do pliku
+        historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen +" "+prompt2+  self.get_prompt_stats() + prompt3 + " utracił 0,25  Przynależności.  " + prompt4)     
+        self.kawalek_kodu_wydarzenwydarzen(historyjka) #skompresowany kawalek kodu co sie powtarza w wydarzeniach
         self.przynaleznosc = max(0, self.przynaleznosc - 0.25) 
 
 
+#                                                    _ 
+# __      ____ _ _____ __   ___  __      ___   _  __| |
+# \ \ /\ / / _` |_  / '_ \ / _ \ \ \ /\ / / | | |/ _` |
+#  \ V  V / (_| |/ /| | | |  __/  \ V  V /| |_| | (_| |
+#   \_/\_/ \__,_/___|_| |_|\___|   \_/\_/  \__, |\__,_|
+#                                          |___/       
+
+    # najedzenie
+
+    def najedz_down2(self): #Wazne
+        print()
+        historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen +" "+prompt2+  self.get_prompt_stats() + prompt3 + " utracił aż 2 pkt  Najedzenia.  " + prompt4)
+        self.kawalek_kodu_wydarzenwydarzen(historyjka) #skompresowany kawalek kodu co sie powtarza w wydarzeniach
+        self.najedzenie = max(0, self.najedzenie - 2) 
+ 
+    def najedz_up2(self): #Wazne
+        print()
+        historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen +" "+prompt2+  self.get_prompt_stats() + prompt3 + " zyskał aż 2 pkt  Najedzenia.  " + prompt4)
+        self.kawalek_kodu_wydarzenwydarzen(historyjka) #skompresowany kawalek kodu co sie powtarza w wydarzeniach
+        self.najedzenie = min(10, self.najedzenie + 2)
+ 
+    # dobrostan_emocjonalny
+
+    def dobrostan_emo_down2(self): #Wazne
+        print()
+        historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen +" "+prompt2+  self.get_prompt_stats() + prompt3 + " utracił aż 2 pkt Dobrostanu emocjonalnego.  " + prompt4)
+        self.kawalek_kodu_wydarzenwydarzen(historyjka) #skompresowany kawalek kodu co sie powtarza w wydarzeniach
+        self.dobrostan_emocjonalny = max(0, self.dobrostan_emocjonalny - 2) 
+
+    def dobrostan_emo_up2(self): #Wazne
+        print()
+        historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen +" "+prompt2+  self.get_prompt_stats() + prompt3 + " zyskał aż 2 pkt Dobrostanu emocjonalnego.  " + prompt4)
+        self.kawalek_kodu_wydarzenwydarzen(historyjka) #skompresowany kawalek kodu co sie powtarza w wydarzeniach
+        self.dobrostan_emocjonalny = min(10, self.dobrostan_emocjonalny + 2)
+
+
+    # przynaleznosc
+
+
+    def przynalez_down2(self): #Wazne
+        print()
+        historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen +" "+prompt2+  self.get_prompt_stats() + prompt3 + " stracił aż 2 pkt Przynależności.  " + prompt4)
+        self.kawalek_kodu_wydarzenwydarzen(historyjka) #skompresowany kawalek kodu co sie powtarza w wydarzeniach
+        self.przynaleznosc = max(0, self.przynaleznosc - 2)
+
+
+    def przynalez_up2(self):#Wazne
+        print()
+        historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen +" "+prompt2+  self.get_prompt_stats() + prompt3 + " zyskał aż 2 pkt Przynależności.  " + prompt4)
+        self.kawalek_kodu_wydarzenwydarzen(historyjka) #skompresowany kawalek kodu co sie powtarza w wydarzeniach
+        self.przynaleznosc = min(10, self.przynaleznosc + 2)
+
+
+
+
+
+
+#-------------------------------------------------------------------------------------------------------
 
 
     #wyswietla menu i aktualizuje stan kota
