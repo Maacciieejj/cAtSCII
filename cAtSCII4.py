@@ -113,7 +113,7 @@ def main():  #
             kot.karmienie()
             kot.zapisz_log("Akcja: Karmienie kota") #zapis logu
             print(wyszukaj_i_konwertuj("cat eat"))
-            historyjka = generuj_historyjke("Napisz krótką, 2-zdaniową historyjkę po polsku, w drugiej osobie liczby pojedynczej, czas teraźniejszy, o tym jak właśnie nakarmiono kota. Zastanów się nad pokarmami jakie jada kot i wybierz jeden (wylosuj) . Nie używaj imion i ni wskazuj na płcie. Niech historyjka nie będzie zbyt słodka i niech nie brzmi jak tekst z reklamy. Nie używaj imion i nie wskazuj na płeć. Niech historyjka nie będzie zbyt słodka i niech nie brzmi jak tekst z reklamy. Nie zwracaj się w tekście bezpośrednio do czytającego, nie przełamuj czwartej ściany.")
+            historyjka = generuj_historyjke("Napisz krótką, 1-zdaniową historyjkę po polsku, w drugiej osobie liczby pojedynczej, czas teraźniejszy, o tym jak właśnie nakarmiono kota. Zastanów się nad pokarmami jakie jada kot i wybierz jeden (wylosuj) . Nie używaj imion i ni wskazuj na płcie. Niech historyjka nie będzie zbyt słodka i niech nie brzmi jak tekst z reklamy. Nie używaj imion i nie wskazuj na płeć. Niech historyjka nie będzie zbyt słodka i niech nie brzmi jak tekst z reklamy. Nie zwracaj się w tekście bezpośrednio do czytającego, nie przełamuj czwartej ściany.")
             print(f"\n↑ {historyjka}")
             kot.zapisz_sejw()  # Save
 
@@ -121,7 +121,7 @@ def main():  #
             kot.glaskanie()
             kot.zapisz_log("Akcja: Głaskanie kota") #zapis logu
             print(wyszukaj_i_konwertuj("petting cat"))
-            historyjka = generuj_historyjke("Napisz krótką, 2-zdaniową historyjkę po polsku, w drugiej osobie liczby pojedynczej, czas teraźniejszy, o tym jak pogłaskano kota. Nie pisz że kot się wygina lub wibruje podczas głaskania. Nie używaj imion i nie wskazuj na płeć. Niech historyjka nie będzie zbyt słodka i niech nie brzmi jak tekst z reklamy. Nie zwracaj się w tekście bezpośrednio do czytającego, nie przełamuj czwartej ściany.")
+            historyjka = generuj_historyjke("Napisz krótką, 1-zdaniową historyjkę po polsku, w drugiej osobie liczby pojedynczej, czas teraźniejszy, o tym jak pogłaskano kota. Nie pisz że kot się wygina lub wibruje podczas głaskania. Nie używaj imion i nie wskazuj na płeć. Niech historyjka nie będzie zbyt słodka i niech nie brzmi jak tekst z reklamy. Nie zwracaj się w tekście bezpośrednio do czytającego, nie przełamuj czwartej ściany.")
             print(f"\n↑ {historyjka}")
             kot.zapisz_sejw()  # Save
 
@@ -134,7 +134,7 @@ def main():  #
             kot.patrzenie()
             kot.zapisz_log("Akcja: Patrzenie na kota") #zapis logu
             print(wyszukaj_i_konwertuj("cat portrait"))
-            historyjka = generuj_historyjke("Napisz krótką, 2-zdaniową historyjkę po polsku, w drugiej osobie liczby pojedynczej, czas teraźniejszy, o tym jak właśnie patrzono na swojego kota czy wszystko u niego ok, i kot odwzajemniał. Nie używaj imion i ni wskazuj na płcie. Niech historyjka nie będzie zbyt słodka i niech nie brzmi jak tekst z reklamy ale niech to będzie pozytywne. Nie używaj imion i nie wskazuj na płeć.  Nie zwracaj się w tekście bezpośrednio do czytającego, nie przełamuj czwartej ściany. Nie pisz że ktoś siedziałi sie patrzył w ścianę.")
+            historyjka = generuj_historyjke("Napisz krótką, 1-zdaniową historyjkę po polsku, w drugiej osobie liczby pojedynczej, czas teraźniejszy, o tym jak nawiązano kontakt wzrokowy ze swoim kotem. Nie używaj imion i ni wskazuj na płcie. Niech historyjka nie będzie zbyt słodka i niech nie brzmi jak tekst z reklamy ale niech to będzie pozytywne. Nie używaj imion i nie wskazuj na płeć.  Nie zwracaj się w tekście bezpośrednio do czytającego, nie przełamuj czwartej ściany. Nie pisz że ktoś siedziałi sie patrzył w ścianę.")
             print(f"\n↑ {historyjka}")
             kot.zapisz_sejw()  # Save
 

@@ -33,8 +33,8 @@ class Cat:
         else:
             # Inicjalizacja nowej gry
             self.najedzenie = 10 #Tworzy zmienną przechowującą poziom najedzenia kota. Self oznacza, że zmienna należy do instancji klasy
-            self.zadbanie = 10 # podobnie
-            self.dostatekuwagi = 10
+            self.dobrostan_emocjonalny = 10 # podobnie
+            self.przynaleznosc = 10
             self.moment_adopcji = time.time()  # dodajemy czas startu jako właściwość kota
             self.ostatnia_aktualizacja = time.time()  # to tu ma niby usunac bledy z czasem
 
@@ -43,8 +43,8 @@ class Cat:
     def zapisz_sejw(self):
         dane_sejwu = {
             'najedzenie': self.najedzenie,
-            'zadbanie': self.zadbanie,
-            'dostatekuwagi': self.dostatekuwagi,
+            'dobrostan_emocjonalny': self.dobrostan_emocjonalny,
+            'przynaleznosc': self.przynaleznosc,
             'moment_adopcji': self.moment_adopcji,
             'ostatnia_aktualizacja': time.time()  # Zapisujemy aktualny czas
         }
@@ -60,8 +60,8 @@ class Cat:
                 dane_sejwu = json.load(plik)
                 
             self.najedzenie = dane_sejwu['najedzenie']
-            self.zadbanie = dane_sejwu['zadbanie']
-            self.dostatekuwagi = dane_sejwu['dostatekuwagi']
+            self.dobrostan_emocjonalny = dane_sejwu['dobrostan_emocjonalny']
+            self.przynaleznosc = dane_sejwu['przynaleznosc']
             self.moment_adopcji = dane_sejwu['moment_adopcji']
             self.ostatnia_aktualizacja = dane_sejwu['ostatnia_aktualizacja'] ##to zamiast tego na dole. do obserwacji :)
             #### self.ostatnia_aktualizacja = time.time()  # Dodajemy to przed aktualizacją statystyk - sprawia ze kotu nie spadaja stasty za czas niedziaalnia programu)
@@ -91,8 +91,8 @@ class Cat:
             
             log = f"\n[{dni}d {godziny}h {minuty}m] {akcja}\n"
             log += f"Najedzenie: {round(self.najedzenie, 2)}, "
-            log += f"Zadbanie: {round(self.zadbanie, 2)}, "
-            log += f"Dostatek uwagi: {round(self.dostatekuwagi, 2)}\n"
+            log += f"Dobrostan emocjonalny: {round(self.dobrostan_emocjonalny, 2)}, "
+            log += f"Przynależność: {round(self.przynaleznosc, 2)}\n"
 
             plik.write(log)
 
@@ -108,8 +108,8 @@ class Cat:
         if minuty > 0:
             spadek = minuty / 120
             self.najedzenie = max(0, self.najedzenie - spadek)
-            self.zadbanie = max(0, self.zadbanie - spadek)
-            self.dostatekuwagi = max(0, self.dostatekuwagi - spadek)
+            self.dobrostan_emocjonalny = max(0, self.dobrostan_emocjonalny - spadek)
+            self.przynaleznosc = max(0, self.przynaleznosc - spadek)
             self.ostatnia_aktualizacja = teraz
 
 
@@ -121,22 +121,22 @@ class Cat:
 
         
     def glaskanie(self): #itd
-        self.zadbanie = min(10, self.zadbanie + 2)
+        self.dobrostan_emocjonalny = min(10, self.dobrostan_emocjonalny + 2)
         return wyszukaj_i_konwertuj("petting cat")
 
 
     def patrzenie(self):
-        self.dostatekuwagi = min(10, self.dostatekuwagi + 2)
+        self.przynaleznosc = min(10, self.przynaleznosc + 2)
         return wyszukaj_i_konwertuj("watching cat")
 
 
     def zyje(self):
-        return self.najedzenie > 0 and self.zadbanie > 0 and self.dostatekuwagi > 0
+        return self.najedzenie > 0 and self.dobrostan_emocjonalny > 0 and self.przynaleznosc > 0
 
 
 
 
-    # ponizej metoda zpisu historyjki do spis_wydarzen.txt
+    # ponizej metoda zpisu historyjki do spis_wydarzen
     def zapisz_historyjke(self, historyjka):
         # Wyciągamy samą treść historyjki (bez tytułu)
         tresc = historyjka[historyjka.find('**', historyjka.find('**')+2)+2:].strip()
@@ -166,55 +166,55 @@ class Cat:
         self.zapisz_historyjke(historyjka)  # Zapisujemy historyjkę do pliku
         self.najedzenie = min(10, self.najedzenie + 2)
  
-    # zadbanie
+    # dobrostan_emocjonalny
 
-    def zadb_down2(self): #Wazne
+    def dobrostan_emo_down2(self): #Wazne
         print()
         print(wyszukaj_i_konwertuj("aggressive dog"))
-        historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen+ " Do tej pory to tyle. Dobrostan psychiczny " + prompt2 + " utracił aż 2 " + prompt3)
+        historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen+ " Do tej pory to tyle. Dobrostan emocjonalny " + prompt2 + " utracił aż 2 " + prompt3)
         print(f"↑ WAŻNE WYDARZENIE: \n{historyjka}")
         self.zapisz_historyjke(historyjka)  # Zapisujemy historyjkę do pliku
-        self.zadbanie = max(0, self.zadbanie - 2) 
+        self.dobrostan_emocjonalny = max(0, self.dobrostan_emocjonalny - 2) 
 
-    def zadb_up2(self): #Wazne
+    def dobrostan_emo_up2(self): #Wazne
         print()
         print(wyszukaj_i_konwertuj("children cat"))
-        historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen+ " Do tej pory to tyle. Dobrostan psychiczny " + prompt2 + " zyskał aż 2 " + prompt3)
+        historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen+ " Do tej pory to tyle. Dobrostan emocjonalny " + prompt2 + " zyskał aż 2 " + prompt3)
         print(f"↑ WAŻNE WYDARZENIE: \n{historyjka}")
         self.zapisz_historyjke(historyjka)  # Zapisujemy historyjkę do pliku
-        self.zadbanie = min(10, self.zadbanie + 2)
+        self.dobrostan_emocjonalny = min(10, self.dobrostan_emocjonalny + 2)
 
 
-    # dostatek uwagi
+    # przynaleznosc
 
 
-    def dostatekuw_down2(self): #Wazne
+    def przynalez_down2(self): #Wazne
         print()
         print(wyszukaj_i_konwertuj("sad cat"))
         historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen+ " Do tej pory to tyle. Przynależność społeczna (im jest niższa ta statystyka tym bardziej kot czuje sie samotny) " + prompt2 + " utracił aż 2 " + prompt3)
         print(f"↑ WAŻNE WYDARZENIE: \n{historyjka}")
         self.zapisz_historyjke(historyjka)  # Zapisujemy historyjkę do pliku
-        self.dostatekuwagi = max(0, self.dostatekuwagi - 2)
+        self.przynaleznosc = max(0, self.przynaleznosc - 2)
 
 
-    def dostatekuw_up2(self):#Wazne
+    def przynalez_up2(self):#Wazne
         print()
         print(wyszukaj_i_konwertuj("cats meeting"))
         historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen+ " Do tej pory to tyle. Przynależność społeczna (im jest niższa ta statystyka tym bardziej kot czuje sie samotny) " + prompt2 + " zyskał aż 2 " + prompt3)
         print(f"↑ WAŻNE WYDARZENIE: \n{historyjka}")
         self.zapisz_historyjke(historyjka)  # Zapisujemy historyjkę do pliku
-        self.dostatekuwagi = min(10, self.dostatekuwagi + 2)
+        self.przynaleznosc = min(10, self.przynaleznosc + 2)
 
 
 
     # ponizej metody - DROBNE WYDARZEIA***************************************************
 
-    # zadbanie
+    # dobrostan_emocjonalny
 
-    def zadb_up(self):#drobne
+    def dobrostan_emo_up(self):#drobne
         print()
         # Najpierw generujemy historyjkę, ale jej nie wyświetlamy
-        historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen+ " Do tej pory to tyle. Dobrostan psychiczny " + prompt2 + " zyskał 0,25 " + prompt3)
+        historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen+ " Do tej pory to tyle. Dobrostan emocjonalny " + prompt2 + " zyskał 0,25 " + prompt3)
         # Wyciągamy tytuł i generujemy ASCII art
         tytul = self.wyciagnij_tytul(historyjka)
         print("Debug "), print(f"cat and {tytul}")
@@ -223,19 +223,19 @@ class Cat:
         print(ascii_art)
         print(f"↑ Drobne wydarzenie: \n{historyjka[historyjka.find('**', historyjka.find('**')+2)+2:]}") # Wyświetla tekst po drugim **
         self.zapisz_historyjke(historyjka)  # Zapisujemy historyjkę do pliku
-        self.zadbanie = min(10, self.zadbanie + 0.25)  
+        self.dobrostan_emocjonalny = min(10, self.dobrostan_emocjonalny + 0.25)  
 
                 
-    def zadb_down(self):#drobne
+    def dobrostan_emo_down(self):#drobne
         print()
-        historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen+ " Do tej pory to tyle. Dobrostan psychiczny " + prompt2 + " utracił 0,25 " + prompt3)
+        historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen+ " Do tej pory to tyle. Dobrostan emocjonalny " + prompt2 + " utracił 0,25 " + prompt3)
         tytul = self.wyciagnij_tytul(historyjka)
         print("Debug "), print(f"cat and {tytul}")
         ascii_art = wyszukaj_i_konwertuj(f"cat and {tytul}")
         print(ascii_art)
         print(f"↑ Drobne wydarzenie: \n{historyjka[historyjka.find('**', historyjka.find('**')+2)+2:]}") # Wyświetla tekst po drugim **
         self.zapisz_historyjke(historyjka)  # Zapisujemy historyjkę do pliku
-        self.zadbanie = max(0, self.zadbanie - 0.25)  
+        self.dobrostan_emocjonalny = max(0, self.dobrostan_emocjonalny - 0.25)  
   
 
 
@@ -265,9 +265,9 @@ class Cat:
 
   
 
-    # dostatekuwagi
+    # przynaleznosc
 
-    def dostatekuw_up(self): #drobne
+    def przynalez_up(self): #drobne
         print()
         historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen+ " Do tej pory to tyle. Przynależność społeczna (im jest niższa ta statystyka tym bardziej kot czuje sie samotny) " + prompt2 + " zyskał 0,25 " + prompt3)
         tytul = self.wyciagnij_tytul(historyjka)
@@ -276,9 +276,9 @@ class Cat:
         print(ascii_art)
         print(f"↑ Drobne wydarzenie: \n{historyjka[historyjka.find('**', historyjka.find('**')+2)+2:]}") # Wyświetla tekst po drugim **
         self.zapisz_historyjke(historyjka)  # Zapisujemy historyjkę do pliku
-        self.dostatekuwagi = min(10, self.dostatekuwagi + 0.25)  
+        self.przynaleznosc = min(10, self.przynaleznosc + 0.25)  
 
-    def dostatekuw_down(self): #drobne
+    def przynalez_down(self): #drobne
         print()
         historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen+ " Do tej pory to tyle. Przynależność społeczna (im jest niższa ta statystyka tym bardziej kot czuje sie samotny) " + prompt2 + " utracił 0,25 " + prompt3)
         tytul = self.wyciagnij_tytul(historyjka)
@@ -287,7 +287,7 @@ class Cat:
         print(ascii_art)
         print(f"↑ Drobne wydarzenie: \n{historyjka[historyjka.find('**', historyjka.find('**')+2)+2:]}") # Wyświetla tekst po drugim **
         self.zapisz_historyjke(historyjka)  # Zapisujemy historyjkę do pliku
-        self.dostatekuwagi = max(0, self.dostatekuwagi - 0.25) 
+        self.przynaleznosc = max(0, self.przynaleznosc - 0.25) 
 
 
 
@@ -300,7 +300,7 @@ class Cat:
         godziny = (czas_gry // 3600) % 24
         dni = czas_gry // 86400
         #ponizej wyswietlanie licznikow
-        print(f"""\nNajedzenie:{round(self.najedzenie, 2)} Zadbanie:{round(self.zadbanie, 2)} Dostatek uwagi:{round(self.dostatekuwagi, 2)}""")
+        print(f"""\nNajedzenie:{round(self.najedzenie, 2)} Dobrostan emocjonalny:{round(self.dobrostan_emocjonalny, 2)} Przynaleznosc:{round(self.przynaleznosc, 2)}""")
         print("Czas opieki:" f"{dni} d. {godziny} h. {minuty} m.")
         print("....................................................")
 
