@@ -274,13 +274,13 @@ class Cat:
     def najedz_down2(self): #Wazne
         print()
         historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen +" "+prompt2+  self.get_prompt_stats() + prompt3 + " utracił aż 2 pkt  Najedzenia.  " + prompt4)
-        self.kawalek_kodu_wydarzenwydarzen(historyjka, "Ważne") #skompresowany kawalek kodu co sie powtarza w wydarzeniach
+        self.kawalek_kodu_wydarzenwydarzen(historyjka, "WAŻNE") #skompresowany kawalek kodu co sie powtarza w wydarzeniach
         self.najedzenie = max(0, self.najedzenie - 2) 
  
     def najedz_up2(self): #Wazne
         print()
         historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen +" "+prompt2+  self.get_prompt_stats() + prompt3 + " zyskał aż 2 pkt  Najedzenia.  " + prompt4)
-        self.kawalek_kodu_wydarzenwydarzen(historyjka, "Ważne") #skompresowany kawalek kodu co sie powtarza w wydarzeniach
+        self.kawalek_kodu_wydarzenwydarzen(historyjka, "WAŻNE") #skompresowany kawalek kodu co sie powtarza w wydarzeniach
         self.najedzenie = min(10, self.najedzenie + 2)
  
     # dobrostan_emocjonalny
@@ -288,13 +288,13 @@ class Cat:
     def dobrostan_emo_down2(self): #Wazne
         print()
         historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen +" "+prompt2+  self.get_prompt_stats() + prompt3 + " utracił aż 2 pkt Dobrostanu emocjonalnego.  " + prompt4)
-        self.kawalek_kodu_wydarzenwydarzen(historyjka, "Ważne") #skompresowany kawalek kodu co sie powtarza w wydarzeniach
+        self.kawalek_kodu_wydarzenwydarzen(historyjka, "WAŻNE") #skompresowany kawalek kodu co sie powtarza w wydarzeniach
         self.dobrostan_emocjonalny = max(0, self.dobrostan_emocjonalny - 2) 
 
     def dobrostan_emo_up2(self): #Wazne
         print()
         historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen +" "+prompt2+  self.get_prompt_stats() + prompt3 + " zyskał aż 2 pkt Dobrostanu emocjonalnego.  " + prompt4)
-        self.kawalek_kodu_wydarzenwydarzen(historyjka, "Ważne") #skompresowany kawalek kodu co sie powtarza w wydarzeniach
+        self.kawalek_kodu_wydarzenwydarzen(historyjka, "WAŻNE") #skompresowany kawalek kodu co sie powtarza w wydarzeniach
         self.dobrostan_emocjonalny = min(10, self.dobrostan_emocjonalny + 2)
 
 
@@ -304,14 +304,14 @@ class Cat:
     def przynalez_down2(self): #Wazne
         print()
         historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen +" "+prompt2+  self.get_prompt_stats() + prompt3 + " stracił aż 2 pkt Przynależności.  " + prompt4)
-        self.kawalek_kodu_wydarzenwydarzen(historyjka, "Ważne") #skompresowany kawalek kodu co sie powtarza w wydarzeniach
+        self.kawalek_kodu_wydarzenwydarzen(historyjka, "WAŻNE") #skompresowany kawalek kodu co sie powtarza w wydarzeniach
         self.przynaleznosc = max(0, self.przynaleznosc - 2)
 
 
     def przynalez_up2(self):#Wazne
         print()
         historyjka = generuj_historyjke(prompt1 +" " +ze_spisu_wydarzen +" "+prompt2+  self.get_prompt_stats() + prompt3 + " zyskał aż 2 pkt Przynależności.  " + prompt4)
-        self.kawalek_kodu_wydarzenwydarzen(historyjka, "Ważne") #skompresowany kawalek kodu co sie powtarza w wydarzeniach
+        self.kawalek_kodu_wydarzenwydarzen(historyjka, "WAŻNE") #skompresowany kawalek kodu co sie powtarza w wydarzeniach
         self.przynaleznosc = min(10, self.przynaleznosc + 2)
 
 
