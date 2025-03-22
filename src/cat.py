@@ -2,6 +2,8 @@ import time
 import os  # bibioteka os do czyszczenia ekranu
 import json  # Dodajemy import dla obsługi formatu JSON dla sejwowania
 import win32api #do wlaczania capslocka debugu prompta dla duckduckgo 
+import sys  # dodaj na początku pliku
+from links.nagrobek import nagrobek  # dodaj na początku pliku
 from src.utils.ascii_converter import wyszukaj_i_konwertuj  # import funkcji konwertującej obrazy na ASCII
 from src.utils.story_generator import generuj_historyjke, formatuj_do_wyswietlenia  # import funkcji generującej historyjki i formatującej tekst
 from links.prompty import *
@@ -69,13 +71,21 @@ class Cat:
             #### self.ostatnia_aktualizacja = time.time()  # Dodajemy to przed aktualizacją statystyk - sprawia ze kotu nie spadaja stasty za czas niedziaalnia programu)
 
 
-
             # Po wczytaniu sejwu, aktualizuj_statystyki() samo obliczy upływ czasu
             # i odpowiednio zaktualizuje statystyki kota
             self.aktualizuj_statystyki()
+
             print("\nWczytano stan kota:")
             self.zapisz_log("Wczytano sejw")
-        
+
+            #ponizej - daje nagrobek jesli sie okaze ze podczas niegrania kot zmarł
+            if not self.zyje():
+                print("\nTwój kot zmarł podczas twojej nieobecności.") 
+                print(nagrobek)
+                self.zapisz_log("R. I. P. (śmierć podczas nieobecności)")
+                sys.exit()
+
+
         except Exception as e:
             print(f"Błąd podczas wczytywania sejwu: {e}")
             print("Bierzesz nowego kota...")

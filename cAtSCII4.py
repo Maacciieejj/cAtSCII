@@ -23,12 +23,12 @@ from src.utils.logger import TeeOutput
 from src.utils.help import HELP_TEXT
 from src.utils.story_generator import generuj_historyjke, formatuj_do_wyswietlenia  #  import formatowania historyjek
 
-from src.events.minor_events import drobne_wydarzenia
-from src.events.major_events import wazne_wydarzenia
+from src.minor_events import drobne_wydarzenia
+from src.major_events import wazne_wydarzenia
 
-from src.models.cat import Cat
+from src.cat import Cat
 
-from src.shared.switches import przelacznik1, set_switch_state
+from src.switches import przelacznik1, set_switch_state
 
 sys.stdout = TeeOutput('zawartosc.txt')
 

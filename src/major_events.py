@@ -1,7 +1,7 @@
 import time #import mehanizmu czasu
 import random
 from links.nagrobek import nagrobek #import asci artow
-from src.shared.switches import get_switch_state # to jest zmienna przełącznika, która będzie sprawdzana w każdym momencie
+from .switches import get_switch_state # to jest zmienna przełącznika, która będzie sprawdzana w każdym momencie
 
 
 

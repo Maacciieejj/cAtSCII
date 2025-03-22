@@ -19,4 +19,6 @@ nagrobek = """
               .-*%@@@@@@@@%%@@@@@%#+:..
                     .+%@@#==+*%%@**%## 
                                   .::. 
+
+Usuń plik sejw.json by zacząć od nowa.
 """
