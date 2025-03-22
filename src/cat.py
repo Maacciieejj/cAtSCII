@@ -1,8 +1,8 @@
 import time
 import os  # bibioteka os do czyszczenia ekranu
 import json  # Dodajemy import dla obsługi formatu JSON dla sejwowania
-import win32api #do wlaczania capslocka debugu prompta dla duckduckgo 
 import sys  # dodaj na początku pliku
+from src.debug import debug_mode
 from links.nagrobek import nagrobek  # dodaj na początku pliku
 from src.utils.ascii_converter import wyszukaj_i_konwertuj  # import funkcji konwertującej obrazy na ASCII
 from src.utils.story_generator import generuj_historyjke, formatuj_do_wyswietlenia  # import funkcji generującej historyjki i formatującej tekst
@@ -204,8 +204,8 @@ class Cat:
     def kawalek_kodu_wydarzenwydarzen(self, historyjka, waga=""):
         # Wyciągamy tytuł i generujemy ASCII art
         tytul = self.wyciagnij_tytul(historyjka)
-        if win32api.GetKeyState(0x14):  # Sprawdza czy Caps Lock jest włączony
-            print("Debug frazy. Wyłącz capslock "), print(f"cat and {tytul}")
+        if debug_mode:  # jesli debug mode jest włączony to wyświetlamy frazy dla duckduckgo
+            print("Debug mode"), print(f"cat and {tytul}")
         ascii_art = wyszukaj_i_konwertuj(f"cat and {tytul}")
         # Teraz wyświetlamy w odpowiedniej kolejności
         print(ascii_art)

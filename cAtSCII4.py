@@ -34,6 +34,7 @@ sys.stdout = TeeOutput('zawartosc.txt')
 
 
 
+
 #**** ponizej glowna funkcja programu ---------------------------
 
 def main():  # 

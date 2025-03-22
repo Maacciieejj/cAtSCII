@@ -13,5 +13,5 @@ W czasie gdy nie możesz do niego zaglądać
 połóż go spać, by nie spotkała go żadna zła przygoda. 
 Jednak jego statystyki opadają też gdy śpi.
 
-(Capslock- debug prompta dla tworzenia asciartu.)
+(Debug mode: python cAtSCII4.py -d)
 """
