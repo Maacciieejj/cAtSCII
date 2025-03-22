@@ -1,17 +1,17 @@
 HELP_TEXT = """
-\n(nieaktualny do zmiany)
-(Capslock- debug prompta dla tworzenia asciartu.) 
-Obserwuj jak żyje twój kot. 
-Dbaj o niego, karmiąc, 
-głaszcząc i poświęcając mu uwagę. 
-tan kota (najedzenie, zadbanie, dostatek uwagi) 
+\n
+Obserwuj jak żyje twój kot w postapokaliptycznym
+Radomiu. 
+Dbaj czasem o niego, karmiąc, głaszcząc i poświęcając 
+mu uwagę. 
+Stan kota (najedzenie, zadbanie, dostatek uwagi) 
 ciągle powoli spada. W międzyczasie pojawią się 
-drobne wydarzenia które lekko wpłyną na jego 
-samopoczucie – pozytywnie lub negatywnie. Rzadziej 
-pojawią się ważne wydarzenia które znacznie mocniej 
-wpływają na kota. A szwendanie w ogóle nie 
-zmienia statystyk kota. Jakie wydarzenia jak wpływają 
-na kota? Tego dowiesz się obserwując jego stan. 
-By nie spotkała kota żadna zła przygoda możesz położyć 
-go spać w czasie gdy nie możesz do niego zaglądać. 
-Jednak jego statystyki opadają też gdy śpi."""
+drobne wydarzenia. Drobne wydażenia modyfikują na 
+plus lub na minus parametry kota o 0,25 pkt. 
+Ważne wydażenia zmieniają je o 2 pkt. 
+W czasie gdy nie możesz do niego zaglądać
+połóż go spać, by nie spotkała go żadna zła przygoda. 
+Jednak jego statystyki opadają też gdy śpi.
+
+(Capslock- debug prompta dla tworzenia asciartu.)
+"""

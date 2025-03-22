@@ -195,7 +195,7 @@ class Cat:
         # Wyciągamy tytuł i generujemy ASCII art
         tytul = self.wyciagnij_tytul(historyjka)
         if win32api.GetKeyState(0x14):  # Sprawdza czy Caps Lock jest włączony
-            print("Debug "), print(f"cat and {tytul}")
+            print("Debug frazy. Wyłącz capslock "), print(f"cat and {tytul}")
         ascii_art = wyszukaj_i_konwertuj(f"cat and {tytul}")
         # Teraz wyświetlamy w odpowiedniej kolejności
         print(ascii_art)
