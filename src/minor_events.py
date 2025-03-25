@@ -33,7 +33,7 @@ def drobne_wydarzenia(kot): # definicja funkcji
             kot.zapisz_log("R. I. P.") #zapis logu
             break
 
-        wydarzenie = random.choice(["dobrostan_emo_up", "dobrostan_emo_down", "dobrostan_emo_up", "dobrostan_emo_down", "najedz_up", "najedz_down", "najedz_up", "najedz_down", "przynalez_up", "przynalez_down", "przynalez_up", "przynalez_down"]) # losowanie wydarzenia
+        wydarzenie = random.choice(["bezzmian_stts", "bezzmian_stts", "bezzmian_stts", "bezzmian_stts", "bezzmian_stts", "bezzmian_stts", "dobrostan_emo_up", "dobrostan_emo_down", "najedz_up", "najedz_down", "przynalez_up", "przynalez_down"]) # losowanie wydarzenia
         getattr(kot, wydarzenie)()  # Wywołuje metodę o nazwie wylosowanego wydarzenia na obiekcie kot . Na przykład, jeśli wylosowano "biegunka", to wykona się kot.biegunka()
         kot.zapisz_log(f"Drobne wydarzenie:{ wydarzenie}") # zapisuje log
         kot.pokaz_stan()
